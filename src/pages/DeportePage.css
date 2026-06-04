@@ -1,0 +1,169 @@
+.deporte-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Volver */
+.volver-btn {
+  align-self: flex-start;
+  margin: 20px 24px 0;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.volver-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Banner */
+.deporte-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 24px 32px;
+  width: 100%;
+  max-width: 720px;
+  box-sizing: border-box;
+}
+
+.deporte-titulo {
+  font-size: clamp(32px, 7vw, 48px);
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Campeón */
+.campeon-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px 48px;
+  width: 100%;
+  max-width: 720px;
+  box-sizing: border-box;
+}
+
+.campeon-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 32px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.campeon-icono {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.campeon-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.campeon-nombre {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.campeon-anio {
+  font-size: 14px;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.campeon-nombre.inline-edit-input {
+  font-size: 20px;
+  font-weight: 700;
+  max-width: 250px;
+}
+
+.campeon-anio.inline-edit-input {
+  font-size: 14px;
+  max-width: 120px;
+}
+
+/* Categorías */
+.categorias-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px 48px;
+  width: 100%;
+  max-width: 720px;
+  box-sizing: border-box;
+}
+
+.categorias-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.categoria-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--accent-bg);
+}
+
+.categoria-texto {
+  flex: 1;
+  font-size: 16px;
+  color: var(--text-h);
+}
+
+.categoria-input {
+  flex: 1;
+  font-size: 16px !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  font-family: inherit !important;
+  background: var(--bg) !important;
+  color: var(--text-h) !important;
+  outline: none !important;
+}
+
+.categoria-eliminar {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoria-eliminar:hover {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
