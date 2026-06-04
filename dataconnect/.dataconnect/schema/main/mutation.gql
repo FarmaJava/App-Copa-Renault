@@ -1,0 +1,1356 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `Arbitro` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  arbitro_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Arbitro_Data!
+  ): Arbitro_KeyOutput! @fdc_generated(from: "Arbitro", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Deporte` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  deporte_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Deporte_Data!
+  ): Deporte_KeyOutput! @fdc_generated(from: "Deporte", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Division` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  division_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Division_Data!
+  ): Division_KeyOutput! @fdc_generated(from: "Division", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Equipo` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  equipo_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Equipo_Data!
+  ): Equipo_KeyOutput! @fdc_generated(from: "Equipo", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Jugador` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  jugador_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Jugador_Data!
+  ): Jugador_KeyOutput! @fdc_generated(from: "Jugador", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `JugadorFavorito` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  jugadorFavorito_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: JugadorFavorito_Data!
+  ): JugadorFavorito_KeyOutput! @fdc_generated(from: "JugadorFavorito", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `LogAccion` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  logAccion_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: LogAccion_Data!
+  ): LogAccion_KeyOutput! @fdc_generated(from: "LogAccion", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Partido` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  partido_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Partido_Data!
+  ): Partido_KeyOutput! @fdc_generated(from: "Partido", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Reglamento` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  reglamento_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Reglamento_Data!
+  ): Reglamento_KeyOutput! @fdc_generated(from: "Reglamento", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Sponsor` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  sponsor_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Sponsor_Data!
+  ): Sponsor_KeyOutput! @fdc_generated(from: "Sponsor", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `SponsorUbicacion` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  sponsorUbicacion_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: SponsorUbicacion_Data!
+  ): SponsorUbicacion_KeyOutput! @fdc_generated(from: "SponsorUbicacion", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Usuario` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  usuario_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Usuario_Data!
+  ): Usuario_KeyOutput! @fdc_generated(from: "Usuario", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `Arbitro` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  arbitro_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Arbitro_Data!]!
+  ): [Arbitro_KeyOutput!]! @fdc_generated(from: "Arbitro", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Deporte` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  deporte_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Deporte_Data!]!
+  ): [Deporte_KeyOutput!]! @fdc_generated(from: "Deporte", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Division` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  division_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Division_Data!]!
+  ): [Division_KeyOutput!]! @fdc_generated(from: "Division", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Equipo` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  equipo_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Equipo_Data!]!
+  ): [Equipo_KeyOutput!]! @fdc_generated(from: "Equipo", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Jugador` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  jugador_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Jugador_Data!]!
+  ): [Jugador_KeyOutput!]! @fdc_generated(from: "Jugador", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `JugadorFavorito` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  jugadorFavorito_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [JugadorFavorito_Data!]!
+  ): [JugadorFavorito_KeyOutput!]! @fdc_generated(from: "JugadorFavorito", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `LogAccion` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  logAccion_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [LogAccion_Data!]!
+  ): [LogAccion_KeyOutput!]! @fdc_generated(from: "LogAccion", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Partido` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  partido_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Partido_Data!]!
+  ): [Partido_KeyOutput!]! @fdc_generated(from: "Partido", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Reglamento` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  reglamento_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Reglamento_Data!]!
+  ): [Reglamento_KeyOutput!]! @fdc_generated(from: "Reglamento", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Sponsor` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  sponsor_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Sponsor_Data!]!
+  ): [Sponsor_KeyOutput!]! @fdc_generated(from: "Sponsor", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `SponsorUbicacion` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  sponsorUbicacion_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [SponsorUbicacion_Data!]!
+  ): [SponsorUbicacion_KeyOutput!]! @fdc_generated(from: "SponsorUbicacion", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Usuario` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  usuario_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Usuario_Data!]!
+  ): [Usuario_KeyOutput!]! @fdc_generated(from: "Usuario", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `Arbitro` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Arbitro`.
+  """
+  arbitro_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Arbitro_Data!
+  ): Arbitro_KeyOutput! @fdc_generated(from: "Arbitro", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Deporte` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Deporte`.
+  """
+  deporte_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Deporte_Data!
+  ): Deporte_KeyOutput! @fdc_generated(from: "Deporte", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Division` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Division`.
+  """
+  division_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Division_Data!
+  ): Division_KeyOutput! @fdc_generated(from: "Division", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Equipo` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Equipo`.
+  """
+  equipo_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Equipo_Data!
+  ): Equipo_KeyOutput! @fdc_generated(from: "Equipo", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Jugador` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Jugador`.
+  """
+  jugador_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Jugador_Data!
+  ): Jugador_KeyOutput! @fdc_generated(from: "Jugador", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `JugadorFavorito` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `JugadorFavorito`.
+  """
+  jugadorFavorito_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: JugadorFavorito_Data!
+  ): JugadorFavorito_KeyOutput! @fdc_generated(from: "JugadorFavorito", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `LogAccion` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `LogAccion`.
+  """
+  logAccion_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: LogAccion_Data!
+  ): LogAccion_KeyOutput! @fdc_generated(from: "LogAccion", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Partido` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Partido`.
+  """
+  partido_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Partido_Data!
+  ): Partido_KeyOutput! @fdc_generated(from: "Partido", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Reglamento` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Reglamento`.
+  """
+  reglamento_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Reglamento_Data!
+  ): Reglamento_KeyOutput! @fdc_generated(from: "Reglamento", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Sponsor` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Sponsor`.
+  """
+  sponsor_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Sponsor_Data!
+  ): Sponsor_KeyOutput! @fdc_generated(from: "Sponsor", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `SponsorUbicacion` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `SponsorUbicacion`.
+  """
+  sponsorUbicacion_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: SponsorUbicacion_Data!
+  ): SponsorUbicacion_KeyOutput! @fdc_generated(from: "SponsorUbicacion", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Usuario` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Usuario`.
+  """
+  usuario_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Usuario_Data!
+  ): Usuario_KeyOutput! @fdc_generated(from: "Usuario", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `Arbitro` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Arbitro`.
+  """
+  arbitro_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Arbitro_Data!]!
+  ): [Arbitro_KeyOutput!]! @fdc_generated(from: "Arbitro", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Deporte` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Deporte`.
+  """
+  deporte_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Deporte_Data!]!
+  ): [Deporte_KeyOutput!]! @fdc_generated(from: "Deporte", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Division` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Division`.
+  """
+  division_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Division_Data!]!
+  ): [Division_KeyOutput!]! @fdc_generated(from: "Division", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Equipo` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Equipo`.
+  """
+  equipo_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Equipo_Data!]!
+  ): [Equipo_KeyOutput!]! @fdc_generated(from: "Equipo", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Jugador` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Jugador`.
+  """
+  jugador_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Jugador_Data!]!
+  ): [Jugador_KeyOutput!]! @fdc_generated(from: "Jugador", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `JugadorFavorito` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `JugadorFavorito`.
+  """
+  jugadorFavorito_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [JugadorFavorito_Data!]!
+  ): [JugadorFavorito_KeyOutput!]! @fdc_generated(from: "JugadorFavorito", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `LogAccion` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `LogAccion`.
+  """
+  logAccion_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [LogAccion_Data!]!
+  ): [LogAccion_KeyOutput!]! @fdc_generated(from: "LogAccion", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Partido` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Partido`.
+  """
+  partido_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Partido_Data!]!
+  ): [Partido_KeyOutput!]! @fdc_generated(from: "Partido", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Reglamento` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Reglamento`.
+  """
+  reglamento_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Reglamento_Data!]!
+  ): [Reglamento_KeyOutput!]! @fdc_generated(from: "Reglamento", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Sponsor` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Sponsor`.
+  """
+  sponsor_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Sponsor_Data!]!
+  ): [Sponsor_KeyOutput!]! @fdc_generated(from: "Sponsor", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `SponsorUbicacion` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `SponsorUbicacion`.
+  """
+  sponsorUbicacion_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [SponsorUbicacion_Data!]!
+  ): [SponsorUbicacion_KeyOutput!]! @fdc_generated(from: "SponsorUbicacion", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Usuario` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Usuario`.
+  """
+  usuario_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Usuario_Data!]!
+  ): [Usuario_KeyOutput!]! @fdc_generated(from: "Usuario", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `Arbitro` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Arbitro` or `null` if not found.
+  """
+  arbitro_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Arbitro_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Arbitro_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Arbitro_Data!
+  ): Arbitro_KeyOutput @fdc_generated(from: "Arbitro", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Deporte` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Deporte` or `null` if not found.
+  """
+  deporte_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Deporte_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Deporte_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Deporte_Data!
+  ): Deporte_KeyOutput @fdc_generated(from: "Deporte", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Division` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Division` or `null` if not found.
+  """
+  division_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Division_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Division_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Division_Data!
+  ): Division_KeyOutput @fdc_generated(from: "Division", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Equipo` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Equipo` or `null` if not found.
+  """
+  equipo_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Equipo_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Equipo_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Equipo_Data!
+  ): Equipo_KeyOutput @fdc_generated(from: "Equipo", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Jugador` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Jugador` or `null` if not found.
+  """
+  jugador_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Jugador_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Jugador_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Jugador_Data!
+  ): Jugador_KeyOutput @fdc_generated(from: "Jugador", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `JugadorFavorito` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `JugadorFavorito` or `null` if not found.
+  """
+  jugadorFavorito_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: JugadorFavorito_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: JugadorFavorito_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: JugadorFavorito_Data!
+  ): JugadorFavorito_KeyOutput @fdc_generated(from: "JugadorFavorito", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `LogAccion` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `LogAccion` or `null` if not found.
+  """
+  logAccion_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: LogAccion_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: LogAccion_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: LogAccion_Data!
+  ): LogAccion_KeyOutput @fdc_generated(from: "LogAccion", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Partido` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Partido` or `null` if not found.
+  """
+  partido_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Partido_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Partido_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Partido_Data!
+  ): Partido_KeyOutput @fdc_generated(from: "Partido", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Reglamento` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Reglamento` or `null` if not found.
+  """
+  reglamento_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Reglamento_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Reglamento_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Reglamento_Data!
+  ): Reglamento_KeyOutput @fdc_generated(from: "Reglamento", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Sponsor` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Sponsor` or `null` if not found.
+  """
+  sponsor_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Sponsor_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Sponsor_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Sponsor_Data!
+  ): Sponsor_KeyOutput @fdc_generated(from: "Sponsor", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `SponsorUbicacion` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `SponsorUbicacion` or `null` if not found.
+  """
+  sponsorUbicacion_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: SponsorUbicacion_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: SponsorUbicacion_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: SponsorUbicacion_Data!
+  ): SponsorUbicacion_KeyOutput @fdc_generated(from: "SponsorUbicacion", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Usuario` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Usuario` or `null` if not found.
+  """
+  usuario_update(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: Usuario_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Usuario_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Usuario_Data!
+  ): Usuario_KeyOutput @fdc_generated(from: "Usuario", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `Arbitro` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  arbitro_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Arbitro_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Arbitro_Data!
+  ): Int! @fdc_generated(from: "Arbitro", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Deporte` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  deporte_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Deporte_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Deporte_Data!
+  ): Int! @fdc_generated(from: "Deporte", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Division` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  division_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Division_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Division_Data!
+  ): Int! @fdc_generated(from: "Division", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Equipo` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  equipo_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Equipo_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Equipo_Data!
+  ): Int! @fdc_generated(from: "Equipo", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Jugador` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  jugador_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Jugador_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Jugador_Data!
+  ): Int! @fdc_generated(from: "Jugador", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `JugadorFavorito` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  jugadorFavorito_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: JugadorFavorito_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: JugadorFavorito_Data!
+  ): Int! @fdc_generated(from: "JugadorFavorito", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `LogAccion` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  logAccion_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: LogAccion_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: LogAccion_Data!
+  ): Int! @fdc_generated(from: "LogAccion", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Partido` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  partido_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Partido_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Partido_Data!
+  ): Int! @fdc_generated(from: "Partido", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Reglamento` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  reglamento_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Reglamento_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Reglamento_Data!
+  ): Int! @fdc_generated(from: "Reglamento", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Sponsor` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  sponsor_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Sponsor_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Sponsor_Data!
+  ): Int! @fdc_generated(from: "Sponsor", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `SponsorUbicacion` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  sponsorUbicacion_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: SponsorUbicacion_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: SponsorUbicacion_Data!
+  ): Int! @fdc_generated(from: "SponsorUbicacion", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Usuario` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  usuario_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Usuario_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Usuario_Data!
+  ): Int! @fdc_generated(from: "Usuario", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `Arbitro` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  arbitro_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Arbitro_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Arbitro_FirstRow
+  ): Arbitro_KeyOutput @fdc_generated(from: "Arbitro", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Deporte` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  deporte_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Deporte_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Deporte_FirstRow
+  ): Deporte_KeyOutput @fdc_generated(from: "Deporte", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Division` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  division_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Division_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Division_FirstRow
+  ): Division_KeyOutput @fdc_generated(from: "Division", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Equipo` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  equipo_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Equipo_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Equipo_FirstRow
+  ): Equipo_KeyOutput @fdc_generated(from: "Equipo", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Jugador` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  jugador_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Jugador_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Jugador_FirstRow
+  ): Jugador_KeyOutput @fdc_generated(from: "Jugador", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `JugadorFavorito` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  jugadorFavorito_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: JugadorFavorito_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: JugadorFavorito_FirstRow
+  ): JugadorFavorito_KeyOutput @fdc_generated(from: "JugadorFavorito", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `LogAccion` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  logAccion_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: LogAccion_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: LogAccion_FirstRow
+  ): LogAccion_KeyOutput @fdc_generated(from: "LogAccion", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Partido` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  partido_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Partido_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Partido_FirstRow
+  ): Partido_KeyOutput @fdc_generated(from: "Partido", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Reglamento` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  reglamento_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Reglamento_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Reglamento_FirstRow
+  ): Reglamento_KeyOutput @fdc_generated(from: "Reglamento", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Sponsor` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  sponsor_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Sponsor_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Sponsor_FirstRow
+  ): Sponsor_KeyOutput @fdc_generated(from: "Sponsor", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `SponsorUbicacion` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  sponsorUbicacion_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: SponsorUbicacion_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: SponsorUbicacion_FirstRow
+  ): SponsorUbicacion_KeyOutput @fdc_generated(from: "SponsorUbicacion", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Usuario` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  usuario_delete(
+    """
+    The unique ID of the object.
+    """
+    id: String
+
+    """
+    ✨ `_expr` server value variant of `id` (The unique ID of the object.)
+    """
+    id_expr: String_Expr
+
+    """
+    The key used to identify the object.
+    """
+    key: Usuario_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Usuario_FirstRow
+  ): Usuario_KeyOutput @fdc_generated(from: "Usuario", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `Arbitro` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  arbitro_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Arbitro_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Arbitro", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Deporte` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  deporte_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Deporte_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Deporte", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Division` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  division_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Division_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Division", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Equipo` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  equipo_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Equipo_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Equipo", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Jugador` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  jugador_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Jugador_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Jugador", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `JugadorFavorito` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  jugadorFavorito_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: JugadorFavorito_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "JugadorFavorito", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `LogAccion` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  logAccion_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: LogAccion_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "LogAccion", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Partido` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  partido_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Partido_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Partido", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Reglamento` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  reglamento_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Reglamento_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Reglamento", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Sponsor` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  sponsor_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Sponsor_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Sponsor", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `SponsorUbicacion` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  sponsorUbicacion_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: SponsorUbicacion_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "SponsorUbicacion", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Usuario` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  usuario_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Usuario_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Usuario", purpose: DELETE_MULTIPLE)
+}

@@ -1,11 +1,11 @@
 type Usuario @table {
-  id: UUID! @default(expr: "uuidV4()")
+  id: String!
 
   nombre: String!
-  email: String! @unique
-  password: String!
 
-  tipoUsuario: String!
+  email: String! @unique
+
+  tipoUsuario: String! @default(value: "usuario")
 
   estado: Boolean! @default(value: true)
 
