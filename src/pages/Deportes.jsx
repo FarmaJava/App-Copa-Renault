@@ -1,23 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "./Deportes.css";
-
-function useAdmin() {
-  const [admin, setAdmin] = useState(false);
-
-  useEffect(() => {
-    const handler = (e) => {
-      if (e.ctrlKey && e.shiftKey && e.key === "A") {
-        e.preventDefault();
-        setAdmin((prev) => !prev);
-      }
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, []);
-
-  return admin;
-}
 
 function InlineEdit({ value, onSave, className, admin, placeholder }) {
   const [editing, setEditing] = useState(false);
@@ -162,7 +146,7 @@ function ProductoModal({ producto, onSave, onClose }) {
 
 function Deportes() {
   const navigate = useNavigate();
-  const admin = useAdmin();
+  const { admin } = useAuth();
 
   const [bannerTitulo, setBannerTitulo] = useState("Copa Renault");
   const [bannerSubtitulo, setBannerSubtitulo] = useState(
@@ -174,9 +158,9 @@ function Deportes() {
   const [lugar, setLugar] = useState("");
 
   const [deportes, setDeportes] = useState([
-    { nombre: "Fútbol", inicial: "F" },
-    { nombre: "Básquet", inicial: "B" },
-    { nombre: "Vóley", inicial: "V" },
+    { nombre: "Fútbol", inicial: "F", imagen: "https://www.clarin.com/2025/06/17/IOfIZWHY5_2000x1500__1.jpg" },
+    { nombre: "Básquet", inicial: "B", imagen: "https://fotos.perfil.com/2023/04/24/trim/720/410/basquet-1553477.jpg" },
+    { nombre: "Vóley", inicial: "V", imagen: "https://media.tycsports.com/files/2022/09/30/486024/voley_862x485.webp?v=1" },
   ]);
 
   const [sponsors, setSponsors] = useState(
@@ -265,7 +249,12 @@ function Deportes() {
               className="deporte-card"
               onClick={() => navigate("/deporte/" + i)}
             >
-              <div className="deporte-icono">{deporte.inicial}</div>
+              <div
+                className="deporte-icono"
+                style={{ backgroundImage: `url(${deporte.imagen})` }}
+              >
+                <span className="deporte-icono-overlay" />
+              </div>
               <InlineEdit
                 value={deporte.nombre}
                 onSave={(v) => actualizarDeporte(i, v)}

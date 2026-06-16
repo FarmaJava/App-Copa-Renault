@@ -1,23 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "./DeportePage.css";
-
-function useAdmin() {
-  const [admin, setAdmin] = useState(false);
-
-  useEffect(() => {
-    const handler = (e) => {
-      if (e.ctrlKey && e.shiftKey && e.key === "A") {
-        e.preventDefault();
-        setAdmin((prev) => !prev);
-      }
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, []);
-
-  return admin;
-}
 
 function InlineEdit({ value, onSave, className, admin, placeholder }) {
   const [editing, setEditing] = useState(false);
@@ -66,7 +50,7 @@ const nombresPorDefecto = ["Fútbol", "Básquet", "Vóley"];
 function DeportePage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const admin = useAdmin();
+  const { admin } = useAuth();
   const i = parseInt(id, 10);
 
   const deporteNombre = nombresPorDefecto[i] || "Deporte";

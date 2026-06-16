@@ -8,8 +8,10 @@ function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const iniciarSesion = async () => {
+    setError("");
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
@@ -18,8 +20,14 @@ function Login() {
       );
       console.log("Usuario:", userCredential.user);
       navigate("/deportes");
-    } catch (error) {
-      console.error(error.message);
+    } catch (err) {
+      if (err.code === "auth/invalid-credential") {
+        setError("Correo o contraseña incorrectos");
+      } else if (err.code === "auth/user-not-found") {
+        setError("No hay una cuenta con ese correo");
+      } else {
+        setError("Error al iniciar sesión");
+      }
     }
   };
 
@@ -45,6 +53,8 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+
+        {error && <p className="login-error">{error}</p>}
 
         <button onClick={iniciarSesion}>Entrar</button>
 

@@ -71,3 +71,11 @@
 .login-registro-link:hover {
   text-decoration: underline;
 }
+
+.login-error {
+  width: 100%;
+  font-size: 14px;
+  color: #dc2626;
+  text-align: center;
+  margin: 0;
+}

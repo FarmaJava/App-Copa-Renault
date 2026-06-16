@@ -53,12 +53,32 @@
 body {
   margin: 0;
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://www.itr.edu.ar/img/articulos/Cupula2016.jpg") center/cover no-repeat fixed;
+  filter: brightness(0.3);
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.25), rgba(234, 179, 8, 0.15));
+  z-index: -1;
 }
 
 #root {
   min-height: 100svh;
   max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 h1,
