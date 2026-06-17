@@ -18,6 +18,11 @@ function Registro() {
       return;
     }
 
+    if (email === "admin@itr.com") {
+      setError("No podés registrarte con ese correo");
+      return;
+    }
+
     if (password !== confirm) {
       setError("Las contraseñas no coinciden");
       return;
@@ -32,8 +37,7 @@ function Registro() {
     usuarios.push({ nombre, email, password });
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    alert("Cuenta creada correctamente");
-    navigate("/");
+    navigate("/deportes");
   };
 
   return (
