@@ -153,9 +153,9 @@ function Deportes() {
     "Torneo Deportivo Intercolegial"
   );
   const [bannerAno, setBannerAno] = useState("2027");
-  const [fecha, setFecha] = useState("");
-  const [horario, setHorario] = useState("");
-  const [lugar, setLugar] = useState("");
+  const [fecha, setFecha] = useState("15/04/2027");
+  const [horario, setHorario] = useState("9:00 - 17:00");
+  const [lugar, setLugar] = useState("Instituto Técnico Renault");
 
   const [deportes, setDeportes] = useState([
     { nombre: "Fútbol", inicial: "F", imagen: "https://www.clarin.com/2025/06/17/IOfIZWHY5_2000x1500__1.jpg" },
