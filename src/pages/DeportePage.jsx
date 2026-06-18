@@ -89,7 +89,7 @@ function PartidoModal({ partido, onSave, onClose }) {
               className="modal-input"
               value={categoria}
               onChange={(e) => setCategoria(e.target.value)}
-              placeholder="Ej: Primera"
+              placeholder="Ej: Mayor"
             />
           </div>
         </div>
@@ -159,16 +159,16 @@ const nombresPorDefecto = ["Fútbol", "Básquet", "Vóley"];
 // Datos de ejemplo: cada deporte tiene su propia lista de partidos
 const partidosPorDefecto = [
   [
-    { hora: "10:30", cancha: "Cancha 1", categoria: "Primera", local: "Renault A", puntosLocal: "2", puntosVisitante: "0", visitante: "Renault B" },
-    { hora: "12:00", cancha: "Cancha 2", categoria: "Segunda", local: "Renault C", puntosLocal: "1", puntosVisitante: "1", visitante: "Renault A" },
+    { hora: "10:30", cancha: "Cancha 1", categoria: "Mayor", local: "Renault A", puntosLocal: "2", puntosVisitante: "0", visitante: "Renault B" },
+    { hora: "12:00", cancha: "Cancha 2", categoria: "Intermedia", local: "Renault C", puntosLocal: "1", puntosVisitante: "1", visitante: "Renault A" },
   ],
   [
-    { hora: "09:00", cancha: "Cancha 1", categoria: "Primera", local: "Renault A", puntosLocal: "78", puntosVisitante: "65", visitante: "Renault B" },
-    { hora: "10:30", cancha: "Cancha 2", categoria: "Segunda", local: "Renault C", puntosLocal: "55", puntosVisitante: "70", visitante: "Renault A" },
+    { hora: "09:00", cancha: "Cancha 1", categoria: "Mayor", local: "Renault A", puntosLocal: "78", puntosVisitante: "65", visitante: "Renault B" },
+    { hora: "10:30", cancha: "Cancha 2", categoria: "Intermedia", local: "Renault C", puntosLocal: "55", puntosVisitante: "70", visitante: "Renault A" },
   ],
   [
-    { hora: "11:00", cancha: "Cancha 3", categoria: "Primera", local: "Renault A", puntosLocal: "3", puntosVisitante: "0", visitante: "Renault B" },
-    { hora: "14:00", cancha: "Cancha 1", categoria: "Segunda", local: "Renault C", puntosLocal: "2", puntosVisitante: "3", visitante: "Renault A" },
+    { hora: "11:00", cancha: "Cancha 3", categoria: "Mayor", local: "Renault A", puntosLocal: "3", puntosVisitante: "0", visitante: "Renault B" },
+    { hora: "14:00", cancha: "Cancha 1", categoria: "Intermedia", local: "Renault C", puntosLocal: "2", puntosVisitante: "3", visitante: "Renault A" },
   ],
 ];
 
@@ -184,7 +184,7 @@ function DeportePage() {
   const deporteNombre = nombresPorDefecto[i] || "Deporte";
 
   const [campeon, setCampeon] = useState("");
-  const [anioCampeon, setAnioCampeon] = useState("");
+  const [añoCampeon, setAñoCampeon] = useState("");
   const [categorias, setCategorias] = useState([""]);
   const [editCategoria, setEditCategoria] = useState(null);
   const [partidos, setPartidos] = useState(partidosPorDefecto[i] || []);
@@ -218,8 +218,8 @@ function DeportePage() {
               placeholder="Nombre del equipo"
             />
             <InlineEdit
-              value={anioCampeon}
-              onSave={setAnioCampeon}
+              value={añoCampeon}
+              onSave={setAñoCampeon}
               className="campeon-anio"
               admin={admin}
               placeholder="Año"
