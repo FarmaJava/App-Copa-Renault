@@ -2,6 +2,9 @@ import { createContext, useContext, useEffect, useState, useCallback } from "rea
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import auth from "../firebase/auth";
 
+// Contexto de autenticación. Expone user, admin, loading y logout.
+// Admin se activa automáticamente con el email admin@itr.com.
+// Ctrl+; permite desactivar temporalmente el modo admin (adminOverride).
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
@@ -12,6 +15,7 @@ export function AuthProvider({ children }) {
   const isAdminUser = user?.email === "admin@itr.com";
   const admin = isAdminUser && !adminOverride;
 
+  // Escucha cambios en el estado de autenticación de Firebase
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (firebaseUser) => {
       setUser(firebaseUser);
@@ -21,6 +25,7 @@ export function AuthProvider({ children }) {
     return unsub;
   }, []);
 
+  // Atajo de teclado Ctrl+; para toggle manual del modo admin
   useEffect(() => {
     const handler = (e) => {
       if (e.ctrlKey && e.code === "Semicolon" && user?.email === "admin@itr.com") {
@@ -41,6 +46,7 @@ export function AuthProvider({ children }) {
   );
 }
 
+// Hook personalizado para acceder al contexto desde cualquier componente
 // eslint-disable-next-line react-refresh/only-export-components
 export function useAuth() {
   const ctx = useContext(AuthContext);

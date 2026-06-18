@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Registro.css";
 
+// Página de registro. NO usa Firebase Auth — guarda en localStorage (clave "usuarios").
+// Estos usuarios no pueden iniciar sesión en / (Login) porque Login usa Firebase Auth.
 function Registro() {
   const navigate = useNavigate();
   const [nombre, setNombre] = useState("");

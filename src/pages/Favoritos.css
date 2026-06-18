@@ -1,0 +1,128 @@
+.favoritos-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.favoritos-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px 40px;
+  width: 100%;
+  max-width: 720px;
+  box-sizing: border-box;
+}
+
+.favoritos-titulo {
+  font-size: clamp(40px, 8vw, 64px);
+  font-weight: 700;
+  color: var(--secondary);
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+}
+
+.favoritos-subtitulo {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 12px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Sections */
+.favoritos-section-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px 48px;
+  width: 100%;
+  max-width: 720px;
+  box-sizing: border-box;
+}
+
+/* Equipos */
+.favoritos-equipos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.favorito-equipo-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--secondary-bg);
+}
+
+.favorito-equipo-icono {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.favorito-equipo-nombre {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+/* Jugadores */
+.favoritos-jugadores-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.favorito-jugador-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--accent-bg);
+}
+
+.favorito-jugador-camisa {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.favorito-jugador-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.favorito-jugador-nombre {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.favorito-jugador-equipo {
+  font-size: 13px;
+  color: var(--text);
+  opacity: 0.7;
+}

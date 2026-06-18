@@ -4,6 +4,8 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../firebase/auth";
 import "./Login.css";
 
+// Página de inicio de sesión. Usa Firebase Auth (email/contraseña).
+// No acepta usuarios registrados vía localStorage (Registro).
 function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -13,11 +15,7 @@ function Login() {
   const iniciarSesion = async () => {
     setError("");
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("Usuario:", userCredential.user);
       navigate("/deportes");
     } catch (err) {

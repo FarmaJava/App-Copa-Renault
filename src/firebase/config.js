@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 
+// Configuración del proyecto Firebase: copa-renualt-app
 const firebaseConfig = {
   apiKey: "AIzaSyBTihwyMyHz_BODY33l3tfsnpdjxwF0pYQ",
   authDomain: "copa-renualt-app.firebaseapp.com",
@@ -10,6 +11,7 @@ const firebaseConfig = {
   measurementId: "G-FR0NWDTV6M"
 };
 
+// Inicializa Firebase y exporta la app para usarla en otros módulos
 const app = initializeApp(firebaseConfig);
 
 export default app;
