@@ -12,8 +12,16 @@ For each operation, there is a wrapper hook that can be used to call the operati
 
 Here are all of the hooks that get generated:
 ```ts
-import { useJugadorInsert } from '@dataconnect/generated/react';
+import { useListPartidosPorDeporte, useListDivisionesPorDeporte, useListJugadoresPorEquipo, useListEquiposPorDivision, useJugadorInsert } from '@dataconnect/generated/react';
 // The types of these hooks are available in react/index.d.ts
+
+const { data, isPending, isSuccess, isError, error } = useListPartidosPorDeporte(listPartidosPorDeporteVars);
+
+const { data, isPending, isSuccess, isError, error } = useListDivisionesPorDeporte(listDivisionesPorDeporteVars);
+
+const { data, isPending, isSuccess, isError, error } = useListJugadoresPorEquipo(listJugadoresPorEquipoVars);
+
+const { data, isPending, isSuccess, isError, error } = useListEquiposPorDivision(listEquiposPorDivisionVars);
 
 const { data, isPending, isSuccess, isError, error } = useJugadorInsert(jugadorInsertVars);
 
@@ -54,8 +62,20 @@ If a user is not using a supported framework, they can use the generated SDK dir
 Here's an example of how to use it with the first 5 operations:
 
 ```js
-import { jugadorInsert } from '@dataconnect/generated';
+import { listPartidosPorDeporte, listDivisionesPorDeporte, listJugadoresPorEquipo, listEquiposPorDivision, jugadorInsert } from '@dataconnect/generated';
 
+
+// Operation ListPartidosPorDeporte:  For variables, look at type ListPartidosPorDeporteVars in ../index.d.ts
+const { data } = await ListPartidosPorDeporte(dataConnect, listPartidosPorDeporteVars);
+
+// Operation ListDivisionesPorDeporte:  For variables, look at type ListDivisionesPorDeporteVars in ../index.d.ts
+const { data } = await ListDivisionesPorDeporte(dataConnect, listDivisionesPorDeporteVars);
+
+// Operation ListJugadoresPorEquipo:  For variables, look at type ListJugadoresPorEquipoVars in ../index.d.ts
+const { data } = await ListJugadoresPorEquipo(dataConnect, listJugadoresPorEquipoVars);
+
+// Operation ListEquiposPorDivision:  For variables, look at type ListEquiposPorDivisionVars in ../index.d.ts
+const { data } = await ListEquiposPorDivision(dataConnect, listEquiposPorDivisionVars);
 
 // Operation JugadorInsert:  For variables, look at type JugadorInsertVars in ../index.d.ts
 const { data } = await JugadorInsert(dataConnect, jugadorInsertVars);

@@ -164,11 +164,11 @@ function Deportes() {
   const [lugar, setLugar] = useState("Instituto Técnico Renault");
 
   // Lista de deportes disponibles — cada uno con nombre e imagen de fondo
-  const [deportes, setDeportes] = useState([
-    { nombre: "Fútbol", inicial: "F", imagen: "https://www.clarin.com/2025/06/17/IOfIZWHY5_2000x1500__1.jpg" },
-    { nombre: "Básquet", inicial: "B", imagen: "https://fotos.perfil.com/2023/04/24/trim/720/410/basquet-1553477.jpg" },
-    { nombre: "Vóley", inicial: "V", imagen: "https://media.tycsports.com/files/2022/09/30/486024/voley_862x485.webp?v=1" },
-  ]);
+const [deportes, setDeportes] = useState([
+  { id: "44edf1eb-e95c-40c8-9a42-e4655707d439", nombre: "Fútbol", inicial: "F", imagen: "https://www.clarin.com/2025/06/17/IOfIZWHY5_2000x1500__1.jpg" },
+  { id: "77d08f9b-9244-4584-bad9-f91b0ed4f36c", nombre: "Básquet", inicial: "B", imagen: "https://fotos.perfil.com/2023/04/24/trim/720/410/basquet-1553477.jpg" },
+  { id: "a87f074f-a29d-49dc-a13d-64dd4ff78908", nombre: "Vóley", inicial: "V", imagen: "https://media.tycsports.com/files/2022/09/30/486024/voley_862x485.webp?v=1" },
+]);
 
   const [sponsors, setSponsors] = useState(
     Array.from({ length: 4 }, () => ({ nombre: "", imagen: "" }))
@@ -254,7 +254,7 @@ function Deportes() {
             <div
               key={i}
               className="deporte-card"
-              onClick={() => navigate("/deporte/" + i)}
+              onClick={() => navigate("/deporte/" + deporte.id)}
             >
               <div
                 className="deporte-icono"

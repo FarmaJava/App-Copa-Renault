@@ -1,0 +1,43 @@
+query ListPartidosPorDeporte($deporteId: UUID!) @auth(level: PUBLIC) {
+  partidos(where: { division: { deporteId: { eq: $deporteId } } }) {
+    id
+    fechaPartido
+    horaPartido
+    ubicacion
+    estado
+    resultadoLocal
+    resultadoVisitante
+    equipoLocal { id nombre }
+    equipoVisitante { id nombre }
+    arbitro { id nombre }
+    division { id nombre nivel }
+  }
+}
+
+query ListDivisionesPorDeporte($deporteId: UUID!) @auth(level: PUBLIC) {
+  divisions(where: { deporteId: { eq: $deporteId } }) {
+    id
+    nombre
+    nivel
+  }
+}
+
+query ListJugadoresPorEquipo($equipoId: UUID!) @auth(level: PUBLIC) {
+  jugadors(where: { equipoId: { eq: $equipoId } }) {
+    id
+    nombre
+    numeroCamiseta
+    posicion
+    fechaNacimiento
+    fotoUrl
+  }
+}
+
+query ListEquiposPorDivision($divisionId: UUID!) @auth(level: PUBLIC) {
+  equipos(where: { divisionId: { eq: $divisionId } }) {
+    id
+    nombre
+    ciudad
+    logoUrl
+  }
+}
