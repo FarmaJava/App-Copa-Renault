@@ -12,8 +12,10 @@ For each operation, there is a wrapper hook that can be used to call the operati
 
 Here are all of the hooks that get generated:
 ```ts
-import { useListPartidosPorDeporte, useListDivisionesPorDeporte, useListJugadoresPorEquipo, useListEquiposPorDivision, useListSponsors, useJugadorInsert } from '@dataconnect/generated/react';
+import { useJugadorInsert, useListPartidosPorDeporte, useListDivisionesPorDeporte, useListJugadoresPorEquipo, useListEquiposPorDivision, useListSponsors, useListProductosCantina, useListProductosCantinaDisponibles, useListProductoscantinaPorCategoria, useGetProductoCantina } from '@dataconnect/generated/react';
 // The types of these hooks are available in react/index.d.ts
+
+const { data, isPending, isSuccess, isError, error } = useJugadorInsert(jugadorInsertVars);
 
 const { data, isPending, isSuccess, isError, error } = useListPartidosPorDeporte(listPartidosPorDeporteVars);
 
@@ -25,7 +27,13 @@ const { data, isPending, isSuccess, isError, error } = useListEquiposPorDivision
 
 const { data, isPending, isSuccess, isError, error } = useListSponsors();
 
-const { data, isPending, isSuccess, isError, error } = useJugadorInsert(jugadorInsertVars);
+const { data, isPending, isSuccess, isError, error } = useListProductosCantina();
+
+const { data, isPending, isSuccess, isError, error } = useListProductosCantinaDisponibles();
+
+const { data, isPending, isSuccess, isError, error } = useListProductoscantinaPorCategoria(listProductoscantinaPorCategoriaVars);
+
+const { data, isPending, isSuccess, isError, error } = useGetProductoCantina(getProductoCantinaVars);
 
 ```
 
@@ -64,8 +72,11 @@ If a user is not using a supported framework, they can use the generated SDK dir
 Here's an example of how to use it with the first 5 operations:
 
 ```js
-import { listPartidosPorDeporte, listDivisionesPorDeporte, listJugadoresPorEquipo, listEquiposPorDivision, listSponsors, jugadorInsert } from '@dataconnect/generated';
+import { jugadorInsert, listPartidosPorDeporte, listDivisionesPorDeporte, listJugadoresPorEquipo, listEquiposPorDivision, listSponsors, listProductosCantina, listProductosCantinaDisponibles, listProductoscantinaPorCategoria, getProductoCantina } from '@dataconnect/generated';
 
+
+// Operation JugadorInsert:  For variables, look at type JugadorInsertVars in ../index.d.ts
+const { data } = await JugadorInsert(dataConnect, jugadorInsertVars);
 
 // Operation ListPartidosPorDeporte:  For variables, look at type ListPartidosPorDeporteVars in ../index.d.ts
 const { data } = await ListPartidosPorDeporte(dataConnect, listPartidosPorDeporteVars);
@@ -82,8 +93,17 @@ const { data } = await ListEquiposPorDivision(dataConnect, listEquiposPorDivisio
 // Operation ListSponsors: 
 const { data } = await ListSponsors(dataConnect);
 
-// Operation JugadorInsert:  For variables, look at type JugadorInsertVars in ../index.d.ts
-const { data } = await JugadorInsert(dataConnect, jugadorInsertVars);
+// Operation ListProductosCantina: 
+const { data } = await ListProductosCantina(dataConnect);
+
+// Operation ListProductosCantinaDisponibles: 
+const { data } = await ListProductosCantinaDisponibles(dataConnect);
+
+// Operation ListProductoscantinaPorCategoria:  For variables, look at type ListProductoscantinaPorCategoriaVars in ../index.d.ts
+const { data } = await ListProductoscantinaPorCategoria(dataConnect, listProductoscantinaPorCategoriaVars);
+
+// Operation GetProductoCantina:  For variables, look at type GetProductoCantinaVars in ../index.d.ts
+const { data } = await GetProductoCantina(dataConnect, getProductoCantinaVars);
 
 
 ```

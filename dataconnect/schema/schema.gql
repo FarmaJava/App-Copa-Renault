@@ -146,3 +146,14 @@ type LogAccion @table {
 
   fechaAccion: Timestamp! @default(expr: "request.time")
 }
+type ProductoCantina @table {
+  id: UUID! @default(expr: "uuidV4()")
+  nombre: String!
+  descripcion: String
+  precio: Float!
+  categoria: String
+  disponible: Boolean! @default(value: true)
+  imagenUrl: String
+  fechaCreacion: Timestamp! @default(expr: "request.time")
+}
+

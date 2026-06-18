@@ -1,11 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useState, useEffect } from "react";
-import { listSponsors } from "../dataconnect-generated/esm/index.esm.js";
+import {
+  listSponsors,
+  listProductosCantinaDisponibles,
+  createProductoCantina,
+  updateProductoCantina,
+  deleteProductoCantina,
+} from "../dataconnect-generated/esm/index.esm.js";
 import "./Deportes.css";
 
-// Componente reutilizable para edición inline. En modo admin, al hacer click
-// sobre un texto se convierte en input; al perder foco o presionar Enter se guarda.
 function InlineEdit({ value, onSave, className, admin, placeholder }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(value);
@@ -16,15 +20,9 @@ function InlineEdit({ value, onSave, className, admin, placeholder }) {
         className={className + " inline-edit-input"}
         value={draft}
         onChange={(e) => setDraft(e.target.value)}
-        onBlur={() => {
-          onSave(draft);
-          setEditing(false);
-        }}
+        onBlur={() => { onSave(draft); setEditing(false); }}
         onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            onSave(draft);
-            setEditing(false);
-          }
+          if (e.key === "Enter") { onSave(draft); setEditing(false); }
         }}
         autoFocus
         placeholder={placeholder}
@@ -35,12 +33,7 @@ function InlineEdit({ value, onSave, className, admin, placeholder }) {
   return (
     <span
       className={className + (admin ? " editable" : "")}
-      onClick={() => {
-        if (admin) {
-          setDraft(value);
-          setEditing(true);
-        }
-      }}
+      onClick={() => { if (admin) { setDraft(value); setEditing(true); } }}
       title={admin ? "Click para editar" : undefined}
     >
       {value || placeholder}
@@ -48,7 +41,6 @@ function InlineEdit({ value, onSave, className, admin, placeholder }) {
   );
 }
 
-// Modal para editar sponsors en modo admin (nombre + URL del logo)
 function SponsorModal({ sponsor, onSave, onClose }) {
   const [nombre, setNombre] = useState(sponsor?.nombre || "");
   const [imagen, setImagen] = useState(sponsor?.imagen || "");
@@ -57,91 +49,66 @@ function SponsorModal({ sponsor, onSave, onClose }) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
         <h3 className="modal-titulo">Editar Sponsor</h3>
-
         <label className="modal-label">Nombre de la empresa</label>
-        <input
-          className="modal-input"
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
-          placeholder="Ej: Renault"
-        />
-
+        <input className="modal-input" value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Ej: Renault" />
         <label className="modal-label">URL del logo</label>
-        <input
-          className="modal-input"
-          value={imagen}
-          onChange={(e) => setImagen(e.target.value)}
-          placeholder="https://ejemplo.com/logo.png"
-        />
-
+        <input className="modal-input" value={imagen} onChange={(e) => setImagen(e.target.value)} placeholder="https://ejemplo.com/logo.png" />
         <div className="modal-acciones">
-          <button className="modal-btn modal-btn-cancelar" onClick={onClose}>
-            Cancelar
-          </button>
-          <button
-            className="modal-btn modal-btn-guardar"
-            onClick={() => {
-              onSave({ nombre, imagen });
-              onClose();
-            }}
-          >
-            Guardar
-          </button>
+          <button className="modal-btn modal-btn-cancelar" onClick={onClose}>Cancelar</button>
+          <button className="modal-btn modal-btn-guardar" onClick={() => { onSave({ nombre, imagen }); onClose(); }}>Guardar</button>
         </div>
       </div>
     </div>
   );
 }
 
-// Modal para editar productos de la cantina (nombre, detalles, precio)
-function ProductoModal({ producto, onSave, onClose }) {
+function ProductoModal({ producto, onSave, onClose, loading }) {
   const [nombre, setNombre] = useState(producto?.nombre || "");
-  const [detalles, setDetalles] = useState(producto?.detalles || "");
-  const [precio, setPrecio] = useState(producto?.precio || "");
+  const [descripcion, setDescripcion] = useState(producto?.descripcion || "");
+  const [precio, setPrecio] = useState(producto?.precio?.toString() || "");
+  const [categoria, setCategoria] = useState(producto?.categoria || "");
+  const [imagenUrl, setImagenUrl] = useState(producto?.imagenUrl || "");
+  const [disponible, setDisponible] = useState(producto?.disponible ?? true);
+
+  const esEdicion = !!producto?.id;
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <h3 className="modal-titulo">
-          {producto ? "Editar Producto" : "Nuevo Producto"}
-        </h3>
+        <h3 className="modal-titulo">{esEdicion ? "Editar Producto" : "Nuevo Producto"}</h3>
 
-        <label className="modal-label">Nombre</label>
-        <input
-          className="modal-input"
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
-          placeholder="Ej: Choripán"
-        />
+        <label className="modal-label">Nombre *</label>
+        <input className="modal-input" value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Ej: Choripán" />
 
-        <label className="modal-label">Detalles</label>
-        <input
-          className="modal-input"
-          value={detalles}
-          onChange={(e) => setDetalles(e.target.value)}
-          placeholder="Ej: Con chimichurri"
-        />
+        <label className="modal-label">Descripción</label>
+        <input className="modal-input" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} placeholder="Ej: Con chimichurri" />
 
-        <label className="modal-label">Precio</label>
-        <input
-          className="modal-input"
-          value={precio}
-          onChange={(e) => setPrecio(e.target.value)}
-          placeholder="Ej: $2500"
-        />
+        <label className="modal-label">Precio *</label>
+        <input className="modal-input" type="number" value={precio} onChange={(e) => setPrecio(e.target.value)} placeholder="Ej: 2500" />
+
+        <label className="modal-label">Categoría</label>
+        <input className="modal-input" value={categoria} onChange={(e) => setCategoria(e.target.value)} placeholder="Ej: bebidas, comidas, snacks" />
+
+        <label className="modal-label">URL de imagen</label>
+        <input className="modal-input" value={imagenUrl} onChange={(e) => setImagenUrl(e.target.value)} placeholder="https://..." />
+
+        {esEdicion && (
+          <label className="modal-label" style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer" }}>
+            <input type="checkbox" checked={disponible} onChange={(e) => setDisponible(e.target.checked)} />
+            Disponible
+          </label>
+        )}
 
         <div className="modal-acciones">
-          <button className="modal-btn modal-btn-cancelar" onClick={onClose}>
+          <button className="modal-btn modal-btn-cancelar" onClick={onClose} disabled={loading}>
             Cancelar
           </button>
           <button
             className="modal-btn modal-btn-guardar"
-            onClick={() => {
-              onSave({ nombre, detalles, precio });
-              onClose();
-            }}
+            disabled={loading || !nombre || !precio}
+            onClick={() => onSave({ nombre, descripcion, precio: parseFloat(precio), categoria, imagenUrl, disponible })}
           >
-            Guardar
+            {loading ? "Guardando..." : "Guardar"}
           </button>
         </div>
       </div>
@@ -149,49 +116,81 @@ function ProductoModal({ producto, onSave, onClose }) {
   );
 }
 
-// Página principal. Muestra banner del evento, tarjetas de deportes, cantina y sponsors.
-// En modo admin permite editar cualquier texto inline y gestionar productos/sponsors.
 function Deportes() {
   const navigate = useNavigate();
   const { admin } = useAuth();
 
   const [bannerTitulo, setBannerTitulo] = useState("Copa Renault");
-  const [bannerSubtitulo, setBannerSubtitulo] = useState(
-    "Torneo Deportivo Intercolegial"
-  );
+  const [bannerSubtitulo, setBannerSubtitulo] = useState("Torneo Deportivo Intercolegial");
   const [bannerAno, setBannerAno] = useState("2027");
   const [fecha, setFecha] = useState("15/04/2027");
   const [horario, setHorario] = useState("9:00 - 17:00");
   const [lugar, setLugar] = useState("Instituto Técnico Renault");
 
-  // Lista de deportes disponibles — cada uno con nombre e imagen de fondo
-const [deportes, setDeportes] = useState([
-  { id: "44edf1eb-e95c-40c8-9a42-e4655707d439", nombre: "Fútbol", inicial: "F", imagen: "https://www.clarin.com/2025/06/17/IOfIZWHY5_2000x1500__1.jpg" },
-  { id: "77d08f9b-9244-4584-bad9-f91b0ed4f36c", nombre: "Básquet", inicial: "B", imagen: "https://fotos.perfil.com/2023/04/24/trim/720/410/basquet-1553477.jpg" },
-  { id: "a87f074f-a29d-49dc-a13d-64dd4ff78908", nombre: "Vóley", inicial: "V", imagen: "https://media.tycsports.com/files/2022/09/30/486024/voley_862x485.webp?v=1" },
-]);
-
-const [sponsors, setSponsors] = useState([]);
-
-useEffect(() => {
-  listSponsors()
-    .then(res => setSponsors(res.data?.sponsors || []))
-    .catch(e => console.error("Error cargando sponsors:", e));
-}, []);
-
-  const [productos, setProductos] = useState([
-    { nombre: "", detalles: "", precio: "" },
-    { nombre: "", detalles: "", precio: "" },
-    { nombre: "", detalles: "", precio: "" },
+  const [deportes, setDeportes] = useState([
+    { id: "44edf1eb-e95c-40c8-9a42-e4655707d439", nombre: "Fútbol", inicial: "F", imagen: "https://www.clarin.com/2025/06/17/IOfIZWHY5_2000x1500__1.jpg" },
+    { id: "77d08f9b-9244-4584-bad9-f91b0ed4f36c", nombre: "Básquet", inicial: "B", imagen: "https://fotos.perfil.com/2023/04/24/trim/720/410/basquet-1553477.jpg" },
+    { id: "a87f074f-a29d-49dc-a13d-64dd4ff78908", nombre: "Vóley", inicial: "V", imagen: "https://media.tycsports.com/files/2022/09/30/486024/voley_862x485.webp?v=1" },
   ]);
-  const [productoModalIndex, setProductoModalIndex] = useState(null);
+
+  const [sponsors, setSponsors] = useState([]);
+  const [productos, setProductos] = useState([]);
+  const [loadingProductos, setLoadingProductos] = useState(true);
+  const [mutationLoading, setMutationLoading] = useState(false);
+
+  const [productoModal, setProductoModal] = useState(null); // null | { modo: "crear" | "editar", producto?: {} }
   const [sponsorModalIndex, setSponsorModalIndex] = useState(null);
+
+  const fetchProductos = () => {
+    setLoadingProductos(true);
+    listProductosCantinaDisponibles()
+      .then((res) => setProductos(res.data?.productoCantinas || []))
+      .catch((e) => console.error("Error cargando productos:", e))
+      .finally(() => setLoadingProductos(false));
+  };
+
+  useEffect(() => {
+    fetchProductos();
+    listSponsors()
+      .then((res) => setSponsors(res.data?.sponsors || []))
+      .catch((e) => console.error("Error cargando sponsors:", e));
+  }, []);
+
+const handleGuardarProducto = async (data) => {
+  setMutationLoading(true);
+  try {
+    if (productoModal.modo === "crear") {
+      // Sacamos disponible — Firebase lo defaultea a true solo
+      const { disponible, ...createData } = data;
+      await createProductoCantina(createData);
+    } else {
+      await updateProductoCantina({ id: productoModal.producto.id, ...data });
+    }
+    fetchProductos();
+    setProductoModal(null);
+  } catch (e) {
+    console.error("Error guardando producto:", e);
+  } finally {
+    setMutationLoading(false);
+  }
+};
+
+  const handleEliminarProducto = async (id) => {
+    if (!window.confirm("¿Eliminar este producto?")) return;
+    setMutationLoading(true);
+    try {
+      await deleteProductoCantina({ id });
+      fetchProductos();
+    } catch (e) {
+      console.error("Error eliminando producto:", e);
+    } finally {
+      setMutationLoading(false);
+    }
+  };
 
   const actualizarDeporte = (i, nombre) => {
     setDeportes((prev) =>
-      prev.map((d, j) =>
-        j === i ? { ...d, nombre, inicial: nombre.charAt(0).toUpperCase() } : d
-      )
+      prev.map((d, j) => j === i ? { ...d, nombre, inicial: nombre.charAt(0).toUpperCase() } : d)
     );
   };
 
@@ -202,53 +201,15 @@ useEffect(() => {
       <div className="banner-accent" />
 
       <header className="deportes-banner">
-        <InlineEdit
-          value={bannerAno}
-          onSave={setBannerAno}
-          className="banner-ano"
-          admin={admin}
-          placeholder="2027"
-        />
-        <InlineEdit
-          value={bannerTitulo}
-          onSave={setBannerTitulo}
-          className="banner-titulo"
-          admin={admin}
-          placeholder="Título del torneo"
-        />
-        <InlineEdit
-          value={bannerSubtitulo}
-          onSave={setBannerSubtitulo}
-          className="banner-subtitulo"
-          admin={admin}
-          placeholder="Subtítulo"
-        />
+        <InlineEdit value={bannerAno} onSave={setBannerAno} className="banner-ano" admin={admin} placeholder="2027" />
+        <InlineEdit value={bannerTitulo} onSave={setBannerTitulo} className="banner-titulo" admin={admin} placeholder="Título del torneo" />
+        <InlineEdit value={bannerSubtitulo} onSave={setBannerSubtitulo} className="banner-subtitulo" admin={admin} placeholder="Subtítulo" />
         <div className="banner-detalles">
-          <InlineEdit
-            value={fecha}
-            onSave={setFecha}
-            className="banner-dato"
-            admin={admin}
-            placeholder="Fecha del evento"
-          />
+          <InlineEdit value={fecha} onSave={setFecha} className="banner-dato" admin={admin} placeholder="Fecha del evento" />
           {fecha && horario && <span className="banner-dato-sep">|</span>}
-          <InlineEdit
-            value={horario}
-            onSave={setHorario}
-            className="banner-dato"
-            admin={admin}
-            placeholder="Horario"
-          />
-          {(fecha || horario) && lugar && (
-            <span className="banner-dato-sep">|</span>
-          )}
-          <InlineEdit
-            value={lugar}
-            onSave={setLugar}
-            className="banner-dato"
-            admin={admin}
-            placeholder="Lugar"
-          />
+          <InlineEdit value={horario} onSave={setHorario} className="banner-dato" admin={admin} placeholder="Horario" />
+          {(fecha || horario) && lugar && <span className="banner-dato-sep">|</span>}
+          <InlineEdit value={lugar} onSave={setLugar} className="banner-dato" admin={admin} placeholder="Lugar" />
         </div>
       </header>
 
@@ -256,24 +217,11 @@ useEffect(() => {
         <h2 className="section-titulo">Elegí tu disciplina</h2>
         <div className="deportes-grid">
           {deportes.map((deporte, i) => (
-            <div
-              key={i}
-              className="deporte-card"
-              onClick={() => navigate("/deporte/" + deporte.id)}
-            >
-              <div
-                className="deporte-icono"
-                style={{ backgroundImage: `url(${deporte.imagen})` }}
-              >
+            <div key={i} className="deporte-card" onClick={() => navigate("/deporte/" + deporte.id)}>
+              <div className="deporte-icono" style={{ backgroundImage: `url(${deporte.imagen})` }}>
                 <span className="deporte-icono-overlay" />
               </div>
-              <InlineEdit
-                value={deporte.nombre}
-                onSave={(v) => actualizarDeporte(i, v)}
-                className="deporte-nombre"
-                admin={admin}
-                placeholder="Nombre del deporte"
-              />
+              <InlineEdit value={deporte.nombre} onSave={(v) => actualizarDeporte(i, v)} className="deporte-nombre" admin={admin} placeholder="Nombre del deporte" />
             </div>
           ))}
         </div>
@@ -283,77 +231,70 @@ useEffect(() => {
         <div className="section-line" />
         <h2 className="section-titulo">Cantina</h2>
         <div className="productos-grid">
-          {productos.map((p, i) => (
-            <div
-              key={i}
-              className={
-                "producto-card" + (admin ? " producto-card-admin" : "")
-              }
-              onClick={() => {
-                if (admin) setProductoModalIndex(i);
-              }}
-              title={admin ? "Click para editar" : undefined}
-            >
-              {p.nombre ? (
-                <>
-                  <span className="producto-nombre">{p.nombre}</span>
-                  <span className="producto-detalles">{p.detalles}</span>
-                  <span className="producto-precio">{p.precio}</span>
-                </>
-              ) : (
-                <span className="producto-vacio">Vacío</span>
-              )}
-            </div>
-          ))}
+          {loadingProductos ? (
+            <p style={{ color: "var(--text)", opacity: 0.4, fontSize: 14 }}>Cargando productos...</p>
+          ) : productos.length === 0 ? (
+            <p style={{ color: "var(--text)", opacity: 0.4, fontSize: 14 }}>No hay productos disponibles.</p>
+          ) : (
+            productos.map((p) => (
+              <div key={p.id} className={"producto-card" + (admin ? " producto-card-admin" : "")}>
+                {p.imagenUrl && <img src={p.imagenUrl} alt={p.nombre} className="producto-imagen" />}
+                <span className="producto-nombre">{p.nombre}</span>
+                {p.descripcion && <span className="producto-detalles">{p.descripcion}</span>}
+                <span className="producto-precio">${p.precio}</span>
+                {p.categoria && <span className="producto-categoria">{p.categoria}</span>}
+                {admin && (
+                  <div className="producto-admin-acciones" onClick={(e) => e.stopPropagation()}>
+                    <button
+                      className="modal-btn modal-btn-guardar"
+                      style={{ padding: "4px 10px", fontSize: 12 }}
+                      onClick={() => setProductoModal({ modo: "editar", producto: p })}
+                    >
+                      Editar
+                    </button>
+                    <button
+                      className="modal-btn modal-btn-cancelar"
+                      style={{ padding: "4px 10px", fontSize: 12 }}
+                      onClick={() => handleEliminarProducto(p.id)}
+                    >
+                      Eliminar
+                    </button>
+                  </div>
+                )}
+              </div>
+            ))
+          )}
         </div>
         {admin && (
-          <button
-            className="agregar-btn"
-            onClick={() =>
-              setProductoModalIndex(productos.length)
-            }
-          >
+          <button className="agregar-btn" onClick={() => setProductoModal({ modo: "crear", producto: null })}>
             + Agregar producto
           </button>
         )}
       </section>
 
-<section className="sponsors-section">
-  <div className="section-line" />
-  <h2 className="section-titulo">Sponsors</h2>
-  <div className="sponsors-grid">
-    {sponsors.length === 0 ? (
-      <p style={{ color: "var(--text)", opacity: 0.4, fontSize: 14 }}>
-        Cargando sponsors...
-      </p>
-    ) : (
-      sponsors.map((s) => (
-        <a
-          key={s.id}
-          href={s.sitioWeb || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="sponsor-card"
-          style={{ textDecoration: "none" }}
-        >
-          {s.logoUrl ? (
-            <div className="sponsor-logo-wrap">
-              <img className="sponsor-logo" src={s.logoUrl} alt={s.nombre} />
-            </div>
+      <section className="sponsors-section">
+        <div className="section-line" />
+        <h2 className="section-titulo">Sponsors</h2>
+        <div className="sponsors-grid">
+          {sponsors.length === 0 ? (
+            <p style={{ color: "var(--text)", opacity: 0.4, fontSize: 14 }}>Cargando sponsors...</p>
           ) : (
-            <span className="sponsor-nombre-solo">{s.nombre}</span>
+            sponsors.map((s) => (
+              <a key={s.id} href={s.sitioWeb || "#"} target="_blank" rel="noopener noreferrer" className="sponsor-card" style={{ textDecoration: "none" }}>
+                {s.logoUrl ? (
+                  <div className="sponsor-logo-wrap">
+                    <img className="sponsor-logo" src={s.logoUrl} alt={s.nombre} />
+                  </div>
+                ) : (
+                  <span className="sponsor-nombre-solo">{s.nombre}</span>
+                )}
+                <span className="sponsor-nombre">{s.nombre}</span>
+                {s.slogan && <span style={{ fontSize: 11, color: "var(--text)", opacity: 0.5, textAlign: "center" }}>{s.slogan}</span>}
+              </a>
+            ))
           )}
-          <span className="sponsor-nombre">{s.nombre}</span>
-          {s.slogan && (
-            <span style={{ fontSize: 11, color: "var(--text)", opacity: 0.5, textAlign: "center" }}>
-              {s.slogan}
-            </span>
-          )}
-        </a>
-      ))
-    )}
-  </div>
-</section>
+        </div>
+      </section>
 
       <footer className="deportes-footer">
         <p>© {bannerAno} Copa Renault · Todos los derechos reservados</p>
@@ -366,32 +307,19 @@ useEffect(() => {
             if (sponsorModalIndex >= sponsors.length) {
               setSponsors((prev) => [...prev, data]);
             } else {
-              setSponsors((prev) =>
-                prev.map((s, j) => (j === sponsorModalIndex ? data : s))
-              );
+              setSponsors((prev) => prev.map((s, j) => (j === sponsorModalIndex ? data : s)));
             }
           }}
           onClose={() => setSponsorModalIndex(null)}
         />
       )}
 
-      {admin && productoModalIndex !== null && (
+      {admin && productoModal !== null && (
         <ProductoModal
-          producto={
-            productoModalIndex < productos.length
-              ? productos[productoModalIndex]
-              : null
-          }
-          onSave={(data) => {
-            if (productoModalIndex >= productos.length) {
-              setProductos((prev) => [...prev, data]);
-            } else {
-              setProductos((prev) =>
-                prev.map((p, j) => (j === productoModalIndex ? data : p))
-              );
-            }
-          }}
-          onClose={() => setProductoModalIndex(null)}
+          producto={productoModal.producto}
+          onSave={handleGuardarProducto}
+          onClose={() => setProductoModal(null)}
+          loading={mutationLoading}
         />
       )}
     </div>
