@@ -41,3 +41,94 @@ query ListEquiposPorDivision($divisionId: UUID!) @auth(level: PUBLIC) {
     logoUrl
   }
 }
+
+query ListSponsors @auth(level: PUBLIC) {
+  sponsors(where: { estado: { eq: true } }) {
+    id
+    nombre
+    logoUrl
+    slogan
+    sitioWeb
+  }
+}
+
+query ListProductosCantina @auth(level: PUBLIC) {
+  productoCantinas {
+    id
+    nombre
+    descripcion
+    precio
+    categoria
+    disponible
+    imagenUrl
+    fechaCreacion
+  }
+}
+
+query ListProductosCantinaDisponibles @auth(level: PUBLIC) {
+  productoCantinas(where: { disponible: { eq: true } }) {
+    id
+    nombre
+    descripcion
+    precio
+    categoria
+    imagenUrl
+  }
+}
+
+query ListProductoscantinaPorCategoria($categoria: String!) @auth(level: PUBLIC) {
+  productoCantinas(where: { categoria: { eq: $categoria } }) {
+    id
+    nombre
+    descripcion
+    precio
+    disponible
+    imagenUrl
+  }
+}
+
+query GetProductoCantina($id: UUID!) @auth(level: PUBLIC) {
+  productoCantina(id: $id) {
+    id
+    nombre
+    descripcion
+    precio
+    categoria
+    disponible
+    imagenUrl
+    fechaCreacion
+  }
+}
+
+mutation CreateProductoCantina($nombre: String!, $descripcion: String, $precio: Float!, $categoria: String, $imagenUrl: String) @auth(level: PUBLIC) {
+  productoCantina_insert(data: {
+    nombre: $nombre
+    descripcion: $descripcion
+    precio: $precio
+    categoria: $categoria
+    imagenUrl: $imagenUrl
+  })
+}
+
+mutation UpdateProductoCantina($id: UUID!, $nombre: String!, $descripcion: String, $precio: Float!, $categoria: String, $imagenUrl: String, $disponible: Boolean!) @auth(level: PUBLIC) {
+  productoCantina_update(key: { id: $id }, data: {
+    nombre: $nombre
+    descripcion: $descripcion
+    precio: $precio
+    categoria: $categoria
+    imagenUrl: $imagenUrl
+    disponible: $disponible
+  })
+}
+
+mutation DeleteProductoCantina($id: UUID!) @auth(level: PUBLIC) {
+  productoCantina_delete(key: { id: $id })
+}
+
+mutation CreateUsuario($nombre: String!, $email: String!, $tipoUsuario: String!) @auth(level: PUBLIC) {
+  usuario_insert(data: {
+    nombre: $nombre
+    email: $email
+    tipoUsuario: $tipoUsuario
+  })
+}

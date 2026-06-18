@@ -16,6 +16,36 @@ export interface Arbitro_Key {
   __typename?: 'Arbitro_Key';
 }
 
+export interface CreateProductoCantinaData {
+  productoCantina_insert: ProductoCantina_Key;
+}
+
+export interface CreateProductoCantinaVariables {
+  nombre: string;
+  descripcion?: string | null;
+  precio: number;
+  categoria?: string | null;
+  imagenUrl?: string | null;
+}
+
+export interface CreateUsuarioData {
+  usuario_insert: Usuario_Key;
+}
+
+export interface CreateUsuarioVariables {
+  nombre: string;
+  email: string;
+  tipoUsuario: string;
+}
+
+export interface DeleteProductoCantinaData {
+  productoCantina_delete?: ProductoCantina_Key | null;
+}
+
+export interface DeleteProductoCantinaVariables {
+  id: UUIDString;
+}
+
 export interface Deporte_Key {
   id: UUIDString;
   __typename?: 'Deporte_Key';
@@ -29,6 +59,23 @@ export interface Division_Key {
 export interface Equipo_Key {
   id: UUIDString;
   __typename?: 'Equipo_Key';
+}
+
+export interface GetProductoCantinaData {
+  productoCantina?: {
+    id: UUIDString;
+    nombre: string;
+    descripcion?: string | null;
+    precio: number;
+    categoria?: string | null;
+    disponible: boolean;
+    imagenUrl?: string | null;
+    fechaCreacion: TimestampString;
+  } & ProductoCantina_Key;
+}
+
+export interface GetProductoCantinaVariables {
+  id: UUIDString;
 }
 
 export interface JugadorFavorito_Key {
@@ -126,6 +173,55 @@ export interface ListPartidosPorDeporteVariables {
   deporteId: UUIDString;
 }
 
+export interface ListProductosCantinaData {
+  productoCantinas: ({
+    id: UUIDString;
+    nombre: string;
+    descripcion?: string | null;
+    precio: number;
+    categoria?: string | null;
+    disponible: boolean;
+    imagenUrl?: string | null;
+    fechaCreacion: TimestampString;
+  } & ProductoCantina_Key)[];
+}
+
+export interface ListProductosCantinaDisponiblesData {
+  productoCantinas: ({
+    id: UUIDString;
+    nombre: string;
+    descripcion?: string | null;
+    precio: number;
+    categoria?: string | null;
+    imagenUrl?: string | null;
+  } & ProductoCantina_Key)[];
+}
+
+export interface ListProductoscantinaPorCategoriaData {
+  productoCantinas: ({
+    id: UUIDString;
+    nombre: string;
+    descripcion?: string | null;
+    precio: number;
+    disponible: boolean;
+    imagenUrl?: string | null;
+  } & ProductoCantina_Key)[];
+}
+
+export interface ListProductoscantinaPorCategoriaVariables {
+  categoria: string;
+}
+
+export interface ListSponsorsData {
+  sponsors: ({
+    id: UUIDString;
+    nombre: string;
+    logoUrl: string;
+    slogan?: string | null;
+    sitioWeb?: string | null;
+  } & Sponsor_Key)[];
+}
+
 export interface LogAccion_Key {
   id: UUIDString;
   __typename?: 'LogAccion_Key';
@@ -134,6 +230,11 @@ export interface LogAccion_Key {
 export interface Partido_Key {
   id: UUIDString;
   __typename?: 'Partido_Key';
+}
+
+export interface ProductoCantina_Key {
+  id: UUIDString;
+  __typename?: 'ProductoCantina_Key';
 }
 
 export interface Reglamento_Key {
@@ -151,10 +252,36 @@ export interface Sponsor_Key {
   __typename?: 'Sponsor_Key';
 }
 
+export interface UpdateProductoCantinaData {
+  productoCantina_update?: ProductoCantina_Key | null;
+}
+
+export interface UpdateProductoCantinaVariables {
+  id: UUIDString;
+  nombre: string;
+  descripcion?: string | null;
+  precio: number;
+  categoria?: string | null;
+  imagenUrl?: string | null;
+  disponible: boolean;
+}
+
 export interface Usuario_Key {
   id: UUIDString;
   __typename?: 'Usuario_Key';
 }
+
+interface JugadorInsertRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: JugadorInsertVariables): MutationRef<JugadorInsertData, JugadorInsertVariables>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect, vars: JugadorInsertVariables): MutationRef<JugadorInsertData, JugadorInsertVariables>;
+  operationName: string;
+}
+export const jugadorInsertRef: JugadorInsertRef;
+
+export function jugadorInsert(vars: JugadorInsertVariables): MutationPromise<JugadorInsertData, JugadorInsertVariables>;
+export function jugadorInsert(dc: DataConnect, vars: JugadorInsertVariables): MutationPromise<JugadorInsertData, JugadorInsertVariables>;
 
 interface ListPartidosPorDeporteRef {
   /* Allow users to create refs without passing in DataConnect */
@@ -204,15 +331,111 @@ export const listEquiposPorDivisionRef: ListEquiposPorDivisionRef;
 export function listEquiposPorDivision(vars: ListEquiposPorDivisionVariables, options?: ExecuteQueryOptions): QueryPromise<ListEquiposPorDivisionData, ListEquiposPorDivisionVariables>;
 export function listEquiposPorDivision(dc: DataConnect, vars: ListEquiposPorDivisionVariables, options?: ExecuteQueryOptions): QueryPromise<ListEquiposPorDivisionData, ListEquiposPorDivisionVariables>;
 
-interface JugadorInsertRef {
+interface ListSponsorsRef {
   /* Allow users to create refs without passing in DataConnect */
-  (vars: JugadorInsertVariables): MutationRef<JugadorInsertData, JugadorInsertVariables>;
+  (): QueryRef<ListSponsorsData, undefined>;
   /* Allow users to pass in custom DataConnect instances */
-  (dc: DataConnect, vars: JugadorInsertVariables): MutationRef<JugadorInsertData, JugadorInsertVariables>;
+  (dc: DataConnect): QueryRef<ListSponsorsData, undefined>;
   operationName: string;
 }
-export const jugadorInsertRef: JugadorInsertRef;
+export const listSponsorsRef: ListSponsorsRef;
 
-export function jugadorInsert(vars: JugadorInsertVariables): MutationPromise<JugadorInsertData, JugadorInsertVariables>;
-export function jugadorInsert(dc: DataConnect, vars: JugadorInsertVariables): MutationPromise<JugadorInsertData, JugadorInsertVariables>;
+export function listSponsors(options?: ExecuteQueryOptions): QueryPromise<ListSponsorsData, undefined>;
+export function listSponsors(dc: DataConnect, options?: ExecuteQueryOptions): QueryPromise<ListSponsorsData, undefined>;
+
+interface ListProductosCantinaRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (): QueryRef<ListProductosCantinaData, undefined>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect): QueryRef<ListProductosCantinaData, undefined>;
+  operationName: string;
+}
+export const listProductosCantinaRef: ListProductosCantinaRef;
+
+export function listProductosCantina(options?: ExecuteQueryOptions): QueryPromise<ListProductosCantinaData, undefined>;
+export function listProductosCantina(dc: DataConnect, options?: ExecuteQueryOptions): QueryPromise<ListProductosCantinaData, undefined>;
+
+interface ListProductosCantinaDisponiblesRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (): QueryRef<ListProductosCantinaDisponiblesData, undefined>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect): QueryRef<ListProductosCantinaDisponiblesData, undefined>;
+  operationName: string;
+}
+export const listProductosCantinaDisponiblesRef: ListProductosCantinaDisponiblesRef;
+
+export function listProductosCantinaDisponibles(options?: ExecuteQueryOptions): QueryPromise<ListProductosCantinaDisponiblesData, undefined>;
+export function listProductosCantinaDisponibles(dc: DataConnect, options?: ExecuteQueryOptions): QueryPromise<ListProductosCantinaDisponiblesData, undefined>;
+
+interface ListProductoscantinaPorCategoriaRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: ListProductoscantinaPorCategoriaVariables): QueryRef<ListProductoscantinaPorCategoriaData, ListProductoscantinaPorCategoriaVariables>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect, vars: ListProductoscantinaPorCategoriaVariables): QueryRef<ListProductoscantinaPorCategoriaData, ListProductoscantinaPorCategoriaVariables>;
+  operationName: string;
+}
+export const listProductoscantinaPorCategoriaRef: ListProductoscantinaPorCategoriaRef;
+
+export function listProductoscantinaPorCategoria(vars: ListProductoscantinaPorCategoriaVariables, options?: ExecuteQueryOptions): QueryPromise<ListProductoscantinaPorCategoriaData, ListProductoscantinaPorCategoriaVariables>;
+export function listProductoscantinaPorCategoria(dc: DataConnect, vars: ListProductoscantinaPorCategoriaVariables, options?: ExecuteQueryOptions): QueryPromise<ListProductoscantinaPorCategoriaData, ListProductoscantinaPorCategoriaVariables>;
+
+interface GetProductoCantinaRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: GetProductoCantinaVariables): QueryRef<GetProductoCantinaData, GetProductoCantinaVariables>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect, vars: GetProductoCantinaVariables): QueryRef<GetProductoCantinaData, GetProductoCantinaVariables>;
+  operationName: string;
+}
+export const getProductoCantinaRef: GetProductoCantinaRef;
+
+export function getProductoCantina(vars: GetProductoCantinaVariables, options?: ExecuteQueryOptions): QueryPromise<GetProductoCantinaData, GetProductoCantinaVariables>;
+export function getProductoCantina(dc: DataConnect, vars: GetProductoCantinaVariables, options?: ExecuteQueryOptions): QueryPromise<GetProductoCantinaData, GetProductoCantinaVariables>;
+
+interface CreateProductoCantinaRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: CreateProductoCantinaVariables): MutationRef<CreateProductoCantinaData, CreateProductoCantinaVariables>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect, vars: CreateProductoCantinaVariables): MutationRef<CreateProductoCantinaData, CreateProductoCantinaVariables>;
+  operationName: string;
+}
+export const createProductoCantinaRef: CreateProductoCantinaRef;
+
+export function createProductoCantina(vars: CreateProductoCantinaVariables): MutationPromise<CreateProductoCantinaData, CreateProductoCantinaVariables>;
+export function createProductoCantina(dc: DataConnect, vars: CreateProductoCantinaVariables): MutationPromise<CreateProductoCantinaData, CreateProductoCantinaVariables>;
+
+interface UpdateProductoCantinaRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: UpdateProductoCantinaVariables): MutationRef<UpdateProductoCantinaData, UpdateProductoCantinaVariables>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect, vars: UpdateProductoCantinaVariables): MutationRef<UpdateProductoCantinaData, UpdateProductoCantinaVariables>;
+  operationName: string;
+}
+export const updateProductoCantinaRef: UpdateProductoCantinaRef;
+
+export function updateProductoCantina(vars: UpdateProductoCantinaVariables): MutationPromise<UpdateProductoCantinaData, UpdateProductoCantinaVariables>;
+export function updateProductoCantina(dc: DataConnect, vars: UpdateProductoCantinaVariables): MutationPromise<UpdateProductoCantinaData, UpdateProductoCantinaVariables>;
+
+interface DeleteProductoCantinaRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: DeleteProductoCantinaVariables): MutationRef<DeleteProductoCantinaData, DeleteProductoCantinaVariables>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect, vars: DeleteProductoCantinaVariables): MutationRef<DeleteProductoCantinaData, DeleteProductoCantinaVariables>;
+  operationName: string;
+}
+export const deleteProductoCantinaRef: DeleteProductoCantinaRef;
+
+export function deleteProductoCantina(vars: DeleteProductoCantinaVariables): MutationPromise<DeleteProductoCantinaData, DeleteProductoCantinaVariables>;
+export function deleteProductoCantina(dc: DataConnect, vars: DeleteProductoCantinaVariables): MutationPromise<DeleteProductoCantinaData, DeleteProductoCantinaVariables>;
+
+interface CreateUsuarioRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (vars: CreateUsuarioVariables): MutationRef<CreateUsuarioData, CreateUsuarioVariables>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect, vars: CreateUsuarioVariables): MutationRef<CreateUsuarioData, CreateUsuarioVariables>;
+  operationName: string;
+}
+export const createUsuarioRef: CreateUsuarioRef;
+
+export function createUsuario(vars: CreateUsuarioVariables): MutationPromise<CreateUsuarioData, CreateUsuarioVariables>;
+export function createUsuario(dc: DataConnect, vars: CreateUsuarioVariables): MutationPromise<CreateUsuarioData, CreateUsuarioVariables>;
 

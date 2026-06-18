@@ -1,9 +1,12 @@
-import { ListPartidosPorDeporteData, ListPartidosPorDeporteVariables, ListDivisionesPorDeporteData, ListDivisionesPorDeporteVariables, ListJugadoresPorEquipoData, ListJugadoresPorEquipoVariables, ListEquiposPorDivisionData, ListEquiposPorDivisionVariables, JugadorInsertData, JugadorInsertVariables } from '../';
+import { JugadorInsertData, JugadorInsertVariables, ListPartidosPorDeporteData, ListPartidosPorDeporteVariables, ListDivisionesPorDeporteData, ListDivisionesPorDeporteVariables, ListJugadoresPorEquipoData, ListJugadoresPorEquipoVariables, ListEquiposPorDivisionData, ListEquiposPorDivisionVariables, ListSponsorsData, ListProductosCantinaData, ListProductosCantinaDisponiblesData, ListProductoscantinaPorCategoriaData, ListProductoscantinaPorCategoriaVariables, GetProductoCantinaData, GetProductoCantinaVariables, CreateProductoCantinaData, CreateProductoCantinaVariables, UpdateProductoCantinaData, UpdateProductoCantinaVariables, DeleteProductoCantinaData, DeleteProductoCantinaVariables, CreateUsuarioData, CreateUsuarioVariables } from '../';
 import { UseDataConnectQueryResult, useDataConnectQueryOptions, UseDataConnectMutationResult, useDataConnectMutationOptions} from '@tanstack-query-firebase/react/data-connect';
 import { UseQueryResult, UseMutationResult} from '@tanstack/react-query';
 import { DataConnect } from 'firebase/data-connect';
 import { FirebaseError } from 'firebase/app';
 
+
+export function useJugadorInsert(options?: useDataConnectMutationOptions<JugadorInsertData, FirebaseError, JugadorInsertVariables>): UseDataConnectMutationResult<JugadorInsertData, JugadorInsertVariables>;
+export function useJugadorInsert(dc: DataConnect, options?: useDataConnectMutationOptions<JugadorInsertData, FirebaseError, JugadorInsertVariables>): UseDataConnectMutationResult<JugadorInsertData, JugadorInsertVariables>;
 
 export function useListPartidosPorDeporte(vars: ListPartidosPorDeporteVariables, options?: useDataConnectQueryOptions<ListPartidosPorDeporteData>): UseDataConnectQueryResult<ListPartidosPorDeporteData, ListPartidosPorDeporteVariables>;
 export function useListPartidosPorDeporte(dc: DataConnect, vars: ListPartidosPorDeporteVariables, options?: useDataConnectQueryOptions<ListPartidosPorDeporteData>): UseDataConnectQueryResult<ListPartidosPorDeporteData, ListPartidosPorDeporteVariables>;
@@ -17,5 +20,29 @@ export function useListJugadoresPorEquipo(dc: DataConnect, vars: ListJugadoresPo
 export function useListEquiposPorDivision(vars: ListEquiposPorDivisionVariables, options?: useDataConnectQueryOptions<ListEquiposPorDivisionData>): UseDataConnectQueryResult<ListEquiposPorDivisionData, ListEquiposPorDivisionVariables>;
 export function useListEquiposPorDivision(dc: DataConnect, vars: ListEquiposPorDivisionVariables, options?: useDataConnectQueryOptions<ListEquiposPorDivisionData>): UseDataConnectQueryResult<ListEquiposPorDivisionData, ListEquiposPorDivisionVariables>;
 
-export function useJugadorInsert(options?: useDataConnectMutationOptions<JugadorInsertData, FirebaseError, JugadorInsertVariables>): UseDataConnectMutationResult<JugadorInsertData, JugadorInsertVariables>;
-export function useJugadorInsert(dc: DataConnect, options?: useDataConnectMutationOptions<JugadorInsertData, FirebaseError, JugadorInsertVariables>): UseDataConnectMutationResult<JugadorInsertData, JugadorInsertVariables>;
+export function useListSponsors(options?: useDataConnectQueryOptions<ListSponsorsData>): UseDataConnectQueryResult<ListSponsorsData, undefined>;
+export function useListSponsors(dc: DataConnect, options?: useDataConnectQueryOptions<ListSponsorsData>): UseDataConnectQueryResult<ListSponsorsData, undefined>;
+
+export function useListProductosCantina(options?: useDataConnectQueryOptions<ListProductosCantinaData>): UseDataConnectQueryResult<ListProductosCantinaData, undefined>;
+export function useListProductosCantina(dc: DataConnect, options?: useDataConnectQueryOptions<ListProductosCantinaData>): UseDataConnectQueryResult<ListProductosCantinaData, undefined>;
+
+export function useListProductosCantinaDisponibles(options?: useDataConnectQueryOptions<ListProductosCantinaDisponiblesData>): UseDataConnectQueryResult<ListProductosCantinaDisponiblesData, undefined>;
+export function useListProductosCantinaDisponibles(dc: DataConnect, options?: useDataConnectQueryOptions<ListProductosCantinaDisponiblesData>): UseDataConnectQueryResult<ListProductosCantinaDisponiblesData, undefined>;
+
+export function useListProductoscantinaPorCategoria(vars: ListProductoscantinaPorCategoriaVariables, options?: useDataConnectQueryOptions<ListProductoscantinaPorCategoriaData>): UseDataConnectQueryResult<ListProductoscantinaPorCategoriaData, ListProductoscantinaPorCategoriaVariables>;
+export function useListProductoscantinaPorCategoria(dc: DataConnect, vars: ListProductoscantinaPorCategoriaVariables, options?: useDataConnectQueryOptions<ListProductoscantinaPorCategoriaData>): UseDataConnectQueryResult<ListProductoscantinaPorCategoriaData, ListProductoscantinaPorCategoriaVariables>;
+
+export function useGetProductoCantina(vars: GetProductoCantinaVariables, options?: useDataConnectQueryOptions<GetProductoCantinaData>): UseDataConnectQueryResult<GetProductoCantinaData, GetProductoCantinaVariables>;
+export function useGetProductoCantina(dc: DataConnect, vars: GetProductoCantinaVariables, options?: useDataConnectQueryOptions<GetProductoCantinaData>): UseDataConnectQueryResult<GetProductoCantinaData, GetProductoCantinaVariables>;
+
+export function useCreateProductoCantina(options?: useDataConnectMutationOptions<CreateProductoCantinaData, FirebaseError, CreateProductoCantinaVariables>): UseDataConnectMutationResult<CreateProductoCantinaData, CreateProductoCantinaVariables>;
+export function useCreateProductoCantina(dc: DataConnect, options?: useDataConnectMutationOptions<CreateProductoCantinaData, FirebaseError, CreateProductoCantinaVariables>): UseDataConnectMutationResult<CreateProductoCantinaData, CreateProductoCantinaVariables>;
+
+export function useUpdateProductoCantina(options?: useDataConnectMutationOptions<UpdateProductoCantinaData, FirebaseError, UpdateProductoCantinaVariables>): UseDataConnectMutationResult<UpdateProductoCantinaData, UpdateProductoCantinaVariables>;
+export function useUpdateProductoCantina(dc: DataConnect, options?: useDataConnectMutationOptions<UpdateProductoCantinaData, FirebaseError, UpdateProductoCantinaVariables>): UseDataConnectMutationResult<UpdateProductoCantinaData, UpdateProductoCantinaVariables>;
+
+export function useDeleteProductoCantina(options?: useDataConnectMutationOptions<DeleteProductoCantinaData, FirebaseError, DeleteProductoCantinaVariables>): UseDataConnectMutationResult<DeleteProductoCantinaData, DeleteProductoCantinaVariables>;
+export function useDeleteProductoCantina(dc: DataConnect, options?: useDataConnectMutationOptions<DeleteProductoCantinaData, FirebaseError, DeleteProductoCantinaVariables>): UseDataConnectMutationResult<DeleteProductoCantinaData, DeleteProductoCantinaVariables>;
+
+export function useCreateUsuario(options?: useDataConnectMutationOptions<CreateUsuarioData, FirebaseError, CreateUsuarioVariables>): UseDataConnectMutationResult<CreateUsuarioData, CreateUsuarioVariables>;
+export function useCreateUsuario(dc: DataConnect, options?: useDataConnectMutationOptions<CreateUsuarioData, FirebaseError, CreateUsuarioVariables>): UseDataConnectMutationResult<CreateUsuarioData, CreateUsuarioVariables>;

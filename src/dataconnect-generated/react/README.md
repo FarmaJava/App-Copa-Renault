@@ -21,8 +21,17 @@ You can also follow the instructions from the [Data Connect documentation](https
   - [*ListDivisionesPorDeporte*](#listdivisionespordeporte)
   - [*ListJugadoresPorEquipo*](#listjugadoresporequipo)
   - [*ListEquiposPorDivision*](#listequipospordivision)
+  - [*ListSponsors*](#listsponsors)
+  - [*ListProductosCantina*](#listproductoscantina)
+  - [*ListProductosCantinaDisponibles*](#listproductoscantinadisponibles)
+  - [*ListProductoscantinaPorCategoria*](#listproductoscantinaporcategoria)
+  - [*GetProductoCantina*](#getproductocantina)
 - [**Mutations**](#mutations)
   - [*JugadorInsert*](#jugadorinsert)
+  - [*CreateProductoCantina*](#createproductocantina)
+  - [*UpdateProductoCantina*](#updateproductocantina)
+  - [*DeleteProductoCantina*](#deleteproductocantina)
+  - [*CreateUsuario*](#createusuario)
 
 # TanStack Query Firebase & TanStack React Query
 This SDK provides [React](https://react.dev/) hooks generated specific to your application, for the operations found in the connector `example`. These hooks are generated using [TanStack Query Firebase](https://react-query-firebase.invertase.dev/) by our partners at Invertase, a library built on top of [TanStack React Query v5](https://tanstack.com/query/v5/docs/framework/react/overview).
@@ -483,6 +492,415 @@ export default function ListEquiposPorDivisionComponent() {
 }
 ```
 
+## ListSponsors
+You can execute the `ListSponsors` Query using the following Query hook function, which is defined in [dataconnect-generated/react/index.d.ts](./index.d.ts):
+
+```javascript
+useListSponsors(dc: DataConnect, options?: useDataConnectQueryOptions<ListSponsorsData>): UseDataConnectQueryResult<ListSponsorsData, undefined>;
+```
+You can also pass in a `DataConnect` instance to the Query hook function.
+```javascript
+useListSponsors(options?: useDataConnectQueryOptions<ListSponsorsData>): UseDataConnectQueryResult<ListSponsorsData, undefined>;
+```
+
+### Variables
+The `ListSponsors` Query has no variables.
+### Return Type
+Recall that calling the `ListSponsors` Query hook function returns a `UseQueryResult` object. This object holds the state of your Query, including whether the Query is loading, has completed, or has succeeded/failed, and any data returned by the Query, among other things.
+
+To check the status of a Query, use the `UseQueryResult.status` field. You can also check for pending / success / error status using the `UseQueryResult.isPending`, `UseQueryResult.isSuccess`, and `UseQueryResult.isError` fields.
+
+To access the data returned by a Query, use the `UseQueryResult.data` field. The data for the `ListSponsors` Query is of type `ListSponsorsData`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+```javascript
+export interface ListSponsorsData {
+  sponsors: ({
+    id: UUIDString;
+    nombre: string;
+    logoUrl: string;
+    slogan?: string | null;
+    sitioWeb?: string | null;
+  } & Sponsor_Key)[];
+}
+```
+
+To learn more about the `UseQueryResult` object, see the [TanStack React Query documentation](https://tanstack.com/query/v5/docs/framework/react/reference/useQuery).
+
+### Using `ListSponsors`'s Query hook function
+
+```javascript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig } from '@dataconnect/generated';
+import { useListSponsors } from '@dataconnect/generated/react'
+
+export default function ListSponsorsComponent() {
+  // You don't have to do anything to "execute" the Query.
+  // Call the Query hook function to get a `UseQueryResult` object which holds the state of your Query.
+  const query = useListSponsors();
+
+  // You can also pass in a `DataConnect` instance to the Query hook function.
+  const dataConnect = getDataConnect(connectorConfig);
+  const query = useListSponsors(dataConnect);
+
+  // You can also pass in a `useDataConnectQueryOptions` object to the Query hook function.
+  const options = { staleTime: 5 * 1000 };
+  const query = useListSponsors(options);
+
+  // You can also pass both a `DataConnect` instance and a `useDataConnectQueryOptions` object.
+  const dataConnect = getDataConnect(connectorConfig);
+  const options = { staleTime: 5 * 1000 };
+  const query = useListSponsors(dataConnect, options);
+
+  // Then, you can render your component dynamically based on the status of the Query.
+  if (query.isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (query.isError) {
+    return <div>Error: {query.error.message}</div>;
+  }
+
+  // If the Query is successful, you can access the data returned using the `UseQueryResult.data` field.
+  if (query.isSuccess) {
+    console.log(query.data.sponsors);
+  }
+  return <div>Query execution {query.isSuccess ? 'successful' : 'failed'}!</div>;
+}
+```
+
+## ListProductosCantina
+You can execute the `ListProductosCantina` Query using the following Query hook function, which is defined in [dataconnect-generated/react/index.d.ts](./index.d.ts):
+
+```javascript
+useListProductosCantina(dc: DataConnect, options?: useDataConnectQueryOptions<ListProductosCantinaData>): UseDataConnectQueryResult<ListProductosCantinaData, undefined>;
+```
+You can also pass in a `DataConnect` instance to the Query hook function.
+```javascript
+useListProductosCantina(options?: useDataConnectQueryOptions<ListProductosCantinaData>): UseDataConnectQueryResult<ListProductosCantinaData, undefined>;
+```
+
+### Variables
+The `ListProductosCantina` Query has no variables.
+### Return Type
+Recall that calling the `ListProductosCantina` Query hook function returns a `UseQueryResult` object. This object holds the state of your Query, including whether the Query is loading, has completed, or has succeeded/failed, and any data returned by the Query, among other things.
+
+To check the status of a Query, use the `UseQueryResult.status` field. You can also check for pending / success / error status using the `UseQueryResult.isPending`, `UseQueryResult.isSuccess`, and `UseQueryResult.isError` fields.
+
+To access the data returned by a Query, use the `UseQueryResult.data` field. The data for the `ListProductosCantina` Query is of type `ListProductosCantinaData`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+```javascript
+export interface ListProductosCantinaData {
+  productoCantinas: ({
+    id: UUIDString;
+    nombre: string;
+    descripcion?: string | null;
+    precio: number;
+    categoria?: string | null;
+    disponible: boolean;
+    imagenUrl?: string | null;
+    fechaCreacion: TimestampString;
+  } & ProductoCantina_Key)[];
+}
+```
+
+To learn more about the `UseQueryResult` object, see the [TanStack React Query documentation](https://tanstack.com/query/v5/docs/framework/react/reference/useQuery).
+
+### Using `ListProductosCantina`'s Query hook function
+
+```javascript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig } from '@dataconnect/generated';
+import { useListProductosCantina } from '@dataconnect/generated/react'
+
+export default function ListProductosCantinaComponent() {
+  // You don't have to do anything to "execute" the Query.
+  // Call the Query hook function to get a `UseQueryResult` object which holds the state of your Query.
+  const query = useListProductosCantina();
+
+  // You can also pass in a `DataConnect` instance to the Query hook function.
+  const dataConnect = getDataConnect(connectorConfig);
+  const query = useListProductosCantina(dataConnect);
+
+  // You can also pass in a `useDataConnectQueryOptions` object to the Query hook function.
+  const options = { staleTime: 5 * 1000 };
+  const query = useListProductosCantina(options);
+
+  // You can also pass both a `DataConnect` instance and a `useDataConnectQueryOptions` object.
+  const dataConnect = getDataConnect(connectorConfig);
+  const options = { staleTime: 5 * 1000 };
+  const query = useListProductosCantina(dataConnect, options);
+
+  // Then, you can render your component dynamically based on the status of the Query.
+  if (query.isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (query.isError) {
+    return <div>Error: {query.error.message}</div>;
+  }
+
+  // If the Query is successful, you can access the data returned using the `UseQueryResult.data` field.
+  if (query.isSuccess) {
+    console.log(query.data.productoCantinas);
+  }
+  return <div>Query execution {query.isSuccess ? 'successful' : 'failed'}!</div>;
+}
+```
+
+## ListProductosCantinaDisponibles
+You can execute the `ListProductosCantinaDisponibles` Query using the following Query hook function, which is defined in [dataconnect-generated/react/index.d.ts](./index.d.ts):
+
+```javascript
+useListProductosCantinaDisponibles(dc: DataConnect, options?: useDataConnectQueryOptions<ListProductosCantinaDisponiblesData>): UseDataConnectQueryResult<ListProductosCantinaDisponiblesData, undefined>;
+```
+You can also pass in a `DataConnect` instance to the Query hook function.
+```javascript
+useListProductosCantinaDisponibles(options?: useDataConnectQueryOptions<ListProductosCantinaDisponiblesData>): UseDataConnectQueryResult<ListProductosCantinaDisponiblesData, undefined>;
+```
+
+### Variables
+The `ListProductosCantinaDisponibles` Query has no variables.
+### Return Type
+Recall that calling the `ListProductosCantinaDisponibles` Query hook function returns a `UseQueryResult` object. This object holds the state of your Query, including whether the Query is loading, has completed, or has succeeded/failed, and any data returned by the Query, among other things.
+
+To check the status of a Query, use the `UseQueryResult.status` field. You can also check for pending / success / error status using the `UseQueryResult.isPending`, `UseQueryResult.isSuccess`, and `UseQueryResult.isError` fields.
+
+To access the data returned by a Query, use the `UseQueryResult.data` field. The data for the `ListProductosCantinaDisponibles` Query is of type `ListProductosCantinaDisponiblesData`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+```javascript
+export interface ListProductosCantinaDisponiblesData {
+  productoCantinas: ({
+    id: UUIDString;
+    nombre: string;
+    descripcion?: string | null;
+    precio: number;
+    categoria?: string | null;
+    imagenUrl?: string | null;
+  } & ProductoCantina_Key)[];
+}
+```
+
+To learn more about the `UseQueryResult` object, see the [TanStack React Query documentation](https://tanstack.com/query/v5/docs/framework/react/reference/useQuery).
+
+### Using `ListProductosCantinaDisponibles`'s Query hook function
+
+```javascript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig } from '@dataconnect/generated';
+import { useListProductosCantinaDisponibles } from '@dataconnect/generated/react'
+
+export default function ListProductosCantinaDisponiblesComponent() {
+  // You don't have to do anything to "execute" the Query.
+  // Call the Query hook function to get a `UseQueryResult` object which holds the state of your Query.
+  const query = useListProductosCantinaDisponibles();
+
+  // You can also pass in a `DataConnect` instance to the Query hook function.
+  const dataConnect = getDataConnect(connectorConfig);
+  const query = useListProductosCantinaDisponibles(dataConnect);
+
+  // You can also pass in a `useDataConnectQueryOptions` object to the Query hook function.
+  const options = { staleTime: 5 * 1000 };
+  const query = useListProductosCantinaDisponibles(options);
+
+  // You can also pass both a `DataConnect` instance and a `useDataConnectQueryOptions` object.
+  const dataConnect = getDataConnect(connectorConfig);
+  const options = { staleTime: 5 * 1000 };
+  const query = useListProductosCantinaDisponibles(dataConnect, options);
+
+  // Then, you can render your component dynamically based on the status of the Query.
+  if (query.isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (query.isError) {
+    return <div>Error: {query.error.message}</div>;
+  }
+
+  // If the Query is successful, you can access the data returned using the `UseQueryResult.data` field.
+  if (query.isSuccess) {
+    console.log(query.data.productoCantinas);
+  }
+  return <div>Query execution {query.isSuccess ? 'successful' : 'failed'}!</div>;
+}
+```
+
+## ListProductoscantinaPorCategoria
+You can execute the `ListProductoscantinaPorCategoria` Query using the following Query hook function, which is defined in [dataconnect-generated/react/index.d.ts](./index.d.ts):
+
+```javascript
+useListProductoscantinaPorCategoria(dc: DataConnect, vars: ListProductoscantinaPorCategoriaVariables, options?: useDataConnectQueryOptions<ListProductoscantinaPorCategoriaData>): UseDataConnectQueryResult<ListProductoscantinaPorCategoriaData, ListProductoscantinaPorCategoriaVariables>;
+```
+You can also pass in a `DataConnect` instance to the Query hook function.
+```javascript
+useListProductoscantinaPorCategoria(vars: ListProductoscantinaPorCategoriaVariables, options?: useDataConnectQueryOptions<ListProductoscantinaPorCategoriaData>): UseDataConnectQueryResult<ListProductoscantinaPorCategoriaData, ListProductoscantinaPorCategoriaVariables>;
+```
+
+### Variables
+The `ListProductoscantinaPorCategoria` Query requires an argument of type `ListProductoscantinaPorCategoriaVariables`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+
+```javascript
+export interface ListProductoscantinaPorCategoriaVariables {
+  categoria: string;
+}
+```
+### Return Type
+Recall that calling the `ListProductoscantinaPorCategoria` Query hook function returns a `UseQueryResult` object. This object holds the state of your Query, including whether the Query is loading, has completed, or has succeeded/failed, and any data returned by the Query, among other things.
+
+To check the status of a Query, use the `UseQueryResult.status` field. You can also check for pending / success / error status using the `UseQueryResult.isPending`, `UseQueryResult.isSuccess`, and `UseQueryResult.isError` fields.
+
+To access the data returned by a Query, use the `UseQueryResult.data` field. The data for the `ListProductoscantinaPorCategoria` Query is of type `ListProductoscantinaPorCategoriaData`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+```javascript
+export interface ListProductoscantinaPorCategoriaData {
+  productoCantinas: ({
+    id: UUIDString;
+    nombre: string;
+    descripcion?: string | null;
+    precio: number;
+    disponible: boolean;
+    imagenUrl?: string | null;
+  } & ProductoCantina_Key)[];
+}
+```
+
+To learn more about the `UseQueryResult` object, see the [TanStack React Query documentation](https://tanstack.com/query/v5/docs/framework/react/reference/useQuery).
+
+### Using `ListProductoscantinaPorCategoria`'s Query hook function
+
+```javascript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig, ListProductoscantinaPorCategoriaVariables } from '@dataconnect/generated';
+import { useListProductoscantinaPorCategoria } from '@dataconnect/generated/react'
+
+export default function ListProductoscantinaPorCategoriaComponent() {
+  // The `useListProductoscantinaPorCategoria` Query hook requires an argument of type `ListProductoscantinaPorCategoriaVariables`:
+  const listProductoscantinaPorCategoriaVars: ListProductoscantinaPorCategoriaVariables = {
+    categoria: ..., 
+  };
+
+  // You don't have to do anything to "execute" the Query.
+  // Call the Query hook function to get a `UseQueryResult` object which holds the state of your Query.
+  const query = useListProductoscantinaPorCategoria(listProductoscantinaPorCategoriaVars);
+  // Variables can be defined inline as well.
+  const query = useListProductoscantinaPorCategoria({ categoria: ..., });
+
+  // You can also pass in a `DataConnect` instance to the Query hook function.
+  const dataConnect = getDataConnect(connectorConfig);
+  const query = useListProductoscantinaPorCategoria(dataConnect, listProductoscantinaPorCategoriaVars);
+
+  // You can also pass in a `useDataConnectQueryOptions` object to the Query hook function.
+  const options = { staleTime: 5 * 1000 };
+  const query = useListProductoscantinaPorCategoria(listProductoscantinaPorCategoriaVars, options);
+
+  // You can also pass both a `DataConnect` instance and a `useDataConnectQueryOptions` object.
+  const dataConnect = getDataConnect(connectorConfig);
+  const options = { staleTime: 5 * 1000 };
+  const query = useListProductoscantinaPorCategoria(dataConnect, listProductoscantinaPorCategoriaVars, options);
+
+  // Then, you can render your component dynamically based on the status of the Query.
+  if (query.isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (query.isError) {
+    return <div>Error: {query.error.message}</div>;
+  }
+
+  // If the Query is successful, you can access the data returned using the `UseQueryResult.data` field.
+  if (query.isSuccess) {
+    console.log(query.data.productoCantinas);
+  }
+  return <div>Query execution {query.isSuccess ? 'successful' : 'failed'}!</div>;
+}
+```
+
+## GetProductoCantina
+You can execute the `GetProductoCantina` Query using the following Query hook function, which is defined in [dataconnect-generated/react/index.d.ts](./index.d.ts):
+
+```javascript
+useGetProductoCantina(dc: DataConnect, vars: GetProductoCantinaVariables, options?: useDataConnectQueryOptions<GetProductoCantinaData>): UseDataConnectQueryResult<GetProductoCantinaData, GetProductoCantinaVariables>;
+```
+You can also pass in a `DataConnect` instance to the Query hook function.
+```javascript
+useGetProductoCantina(vars: GetProductoCantinaVariables, options?: useDataConnectQueryOptions<GetProductoCantinaData>): UseDataConnectQueryResult<GetProductoCantinaData, GetProductoCantinaVariables>;
+```
+
+### Variables
+The `GetProductoCantina` Query requires an argument of type `GetProductoCantinaVariables`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+
+```javascript
+export interface GetProductoCantinaVariables {
+  id: UUIDString;
+}
+```
+### Return Type
+Recall that calling the `GetProductoCantina` Query hook function returns a `UseQueryResult` object. This object holds the state of your Query, including whether the Query is loading, has completed, or has succeeded/failed, and any data returned by the Query, among other things.
+
+To check the status of a Query, use the `UseQueryResult.status` field. You can also check for pending / success / error status using the `UseQueryResult.isPending`, `UseQueryResult.isSuccess`, and `UseQueryResult.isError` fields.
+
+To access the data returned by a Query, use the `UseQueryResult.data` field. The data for the `GetProductoCantina` Query is of type `GetProductoCantinaData`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+```javascript
+export interface GetProductoCantinaData {
+  productoCantina?: {
+    id: UUIDString;
+    nombre: string;
+    descripcion?: string | null;
+    precio: number;
+    categoria?: string | null;
+    disponible: boolean;
+    imagenUrl?: string | null;
+    fechaCreacion: TimestampString;
+  } & ProductoCantina_Key;
+}
+```
+
+To learn more about the `UseQueryResult` object, see the [TanStack React Query documentation](https://tanstack.com/query/v5/docs/framework/react/reference/useQuery).
+
+### Using `GetProductoCantina`'s Query hook function
+
+```javascript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig, GetProductoCantinaVariables } from '@dataconnect/generated';
+import { useGetProductoCantina } from '@dataconnect/generated/react'
+
+export default function GetProductoCantinaComponent() {
+  // The `useGetProductoCantina` Query hook requires an argument of type `GetProductoCantinaVariables`:
+  const getProductoCantinaVars: GetProductoCantinaVariables = {
+    id: ..., 
+  };
+
+  // You don't have to do anything to "execute" the Query.
+  // Call the Query hook function to get a `UseQueryResult` object which holds the state of your Query.
+  const query = useGetProductoCantina(getProductoCantinaVars);
+  // Variables can be defined inline as well.
+  const query = useGetProductoCantina({ id: ..., });
+
+  // You can also pass in a `DataConnect` instance to the Query hook function.
+  const dataConnect = getDataConnect(connectorConfig);
+  const query = useGetProductoCantina(dataConnect, getProductoCantinaVars);
+
+  // You can also pass in a `useDataConnectQueryOptions` object to the Query hook function.
+  const options = { staleTime: 5 * 1000 };
+  const query = useGetProductoCantina(getProductoCantinaVars, options);
+
+  // You can also pass both a `DataConnect` instance and a `useDataConnectQueryOptions` object.
+  const dataConnect = getDataConnect(connectorConfig);
+  const options = { staleTime: 5 * 1000 };
+  const query = useGetProductoCantina(dataConnect, getProductoCantinaVars, options);
+
+  // Then, you can render your component dynamically based on the status of the Query.
+  if (query.isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (query.isError) {
+    return <div>Error: {query.error.message}</div>;
+  }
+
+  // If the Query is successful, you can access the data returned using the `UseQueryResult.data` field.
+  if (query.isSuccess) {
+    console.log(query.data.productoCantina);
+  }
+  return <div>Query execution {query.isSuccess ? 'successful' : 'failed'}!</div>;
+}
+```
+
 # Mutations
 
 The React generated SDK provides Mutations hook functions that call and return [`useDataConnectMutation`](https://react-query-firebase.invertase.dev/react/data-connect/mutations) hooks from TanStack Query Firebase.
@@ -605,6 +1023,406 @@ export default function JugadorInsertComponent() {
   // If the Mutation is successful, you can access the data returned using the `UseMutationResult.data` field.
   if (mutation.isSuccess) {
     console.log(mutation.data.jugador_insert);
+  }
+  return <div>Mutation execution {mutation.isSuccess ? 'successful' : 'failed'}!</div>;
+}
+```
+
+## CreateProductoCantina
+You can execute the `CreateProductoCantina` Mutation using the `UseMutationResult` object returned by the following Mutation hook function (which is defined in [dataconnect-generated/react/index.d.ts](./index.d.ts)):
+```javascript
+useCreateProductoCantina(options?: useDataConnectMutationOptions<CreateProductoCantinaData, FirebaseError, CreateProductoCantinaVariables>): UseDataConnectMutationResult<CreateProductoCantinaData, CreateProductoCantinaVariables>;
+```
+You can also pass in a `DataConnect` instance to the Mutation hook function.
+```javascript
+useCreateProductoCantina(dc: DataConnect, options?: useDataConnectMutationOptions<CreateProductoCantinaData, FirebaseError, CreateProductoCantinaVariables>): UseDataConnectMutationResult<CreateProductoCantinaData, CreateProductoCantinaVariables>;
+```
+
+### Variables
+The `CreateProductoCantina` Mutation requires an argument of type `CreateProductoCantinaVariables`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+
+```javascript
+export interface CreateProductoCantinaVariables {
+  nombre: string;
+  descripcion?: string | null;
+  precio: number;
+  categoria?: string | null;
+  imagenUrl?: string | null;
+}
+```
+### Return Type
+Recall that calling the `CreateProductoCantina` Mutation hook function returns a `UseMutationResult` object. This object holds the state of your Mutation, including whether the Mutation is loading, has completed, or has succeeded/failed, among other things.
+
+To check the status of a Mutation, use the `UseMutationResult.status` field. You can also check for pending / success / error status using the `UseMutationResult.isPending`, `UseMutationResult.isSuccess`, and `UseMutationResult.isError` fields.
+
+To execute the Mutation, call `UseMutationResult.mutate()`. This function executes the Mutation, but does not return the data from the Mutation.
+
+To access the data returned by a Mutation, use the `UseMutationResult.data` field. The data for the `CreateProductoCantina` Mutation is of type `CreateProductoCantinaData`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+```javascript
+export interface CreateProductoCantinaData {
+  productoCantina_insert: ProductoCantina_Key;
+}
+```
+
+To learn more about the `UseMutationResult` object, see the [TanStack React Query documentation](https://tanstack.com/query/v5/docs/framework/react/reference/useMutation).
+
+### Using `CreateProductoCantina`'s Mutation hook function
+
+```javascript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig, CreateProductoCantinaVariables } from '@dataconnect/generated';
+import { useCreateProductoCantina } from '@dataconnect/generated/react'
+
+export default function CreateProductoCantinaComponent() {
+  // Call the Mutation hook function to get a `UseMutationResult` object which holds the state of your Mutation.
+  const mutation = useCreateProductoCantina();
+
+  // You can also pass in a `DataConnect` instance to the Mutation hook function.
+  const dataConnect = getDataConnect(connectorConfig);
+  const mutation = useCreateProductoCantina(dataConnect);
+
+  // You can also pass in a `useDataConnectMutationOptions` object to the Mutation hook function.
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  const mutation = useCreateProductoCantina(options);
+
+  // You can also pass both a `DataConnect` instance and a `useDataConnectMutationOptions` object.
+  const dataConnect = getDataConnect(connectorConfig);
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  const mutation = useCreateProductoCantina(dataConnect, options);
+
+  // After calling the Mutation hook function, you must call `UseMutationResult.mutate()` to execute the Mutation.
+  // The `useCreateProductoCantina` Mutation requires an argument of type `CreateProductoCantinaVariables`:
+  const createProductoCantinaVars: CreateProductoCantinaVariables = {
+    nombre: ..., 
+    descripcion: ..., // optional
+    precio: ..., 
+    categoria: ..., // optional
+    imagenUrl: ..., // optional
+  };
+  mutation.mutate(createProductoCantinaVars);
+  // Variables can be defined inline as well.
+  mutation.mutate({ nombre: ..., descripcion: ..., precio: ..., categoria: ..., imagenUrl: ..., });
+
+  // You can also pass in a `useDataConnectMutationOptions` object to `UseMutationResult.mutate()`.
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  mutation.mutate(createProductoCantinaVars, options);
+
+  // Then, you can render your component dynamically based on the status of the Mutation.
+  if (mutation.isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (mutation.isError) {
+    return <div>Error: {mutation.error.message}</div>;
+  }
+
+  // If the Mutation is successful, you can access the data returned using the `UseMutationResult.data` field.
+  if (mutation.isSuccess) {
+    console.log(mutation.data.productoCantina_insert);
+  }
+  return <div>Mutation execution {mutation.isSuccess ? 'successful' : 'failed'}!</div>;
+}
+```
+
+## UpdateProductoCantina
+You can execute the `UpdateProductoCantina` Mutation using the `UseMutationResult` object returned by the following Mutation hook function (which is defined in [dataconnect-generated/react/index.d.ts](./index.d.ts)):
+```javascript
+useUpdateProductoCantina(options?: useDataConnectMutationOptions<UpdateProductoCantinaData, FirebaseError, UpdateProductoCantinaVariables>): UseDataConnectMutationResult<UpdateProductoCantinaData, UpdateProductoCantinaVariables>;
+```
+You can also pass in a `DataConnect` instance to the Mutation hook function.
+```javascript
+useUpdateProductoCantina(dc: DataConnect, options?: useDataConnectMutationOptions<UpdateProductoCantinaData, FirebaseError, UpdateProductoCantinaVariables>): UseDataConnectMutationResult<UpdateProductoCantinaData, UpdateProductoCantinaVariables>;
+```
+
+### Variables
+The `UpdateProductoCantina` Mutation requires an argument of type `UpdateProductoCantinaVariables`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+
+```javascript
+export interface UpdateProductoCantinaVariables {
+  id: UUIDString;
+  nombre: string;
+  descripcion?: string | null;
+  precio: number;
+  categoria?: string | null;
+  imagenUrl?: string | null;
+  disponible: boolean;
+}
+```
+### Return Type
+Recall that calling the `UpdateProductoCantina` Mutation hook function returns a `UseMutationResult` object. This object holds the state of your Mutation, including whether the Mutation is loading, has completed, or has succeeded/failed, among other things.
+
+To check the status of a Mutation, use the `UseMutationResult.status` field. You can also check for pending / success / error status using the `UseMutationResult.isPending`, `UseMutationResult.isSuccess`, and `UseMutationResult.isError` fields.
+
+To execute the Mutation, call `UseMutationResult.mutate()`. This function executes the Mutation, but does not return the data from the Mutation.
+
+To access the data returned by a Mutation, use the `UseMutationResult.data` field. The data for the `UpdateProductoCantina` Mutation is of type `UpdateProductoCantinaData`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+```javascript
+export interface UpdateProductoCantinaData {
+  productoCantina_update?: ProductoCantina_Key | null;
+}
+```
+
+To learn more about the `UseMutationResult` object, see the [TanStack React Query documentation](https://tanstack.com/query/v5/docs/framework/react/reference/useMutation).
+
+### Using `UpdateProductoCantina`'s Mutation hook function
+
+```javascript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig, UpdateProductoCantinaVariables } from '@dataconnect/generated';
+import { useUpdateProductoCantina } from '@dataconnect/generated/react'
+
+export default function UpdateProductoCantinaComponent() {
+  // Call the Mutation hook function to get a `UseMutationResult` object which holds the state of your Mutation.
+  const mutation = useUpdateProductoCantina();
+
+  // You can also pass in a `DataConnect` instance to the Mutation hook function.
+  const dataConnect = getDataConnect(connectorConfig);
+  const mutation = useUpdateProductoCantina(dataConnect);
+
+  // You can also pass in a `useDataConnectMutationOptions` object to the Mutation hook function.
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  const mutation = useUpdateProductoCantina(options);
+
+  // You can also pass both a `DataConnect` instance and a `useDataConnectMutationOptions` object.
+  const dataConnect = getDataConnect(connectorConfig);
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  const mutation = useUpdateProductoCantina(dataConnect, options);
+
+  // After calling the Mutation hook function, you must call `UseMutationResult.mutate()` to execute the Mutation.
+  // The `useUpdateProductoCantina` Mutation requires an argument of type `UpdateProductoCantinaVariables`:
+  const updateProductoCantinaVars: UpdateProductoCantinaVariables = {
+    id: ..., 
+    nombre: ..., 
+    descripcion: ..., // optional
+    precio: ..., 
+    categoria: ..., // optional
+    imagenUrl: ..., // optional
+    disponible: ..., 
+  };
+  mutation.mutate(updateProductoCantinaVars);
+  // Variables can be defined inline as well.
+  mutation.mutate({ id: ..., nombre: ..., descripcion: ..., precio: ..., categoria: ..., imagenUrl: ..., disponible: ..., });
+
+  // You can also pass in a `useDataConnectMutationOptions` object to `UseMutationResult.mutate()`.
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  mutation.mutate(updateProductoCantinaVars, options);
+
+  // Then, you can render your component dynamically based on the status of the Mutation.
+  if (mutation.isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (mutation.isError) {
+    return <div>Error: {mutation.error.message}</div>;
+  }
+
+  // If the Mutation is successful, you can access the data returned using the `UseMutationResult.data` field.
+  if (mutation.isSuccess) {
+    console.log(mutation.data.productoCantina_update);
+  }
+  return <div>Mutation execution {mutation.isSuccess ? 'successful' : 'failed'}!</div>;
+}
+```
+
+## DeleteProductoCantina
+You can execute the `DeleteProductoCantina` Mutation using the `UseMutationResult` object returned by the following Mutation hook function (which is defined in [dataconnect-generated/react/index.d.ts](./index.d.ts)):
+```javascript
+useDeleteProductoCantina(options?: useDataConnectMutationOptions<DeleteProductoCantinaData, FirebaseError, DeleteProductoCantinaVariables>): UseDataConnectMutationResult<DeleteProductoCantinaData, DeleteProductoCantinaVariables>;
+```
+You can also pass in a `DataConnect` instance to the Mutation hook function.
+```javascript
+useDeleteProductoCantina(dc: DataConnect, options?: useDataConnectMutationOptions<DeleteProductoCantinaData, FirebaseError, DeleteProductoCantinaVariables>): UseDataConnectMutationResult<DeleteProductoCantinaData, DeleteProductoCantinaVariables>;
+```
+
+### Variables
+The `DeleteProductoCantina` Mutation requires an argument of type `DeleteProductoCantinaVariables`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+
+```javascript
+export interface DeleteProductoCantinaVariables {
+  id: UUIDString;
+}
+```
+### Return Type
+Recall that calling the `DeleteProductoCantina` Mutation hook function returns a `UseMutationResult` object. This object holds the state of your Mutation, including whether the Mutation is loading, has completed, or has succeeded/failed, among other things.
+
+To check the status of a Mutation, use the `UseMutationResult.status` field. You can also check for pending / success / error status using the `UseMutationResult.isPending`, `UseMutationResult.isSuccess`, and `UseMutationResult.isError` fields.
+
+To execute the Mutation, call `UseMutationResult.mutate()`. This function executes the Mutation, but does not return the data from the Mutation.
+
+To access the data returned by a Mutation, use the `UseMutationResult.data` field. The data for the `DeleteProductoCantina` Mutation is of type `DeleteProductoCantinaData`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+```javascript
+export interface DeleteProductoCantinaData {
+  productoCantina_delete?: ProductoCantina_Key | null;
+}
+```
+
+To learn more about the `UseMutationResult` object, see the [TanStack React Query documentation](https://tanstack.com/query/v5/docs/framework/react/reference/useMutation).
+
+### Using `DeleteProductoCantina`'s Mutation hook function
+
+```javascript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig, DeleteProductoCantinaVariables } from '@dataconnect/generated';
+import { useDeleteProductoCantina } from '@dataconnect/generated/react'
+
+export default function DeleteProductoCantinaComponent() {
+  // Call the Mutation hook function to get a `UseMutationResult` object which holds the state of your Mutation.
+  const mutation = useDeleteProductoCantina();
+
+  // You can also pass in a `DataConnect` instance to the Mutation hook function.
+  const dataConnect = getDataConnect(connectorConfig);
+  const mutation = useDeleteProductoCantina(dataConnect);
+
+  // You can also pass in a `useDataConnectMutationOptions` object to the Mutation hook function.
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  const mutation = useDeleteProductoCantina(options);
+
+  // You can also pass both a `DataConnect` instance and a `useDataConnectMutationOptions` object.
+  const dataConnect = getDataConnect(connectorConfig);
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  const mutation = useDeleteProductoCantina(dataConnect, options);
+
+  // After calling the Mutation hook function, you must call `UseMutationResult.mutate()` to execute the Mutation.
+  // The `useDeleteProductoCantina` Mutation requires an argument of type `DeleteProductoCantinaVariables`:
+  const deleteProductoCantinaVars: DeleteProductoCantinaVariables = {
+    id: ..., 
+  };
+  mutation.mutate(deleteProductoCantinaVars);
+  // Variables can be defined inline as well.
+  mutation.mutate({ id: ..., });
+
+  // You can also pass in a `useDataConnectMutationOptions` object to `UseMutationResult.mutate()`.
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  mutation.mutate(deleteProductoCantinaVars, options);
+
+  // Then, you can render your component dynamically based on the status of the Mutation.
+  if (mutation.isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (mutation.isError) {
+    return <div>Error: {mutation.error.message}</div>;
+  }
+
+  // If the Mutation is successful, you can access the data returned using the `UseMutationResult.data` field.
+  if (mutation.isSuccess) {
+    console.log(mutation.data.productoCantina_delete);
+  }
+  return <div>Mutation execution {mutation.isSuccess ? 'successful' : 'failed'}!</div>;
+}
+```
+
+## CreateUsuario
+You can execute the `CreateUsuario` Mutation using the `UseMutationResult` object returned by the following Mutation hook function (which is defined in [dataconnect-generated/react/index.d.ts](./index.d.ts)):
+```javascript
+useCreateUsuario(options?: useDataConnectMutationOptions<CreateUsuarioData, FirebaseError, CreateUsuarioVariables>): UseDataConnectMutationResult<CreateUsuarioData, CreateUsuarioVariables>;
+```
+You can also pass in a `DataConnect` instance to the Mutation hook function.
+```javascript
+useCreateUsuario(dc: DataConnect, options?: useDataConnectMutationOptions<CreateUsuarioData, FirebaseError, CreateUsuarioVariables>): UseDataConnectMutationResult<CreateUsuarioData, CreateUsuarioVariables>;
+```
+
+### Variables
+The `CreateUsuario` Mutation requires an argument of type `CreateUsuarioVariables`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+
+```javascript
+export interface CreateUsuarioVariables {
+  nombre: string;
+  email: string;
+  tipoUsuario: string;
+}
+```
+### Return Type
+Recall that calling the `CreateUsuario` Mutation hook function returns a `UseMutationResult` object. This object holds the state of your Mutation, including whether the Mutation is loading, has completed, or has succeeded/failed, among other things.
+
+To check the status of a Mutation, use the `UseMutationResult.status` field. You can also check for pending / success / error status using the `UseMutationResult.isPending`, `UseMutationResult.isSuccess`, and `UseMutationResult.isError` fields.
+
+To execute the Mutation, call `UseMutationResult.mutate()`. This function executes the Mutation, but does not return the data from the Mutation.
+
+To access the data returned by a Mutation, use the `UseMutationResult.data` field. The data for the `CreateUsuario` Mutation is of type `CreateUsuarioData`, which is defined in [dataconnect-generated/index.d.ts](../index.d.ts). It has the following fields:
+```javascript
+export interface CreateUsuarioData {
+  usuario_insert: Usuario_Key;
+}
+```
+
+To learn more about the `UseMutationResult` object, see the [TanStack React Query documentation](https://tanstack.com/query/v5/docs/framework/react/reference/useMutation).
+
+### Using `CreateUsuario`'s Mutation hook function
+
+```javascript
+import { getDataConnect } from 'firebase/data-connect';
+import { connectorConfig, CreateUsuarioVariables } from '@dataconnect/generated';
+import { useCreateUsuario } from '@dataconnect/generated/react'
+
+export default function CreateUsuarioComponent() {
+  // Call the Mutation hook function to get a `UseMutationResult` object which holds the state of your Mutation.
+  const mutation = useCreateUsuario();
+
+  // You can also pass in a `DataConnect` instance to the Mutation hook function.
+  const dataConnect = getDataConnect(connectorConfig);
+  const mutation = useCreateUsuario(dataConnect);
+
+  // You can also pass in a `useDataConnectMutationOptions` object to the Mutation hook function.
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  const mutation = useCreateUsuario(options);
+
+  // You can also pass both a `DataConnect` instance and a `useDataConnectMutationOptions` object.
+  const dataConnect = getDataConnect(connectorConfig);
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  const mutation = useCreateUsuario(dataConnect, options);
+
+  // After calling the Mutation hook function, you must call `UseMutationResult.mutate()` to execute the Mutation.
+  // The `useCreateUsuario` Mutation requires an argument of type `CreateUsuarioVariables`:
+  const createUsuarioVars: CreateUsuarioVariables = {
+    nombre: ..., 
+    email: ..., 
+    tipoUsuario: ..., 
+  };
+  mutation.mutate(createUsuarioVars);
+  // Variables can be defined inline as well.
+  mutation.mutate({ nombre: ..., email: ..., tipoUsuario: ..., });
+
+  // You can also pass in a `useDataConnectMutationOptions` object to `UseMutationResult.mutate()`.
+  const options = {
+    onSuccess: () => { console.log('Mutation succeeded!'); }
+  };
+  mutation.mutate(createUsuarioVars, options);
+
+  // Then, you can render your component dynamically based on the status of the Mutation.
+  if (mutation.isPending) {
+    return <div>Loading...</div>;
+  }
+
+  if (mutation.isError) {
+    return <div>Error: {mutation.error.message}</div>;
+  }
+
+  // If the Mutation is successful, you can access the data returned using the `UseMutationResult.data` field.
+  if (mutation.isSuccess) {
+    console.log(mutation.data.usuario_insert);
   }
   return <div>Mutation execution {mutation.isSuccess ? 'successful' : 'failed'}!</div>;
 }
