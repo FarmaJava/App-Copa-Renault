@@ -1,357 +1,377 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import {
+  listPartidosPorDeporte,
+  listDivisionesPorDeporte,
+  listEquiposPorDivision,
+  listJugadoresPorEquipo,
+} from "../dataconnect-generated/esm/index.esm.js";
 import "./DeportePage.css";
 
-// Componente reutilizable para edición inline (mismo patrón que en Deportes.jsx)
-function InlineEdit({ value, onSave, className, admin, placeholder }) {
-  const [editing, setEditing] = useState(false);
-  const [draft, setDraft] = useState(value);
+const jugadoresCache = {};
 
-  if (admin && editing) {
-    return (
-      <input
-        className={className + " inline-edit-input"}
-        value={draft}
-        onChange={(e) => setDraft(e.target.value)}
-        onBlur={() => {
-          onSave(draft);
-          setEditing(false);
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            onSave(draft);
-            setEditing(false);
-          }
-        }}
-        autoFocus
-        placeholder={placeholder}
-      />
-    );
-  }
+const DEPORTES = {
+  "44edf1eb-e95c-40c8-9a42-e4655707d439": "Fútbol",
+  "77d08f9b-9244-4584-bad9-f91b0ed4f36c": "Básquet",
+  "a87f074f-a29d-49dc-a13d-64dd4ff78908": "Vóley",
+};
 
+const NIVEL_ACCENT = {
+  Menor:      "var(--accent)",
+  Intermedia: "var(--secondary)",
+  Mayor:      "#facc15",
+};
+
+function EstadoBadge({ estado }) {
+  const estilos = {
+    programado:  { background: "var(--accent-bg)", color: "var(--accent)" },
+    "en curso":  { background: "rgba(250,204,21,0.15)", color: "#facc15" },
+    finalizado:  { background: "var(--accent-bg)", color: "var(--text)", opacity: 0.6 },
+  };
+  const s = estilos[estado] || estilos.finalizado;
   return (
-    <span
-      className={className + (admin ? " editable" : "")}
-      onClick={() => {
-        if (admin) {
-          setDraft(value);
-          setEditing(true);
-        }
-      }}
-      title={admin ? "Click para editar" : undefined}
-    >
-      {value || placeholder}
-    </span>
+    <span style={{
+      ...s, fontSize: 11, fontWeight: 600,
+      padding: "2px 8px", borderRadius: 99,
+      letterSpacing: "0.04em", textTransform: "uppercase"
+    }}>{estado}</span>
   );
 }
 
-// Modal para editar o crear partidos. Incluye horario, cancha, categoría
-// y el marcador con puntajes separados para local y visitante.
-function PartidoModal({ partido, onSave, onClose }) {
-  const [hora, setHora] = useState(partido?.hora || "");
-  const [cancha, setCancha] = useState(partido?.cancha || "");
-  const [categoria, setCategoria] = useState(partido?.categoria || "");
-  const [local, setLocal] = useState(partido?.local || "");
-  const [puntosLocal, setPuntosLocal] = useState(partido?.puntosLocal || "");
-  const [puntosVisitante, setPuntosVisitante] = useState(partido?.puntosVisitante || "");
-  const [visitante, setVisitante] = useState(partido?.visitante || "");
-
+function PartidoCard({ partido }) {
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal modal-partido" onClick={(e) => e.stopPropagation()}>
-        <h3 className="modal-titulo">
-          {partido ? "Editar Partido" : "Nuevo Partido"}
-        </h3>
-
-        <div className="modal-partido-info">
-          <div className="modal-field">
-            <label className="modal-label">Horario</label>
-            <input
-              className="modal-input"
-              value={hora}
-              onChange={(e) => setHora(e.target.value)}
-              placeholder="10:30"
-            />
-          </div>
-          <div className="modal-field">
-            <label className="modal-label">Cancha</label>
-            <input
-              className="modal-input"
-              value={cancha}
-              onChange={(e) => setCancha(e.target.value)}
-              placeholder="Cancha 1"
-            />
-          </div>
-          <div className="modal-field">
-            <label className="modal-label">Categoría</label>
-            <input
-              className="modal-input"
-              value={categoria}
-              onChange={(e) => setCategoria(e.target.value)}
-              placeholder="Ej: Mayor"
-            />
-          </div>
-        </div>
-
-        <div className="modal-partido-marcador">
-          <div className="modal-field modal-equipo-field">
-            <label className="modal-label">Local</label>
-            <input
-              className="modal-input"
-              value={local}
-              onChange={(e) => setLocal(e.target.value)}
-              placeholder="Equipo A"
-            />
-          </div>
-          <div className="modal-field modal-puntos-field">
-            <label className="modal-label">Pts</label>
-            <input
-              className="modal-input modal-input-puntos"
-              value={puntosLocal}
-              onChange={(e) => setPuntosLocal(e.target.value)}
-              placeholder="0"
-            />
-          </div>
-          <span className="modal-partido-guion">-</span>
-          <div className="modal-field modal-puntos-field">
-            <label className="modal-label">Pts</label>
-            <input
-              className="modal-input modal-input-puntos"
-              value={puntosVisitante}
-              onChange={(e) => setPuntosVisitante(e.target.value)}
-              placeholder="0"
-            />
-          </div>
-          <div className="modal-field modal-equipo-field">
-            <label className="modal-label">Visitante</label>
-            <input
-              className="modal-input"
-              value={visitante}
-              onChange={(e) => setVisitante(e.target.value)}
-              placeholder="Equipo B"
-            />
-          </div>
-        </div>
-
-        <div className="modal-acciones">
-          <button className="modal-btn modal-btn-cancelar" onClick={onClose}>
-            Cancelar
-          </button>
-          <button
-            className="modal-btn modal-btn-guardar"
-            onClick={() => {
-              onSave({ hora, cancha, categoria, local, puntosLocal, puntosVisitante, visitante });
-              onClose();
-            }}
-          >
-            Guardar
-          </button>
-        </div>
+    <div className="partido-card">
+      <div className="partido-meta">
+        <span className="partido-hora">{partido.horaPartido}</span>
+        <span className="partido-cancha">{partido.ubicacion}</span>
+        <span className="partido-categoria">{partido.division?.nivel}</span>
+        <EstadoBadge estado={partido.estado} />
       </div>
+      <div className="partido-detalles">
+        <span className="partido-equipo">{partido.equipoLocal?.nombre}</span>
+        <span className="partido-puntos-local">
+          {partido.estado === "programado" ? "-" : partido.resultadoLocal}
+        </span>
+        <span className="partido-guion">vs</span>
+        <span className="partido-puntos-visitante">
+          {partido.estado === "programado" ? "-" : partido.resultadoVisitante}
+        </span>
+        <span className="partido-equipo" style={{ textAlign: "right" }}>
+          {partido.equipoVisitante?.nombre}
+        </span>
+      </div>
+      {partido.arbitro && (
+        <div style={{ fontSize: 12, color: "var(--text)", opacity: 0.5, marginTop: 2 }}>
+          Árbitro: {partido.arbitro.nombre}
+        </div>
+      )}
     </div>
   );
 }
 
-// Nombres de deportes según el índice en la URL (/deporte/0, /deporte/1, /deporte/2)
-const nombresPorDefecto = ["Fútbol", "Básquet", "Vóley"];
+function EquipoCard({ equipo, accent }) {
+  const [abierto, setAbierto] = useState(false);
+  const [jugadores, setJugadores] = useState(null);
+  const [cargando, setCargando] = useState(false);
+  const yaFetch = useRef(false);
 
-// Datos de ejemplo: cada deporte tiene su propia lista de partidos
-const partidosPorDefecto = [
-  [
-    { hora: "10:30", cancha: "Cancha 1", categoria: "Mayor", local: "Renault A", puntosLocal: "2", puntosVisitante: "0", visitante: "Renault B" },
-    { hora: "12:00", cancha: "Cancha 2", categoria: "Intermedia", local: "Renault C", puntosLocal: "1", puntosVisitante: "1", visitante: "Renault A" },
-  ],
-  [
-    { hora: "09:00", cancha: "Cancha 1", categoria: "Mayor", local: "Renault A", puntosLocal: "78", puntosVisitante: "65", visitante: "Renault B" },
-    { hora: "10:30", cancha: "Cancha 2", categoria: "Intermedia", local: "Renault C", puntosLocal: "55", puntosVisitante: "70", visitante: "Renault A" },
-  ],
-  [
-    { hora: "11:00", cancha: "Cancha 3", categoria: "Mayor", local: "Renault A", puntosLocal: "3", puntosVisitante: "0", visitante: "Renault B" },
-    { hora: "14:00", cancha: "Cancha 1", categoria: "Intermedia", local: "Renault C", puntosLocal: "2", puntosVisitante: "3", visitante: "Renault A" },
-  ],
-];
+  async function toggleJugadores() {
+    if (abierto) { setAbierto(false); return; }
 
-// Página de detalle de cada deporte. Muestra campeón actual, categorías,
-// partidos (con horario, cancha, categoría y marcador) y un botón a favoritos.
-// En modo admin permite editar todos los campos inline y gestionar partidos.
+    if (jugadoresCache[equipo.id]) {
+      setJugadores(jugadoresCache[equipo.id]);
+      setAbierto(true);
+      return;
+    }
+
+    if (yaFetch.current) return;
+    yaFetch.current = true;
+
+    setCargando(true);
+    try {
+      const res = await listJugadoresPorEquipo({ equipoId: equipo.id });
+      const lista = [...(res.data?.jugadors || [])]
+        .sort((a, b) => a.numeroCamiseta - b.numeroCamiseta)
+        .filter((j, i, arr) => arr.findIndex(x => x.id === j.id) === i);
+
+      setJugadores(lista);
+      setAbierto(true);
+      jugadoresCache[equipo.id] = lista;
+    } catch (e) {
+      console.error(e);
+      setJugadores([]);
+      yaFetch.current = false;
+    } finally {
+      setCargando(false);
+    }
+  }
+
+  return (
+    <div style={{
+      borderRadius: 12,
+      border: "1px solid var(--border)",
+      marginBottom: 10,
+      overflow: "hidden",
+      background: "var(--accent-bg)",
+      borderLeft: `3px solid ${accent}`,
+    }}>
+      <div
+        onClick={toggleJugadores}
+        style={{
+          display: "flex", alignItems: "center",
+          justifyContent: "space-between",
+          padding: "12px 16px", cursor: "pointer",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{
+            width: 34, height: 34, borderRadius: "50%",
+            background: `${accent}22`,
+            border: `1px solid ${accent}55`,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            fontWeight: 700, fontSize: 14, color: accent,
+          }}>
+            {equipo.nombre.charAt(0)}
+          </div>
+          <div>
+            <div style={{ fontSize: 15, fontWeight: 600, color: "var(--text-h)" }}>
+              {equipo.nombre}
+            </div>
+            <div style={{ fontSize: 12, color: "var(--text)", opacity: 0.5 }}>
+              {equipo.ciudad}
+            </div>
+          </div>
+        </div>
+        <span style={{ fontSize: 12, color: "var(--text)", opacity: 0.4 }}>
+          {cargando ? "cargando..." : abierto ? "▲ ocultar" : "▼ jugadores"}
+        </span>
+      </div>
+
+      {abierto && jugadores && (
+        <div style={{ borderTop: "1px solid var(--border)", padding: "8px 16px 12px" }}>
+          {jugadores.length === 0 ? (
+            <p style={{ fontSize: 13, color: "var(--text)", opacity: 0.4, margin: "8px 0" }}>
+              Sin jugadores registrados
+            </p>
+          ) : (
+            jugadores.map(j => (
+              <div key={j.id} style={{
+                display: "flex", alignItems: "center", gap: 12,
+                padding: "7px 0",
+                borderBottom: "0.5px solid var(--border)",
+              }}>
+                <span style={{
+                  width: 26, height: 26, borderRadius: "50%",
+                  background: `${accent}22`,
+                  border: `1px solid ${accent}44`,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: 11, fontWeight: 700, color: accent, flexShrink: 0
+                }}>
+                  {j.numeroCamiseta}
+                </span>
+                <span style={{ flex: 1, fontSize: 14, color: "var(--text-h)" }}>{j.nombre}</span>
+                <span style={{ fontSize: 12, color: "var(--text)", opacity: 0.45 }}>{j.posicion}</span>
+              </div>
+            ))
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DivisionGrupo({ division, visible }) {
+  const [equipos, setEquipos] = useState(null);
+  const fetchedRef = useRef(false);
+  const accent = NIVEL_ACCENT[division.nivel] || "var(--accent)";
+
+  useEffect(() => {
+    if (!visible || fetchedRef.current) return;
+    fetchedRef.current = true;
+    listEquiposPorDivision({ divisionId: division.id })
+      .then(res => setEquipos(res.data?.equipos || []))
+      .catch(() => setEquipos([]));
+  }, [visible, division.id]);
+
+  if (!visible) return null;
+
+  return (
+    <div style={{ marginBottom: 32, width: "100%" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14, flexWrap: "wrap" }}>
+        <span style={{
+          width: 8, height: 8, borderRadius: "50%",
+          background: accent, display: "inline-block", flexShrink: 0
+        }} />
+        <h3 style={{
+          margin: 0, fontSize: 14, fontWeight: 600,
+          color: "var(--text-h)", textTransform: "uppercase",
+          letterSpacing: "0.06em"
+        }}>
+          {division.nivel} — {division.nombre}
+        </h3>
+        {equipos && (
+          <span style={{ fontSize: 12, color: "var(--text)", opacity: 0.45 }}>
+            {equipos.length} equipo{equipos.length !== 1 ? "s" : ""}
+          </span>
+        )}
+      </div>
+
+      {equipos === null && (
+        <p style={{ fontSize: 13, color: "var(--text)", opacity: 0.5 }}>Cargando equipos...</p>
+      )}
+      {equipos?.map(eq => (
+        <EquipoCard key={eq.id} equipo={eq} accent={accent} />
+      ))}
+    </div>
+  );
+}
+
 function DeportePage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { admin } = useAuth();
-  const i = parseInt(id, 10);
 
-  const deporteNombre = nombresPorDefecto[i] || "Deporte";
+  const deporteNombre = DEPORTES[id] || "Deporte";
 
-  const [campeon, setCampeon] = useState("");
-  const [añoCampeon, setAñoCampeon] = useState("");
-  const [categorias, setCategorias] = useState([""]);
-  const [editCategoria, setEditCategoria] = useState(null);
-  const [partidos, setPartidos] = useState(partidosPorDefecto[i] || []);
-  const [partidoModalIndex, setPartidoModalIndex] = useState(null);
+  const [partidos, setPartidos] = useState([]);
+  const [divisiones, setDivisiones] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [error, setError] = useState(null);
+  const [divisionActiva, setDivisionActiva] = useState("todas");
+
+  useEffect(() => {
+    async function cargarDatos() {
+      setCargando(true);
+      setError(null);
+      try {
+        const [resPartidos, resDivisiones] = await Promise.all([
+          listPartidosPorDeporte({ deporteId: id }),
+          listDivisionesPorDeporte({ deporteId: id }),
+        ]);
+        setPartidos(resPartidos.data?.partidos || []);
+        setDivisiones(resDivisiones.data?.divisions || []);
+      } catch (e) {
+        console.error(e);
+        setError("No se pudieron cargar los datos.");
+      } finally {
+        setCargando(false);
+      }
+    }
+    if (id) cargarDatos();
+  }, [id]);
+
+  const partidosFiltrados = divisionActiva === "todas"
+    ? partidos
+    : partidos.filter(p => p.division?.id === divisionActiva);
 
   return (
     <div className={"deporte-page" + (admin ? " admin-mode" : "")}>
       {admin && <div className="admin-badge">Admin</div>}
-
       <div className="banner-accent" />
 
-      <button className="volver-btn" onClick={() => navigate("/deportes")}>
-        ← Volver
-      </button>
+      <button className="volver-btn" onClick={() => navigate("/deportes")}>← Volver</button>
 
       <header className="deporte-banner">
-        <p className="banner-ano">2027</p>
+        <p className="banner-ano">2026</p>
         <h1 className="deporte-titulo">{deporteNombre}</h1>
       </header>
 
-      <section className="campeon-section">
-        <h2 className="section-titulo">Actual Campeón</h2>
-        <div className="campeon-card">
-          <div className="campeon-icono">🏆</div>
-          <div className="campeon-info">
-            <InlineEdit
-              value={campeon}
-              onSave={setCampeon}
-              className="campeon-nombre"
-              admin={admin}
-              placeholder="Nombre del equipo"
-            />
-            <InlineEdit
-              value={añoCampeon}
-              onSave={setAñoCampeon}
-              className="campeon-anio"
-              admin={admin}
-              placeholder="Año"
-            />
-          </div>
-        </div>
-      </section>
+      {cargando && (
+        <p style={{ textAlign: "center", padding: "2rem", color: "var(--text)", opacity: 0.5 }}>
+          Cargando datos...
+        </p>
+      )}
+      {error && (
+        <p style={{ textAlign: "center", padding: "2rem", color: "#ef4444" }}>❌ {error}</p>
+      )}
 
-      <section className="categorias-section">
-        <h2 className="section-titulo">Categorías</h2>
-        <div className="categorias-lista">
-          {categorias.map((cat, j) => (
-            <div key={j} className="categoria-item">
-              {admin && j === editCategoria ? (
-                <input
-                  className="inline-edit-input categoria-input"
-                  value={cat}
-                  onChange={(e) => {
-                    const nuevas = [...categorias];
-                    nuevas[j] = e.target.value;
-                    setCategorias(nuevas);
-                  }}
-                  onBlur={() => setEditCategoria(null)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") setEditCategoria(null);
-                  }}
-                  autoFocus
-                  placeholder="Nombre de la categoría"
-                />
-              ) : (
-                <span
-                  className={"categoria-texto" + (admin ? " editable" : "")}
-                  onClick={() => {
-                    if (admin) setEditCategoria(j);
+      {!cargando && !error && (
+        <>
+          {divisiones.length > 0 && (
+            <section style={{
+              padding: "0 24px 24px",
+              width: "100%",
+              maxWidth: 720,
+              boxSizing: "border-box",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}>
+              <div style={{ width: "100%", maxWidth: 500 }}>
+                <label style={{
+                  display: "block", fontSize: 11, fontWeight: 700,
+                  color: "var(--accent)", letterSpacing: "0.08em",
+                  textTransform: "uppercase", marginBottom: 8
+                }}>
+                  División
+                </label>
+                <select
+                  value={divisionActiva}
+                  onChange={e => setDivisionActiva(e.target.value)}
+                  style={{
+                    width: "100%",
+                    padding: "10px 36px 10px 14px",
+                    border: "1px solid var(--border)",
+                    borderRadius: 10,
+                    background: "var(--accent-bg)",
+                    color: "var(--text-h)",
+                    fontSize: 14, fontWeight: 500,
+                    fontFamily: "inherit",
+                    cursor: "pointer",
+                    outline: "none",
+                    appearance: "none",
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath fill='%23f97316' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "right 12px center",
                   }}
                 >
-                  {cat || "Categoría"}
-                </span>
-              )}
-              {admin && (
-                <button
-                  className="categoria-eliminar"
-                  onClick={() => {
-                    setCategorias((prev) => prev.filter((_, k) => k !== j));
-                  }}
-                  title="Eliminar"
-                >
-                  ✕
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
-        {admin && (
-          <button
-            className="agregar-btn"
-            onClick={() => setCategorias((prev) => [...prev, ""])}
-          >
-            + Agregar categoría
-          </button>
-        )}
-      </section>
-
-      <section className="partidos-section">
-        <h2 className="section-titulo">Partidos</h2>
-        {partidos.length === 0 ? (
-          <p className="partidos-vacio">No hay partidos registrados</p>
-        ) : (
-          <div className="partidos-lista">
-            {partidos.map((p, j) => (
-              <div
-                key={j}
-                className={"partido-card" + (admin ? " partido-card-admin" : "")}
-                onClick={() => {
-                  if (admin) setPartidoModalIndex(j);
-                }}
-                title={admin ? "Click para editar" : undefined}
-              >
-                <div className="partido-meta">
-                  <span className="partido-hora">{p.hora}</span>
-                  <span className="partido-cancha">{p.cancha}</span>
-                  <span className="partido-categoria">{p.categoria}</span>
-                </div>
-                <div className="partido-detalles">
-                  <span className="partido-equipo">{p.local}</span>
-                  <span className="partido-puntos-local">{p.puntosLocal}</span>
-                  <span className="partido-guion">-</span>
-                  <span className="partido-puntos-visitante">{p.puntosVisitante}</span>
-                  <span className="partido-equipo">{p.visitante}</span>
-                </div>
+                  <option value="todas">— Todas las divisiones —</option>
+                  {divisiones.map(div => (
+                    <option key={div.id} value={div.id}>
+                      {div.nivel} · {div.nombre}
+                    </option>
+                  ))}
+                </select>
               </div>
+            </section>
+          )}
+
+          <section className="partidos-section">
+            <h2 className="section-titulo">Partidos</h2>
+            {partidosFiltrados.length === 0 ? (
+              <p className="partidos-vacio">No hay partidos para esta división</p>
+            ) : (
+              <div className="partidos-lista">
+                {[...partidosFiltrados]
+                  .sort((a, b) => new Date(a.fechaPartido) - new Date(b.fechaPartido))
+                  .map(p => <PartidoCard key={p.id} partido={p} />)}
+              </div>
+            )}
+          </section>
+
+          <section className="partidos-section">
+            <h2 className="section-titulo">Equipos</h2>
+            {divisiones.map(div => (
+              <DivisionGrupo
+                key={div.id}
+                division={div}
+                visible={divisionActiva === "todas" || divisionActiva === div.id}
+              />
             ))}
-          </div>
-        )}
-        {admin && (
-          <button
-            className="agregar-btn"
-            onClick={() => setPartidoModalIndex(partidos.length)}
-          >
-            + Agregar partido
-          </button>
-        )}
-      </section>
+          </section>
+        </>
+      )}
 
       <section className="favoritos-section">
-        <button
-          className="favoritos-btn"
-          onClick={() => navigate("/deporte/" + i + "/favoritos")}
-        >
+        <button className="favoritos-btn" onClick={() => navigate("/deporte/" + id + "/favoritos")}>
           ⭐ Ver favoritos
         </button>
       </section>
 
       <footer className="deportes-footer">
-        <p>© 2027 Copa Renault · Todos los derechos reservados</p>
+        <p>© 2026 Copa Renault · Todos los derechos reservados</p>
       </footer>
-
-      {admin && partidoModalIndex !== null && (
-        <PartidoModal
-          partido={partidos[partidoModalIndex] || null}
-          onSave={(data) => {
-            if (partidoModalIndex >= partidos.length) {
-              setPartidos((prev) => [...prev, data]);
-            } else {
-              setPartidos((prev) =>
-                prev.map((p, j) => (j === partidoModalIndex ? data : p))
-              );
-            }
-          }}
-          onClose={() => setPartidoModalIndex(null)}
-        />
-      )}
     </div>
   );
 }

@@ -1,0 +1,2522 @@
+{
+  "j1": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2006-05-21",
+    "equipoId": "852a9070-b3df-444d-9537-e711d72d085e"
+  },
+  "j2": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2010-09-18",
+    "equipoId": "852a9070-b3df-444d-9537-e711d72d085e"
+  },
+  "j3": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2005-02-22",
+    "equipoId": "852a9070-b3df-444d-9537-e711d72d085e"
+  },
+  "j4": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2005-07-20",
+    "equipoId": "852a9070-b3df-444d-9537-e711d72d085e"
+  },
+  "j5": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-10-19",
+    "equipoId": "852a9070-b3df-444d-9537-e711d72d085e"
+  },
+  "j6": {
+    "nombre": "Juan",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2006-11-24",
+    "equipoId": "852a9070-b3df-444d-9537-e711d72d085e"
+  },
+  "j7": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-06-15",
+    "equipoId": "852a9070-b3df-444d-9537-e711d72d085e"
+  },
+  "j8": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2006-04-23",
+    "equipoId": "852a9070-b3df-444d-9537-e711d72d085e"
+  },
+  "j9": {
+    "nombre": "Franco",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2005-06-18",
+    "equipoId": "852a9070-b3df-444d-9537-e711d72d085e"
+  },
+  "j10": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2007-06-19",
+    "equipoId": "852a9070-b3df-444d-9537-e711d72d085e"
+  },
+  "j11": {
+    "nombre": "Juan",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2009-09-03",
+    "equipoId": "d74c81b3-b0e9-4161-bd47-cbf5e70e279d"
+  },
+  "j12": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2005-01-17",
+    "equipoId": "d74c81b3-b0e9-4161-bd47-cbf5e70e279d"
+  },
+  "j13": {
+    "nombre": "Franco",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2008-05-21",
+    "equipoId": "d74c81b3-b0e9-4161-bd47-cbf5e70e279d"
+  },
+  "j14": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2005-05-02",
+    "equipoId": "d74c81b3-b0e9-4161-bd47-cbf5e70e279d"
+  },
+  "j15": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-05-24",
+    "equipoId": "d74c81b3-b0e9-4161-bd47-cbf5e70e279d"
+  },
+  "j16": {
+    "nombre": "Franco",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-05-22",
+    "equipoId": "d74c81b3-b0e9-4161-bd47-cbf5e70e279d"
+  },
+  "j17": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-06-09",
+    "equipoId": "d74c81b3-b0e9-4161-bd47-cbf5e70e279d"
+  },
+  "j18": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2010-06-02",
+    "equipoId": "d74c81b3-b0e9-4161-bd47-cbf5e70e279d"
+  },
+  "j19": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2009-12-15",
+    "equipoId": "d74c81b3-b0e9-4161-bd47-cbf5e70e279d"
+  },
+  "j20": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2005-03-02",
+    "equipoId": "d74c81b3-b0e9-4161-bd47-cbf5e70e279d"
+  },
+  "j21": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2005-02-15",
+    "equipoId": "6cec3fa9-9b9b-4564-bf61-f100e8a0d8a3"
+  },
+  "j22": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2009-03-14",
+    "equipoId": "6cec3fa9-9b9b-4564-bf61-f100e8a0d8a3"
+  },
+  "j23": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2010-10-24",
+    "equipoId": "6cec3fa9-9b9b-4564-bf61-f100e8a0d8a3"
+  },
+  "j24": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2005-11-23",
+    "equipoId": "6cec3fa9-9b9b-4564-bf61-f100e8a0d8a3"
+  },
+  "j25": {
+    "nombre": "Franco",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2010-10-08",
+    "equipoId": "6cec3fa9-9b9b-4564-bf61-f100e8a0d8a3"
+  },
+  "j26": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2010-09-07",
+    "equipoId": "6cec3fa9-9b9b-4564-bf61-f100e8a0d8a3"
+  },
+  "j27": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2009-12-07",
+    "equipoId": "6cec3fa9-9b9b-4564-bf61-f100e8a0d8a3"
+  },
+  "j28": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2008-09-02",
+    "equipoId": "6cec3fa9-9b9b-4564-bf61-f100e8a0d8a3"
+  },
+  "j29": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2007-11-24",
+    "equipoId": "6cec3fa9-9b9b-4564-bf61-f100e8a0d8a3"
+  },
+  "j30": {
+    "nombre": "Franco",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2010-06-03",
+    "equipoId": "6cec3fa9-9b9b-4564-bf61-f100e8a0d8a3"
+  },
+  "j31": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2010-01-08",
+    "equipoId": "0c4a7b2c-007d-4844-99c0-1dd9d1da9b7b"
+  },
+  "j32": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2008-05-03",
+    "equipoId": "0c4a7b2c-007d-4844-99c0-1dd9d1da9b7b"
+  },
+  "j33": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2009-06-23",
+    "equipoId": "0c4a7b2c-007d-4844-99c0-1dd9d1da9b7b"
+  },
+  "j34": {
+    "nombre": "Franco",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2006-11-17",
+    "equipoId": "0c4a7b2c-007d-4844-99c0-1dd9d1da9b7b"
+  },
+  "j35": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2007-05-26",
+    "equipoId": "0c4a7b2c-007d-4844-99c0-1dd9d1da9b7b"
+  },
+  "j36": {
+    "nombre": "Juan",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2008-08-09",
+    "equipoId": "0c4a7b2c-007d-4844-99c0-1dd9d1da9b7b"
+  },
+  "j37": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2010-06-16",
+    "equipoId": "0c4a7b2c-007d-4844-99c0-1dd9d1da9b7b"
+  },
+  "j38": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2006-10-15",
+    "equipoId": "0c4a7b2c-007d-4844-99c0-1dd9d1da9b7b"
+  },
+  "j39": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2008-01-08",
+    "equipoId": "0c4a7b2c-007d-4844-99c0-1dd9d1da9b7b"
+  },
+  "j40": {
+    "nombre": "Juan",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2005-04-27",
+    "equipoId": "0c4a7b2c-007d-4844-99c0-1dd9d1da9b7b"
+  },
+  "j41": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2005-02-06",
+    "equipoId": "691e2e63-405c-4ebf-9294-aab775a34db5"
+  },
+  "j42": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2005-04-10",
+    "equipoId": "691e2e63-405c-4ebf-9294-aab775a34db5"
+  },
+  "j43": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2005-05-08",
+    "equipoId": "691e2e63-405c-4ebf-9294-aab775a34db5"
+  },
+  "j44": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2005-01-04",
+    "equipoId": "691e2e63-405c-4ebf-9294-aab775a34db5"
+  },
+  "j45": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-11-19",
+    "equipoId": "691e2e63-405c-4ebf-9294-aab775a34db5"
+  },
+  "j46": {
+    "nombre": "Juan",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-01-18",
+    "equipoId": "691e2e63-405c-4ebf-9294-aab775a34db5"
+  },
+  "j47": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2008-01-28",
+    "equipoId": "691e2e63-405c-4ebf-9294-aab775a34db5"
+  },
+  "j48": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2010-01-16",
+    "equipoId": "691e2e63-405c-4ebf-9294-aab775a34db5"
+  },
+  "j49": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2008-05-15",
+    "equipoId": "691e2e63-405c-4ebf-9294-aab775a34db5"
+  },
+  "j50": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2007-02-24",
+    "equipoId": "691e2e63-405c-4ebf-9294-aab775a34db5"
+  },
+  "j51": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2007-07-21",
+    "equipoId": "8167a3a5-8ce0-4760-86b1-c683681ab490"
+  },
+  "j52": {
+    "nombre": "Juan",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2010-08-11",
+    "equipoId": "8167a3a5-8ce0-4760-86b1-c683681ab490"
+  },
+  "j53": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2006-08-01",
+    "equipoId": "8167a3a5-8ce0-4760-86b1-c683681ab490"
+  },
+  "j54": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2010-05-12",
+    "equipoId": "8167a3a5-8ce0-4760-86b1-c683681ab490"
+  },
+  "j55": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2007-08-26",
+    "equipoId": "8167a3a5-8ce0-4760-86b1-c683681ab490"
+  },
+  "j56": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2007-09-05",
+    "equipoId": "8167a3a5-8ce0-4760-86b1-c683681ab490"
+  },
+  "j57": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-06-23",
+    "equipoId": "8167a3a5-8ce0-4760-86b1-c683681ab490"
+  },
+  "j58": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2008-11-09",
+    "equipoId": "8167a3a5-8ce0-4760-86b1-c683681ab490"
+  },
+  "j59": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2005-08-21",
+    "equipoId": "8167a3a5-8ce0-4760-86b1-c683681ab490"
+  },
+  "j60": {
+    "nombre": "Franco",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2009-08-27",
+    "equipoId": "8167a3a5-8ce0-4760-86b1-c683681ab490"
+  },
+  "j61": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2009-07-21",
+    "equipoId": "6ec9cf4b-b8cd-40c2-ba63-2ad6e853bb20"
+  },
+  "j62": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2008-07-17",
+    "equipoId": "6ec9cf4b-b8cd-40c2-ba63-2ad6e853bb20"
+  },
+  "j63": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2010-03-06",
+    "equipoId": "6ec9cf4b-b8cd-40c2-ba63-2ad6e853bb20"
+  },
+  "j64": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2007-06-11",
+    "equipoId": "6ec9cf4b-b8cd-40c2-ba63-2ad6e853bb20"
+  },
+  "j65": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2008-05-09",
+    "equipoId": "6ec9cf4b-b8cd-40c2-ba63-2ad6e853bb20"
+  },
+  "j66": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-07-02",
+    "equipoId": "6ec9cf4b-b8cd-40c2-ba63-2ad6e853bb20"
+  },
+  "j67": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2006-11-14",
+    "equipoId": "6ec9cf4b-b8cd-40c2-ba63-2ad6e853bb20"
+  },
+  "j68": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2008-04-15",
+    "equipoId": "6ec9cf4b-b8cd-40c2-ba63-2ad6e853bb20"
+  },
+  "j69": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2010-01-22",
+    "equipoId": "6ec9cf4b-b8cd-40c2-ba63-2ad6e853bb20"
+  },
+  "j70": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2006-06-11",
+    "equipoId": "6ec9cf4b-b8cd-40c2-ba63-2ad6e853bb20"
+  },
+  "j71": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2007-08-02",
+    "equipoId": "54781a2d-b52c-41e8-a38f-a1f788afbdee"
+  },
+  "j72": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2006-12-12",
+    "equipoId": "54781a2d-b52c-41e8-a38f-a1f788afbdee"
+  },
+  "j73": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2007-06-10",
+    "equipoId": "54781a2d-b52c-41e8-a38f-a1f788afbdee"
+  },
+  "j74": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2005-02-25",
+    "equipoId": "54781a2d-b52c-41e8-a38f-a1f788afbdee"
+  },
+  "j75": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2006-02-07",
+    "equipoId": "54781a2d-b52c-41e8-a38f-a1f788afbdee"
+  },
+  "j76": {
+    "nombre": "Juan",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2008-10-07",
+    "equipoId": "54781a2d-b52c-41e8-a38f-a1f788afbdee"
+  },
+  "j77": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2008-06-13",
+    "equipoId": "54781a2d-b52c-41e8-a38f-a1f788afbdee"
+  },
+  "j78": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2010-08-26",
+    "equipoId": "54781a2d-b52c-41e8-a38f-a1f788afbdee"
+  },
+  "j79": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2006-01-02",
+    "equipoId": "54781a2d-b52c-41e8-a38f-a1f788afbdee"
+  },
+  "j80": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2006-04-20",
+    "equipoId": "54781a2d-b52c-41e8-a38f-a1f788afbdee"
+  },
+  "j81": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2009-03-05",
+    "equipoId": "a66fe5d7-d2d1-46af-8a90-3df075852104"
+  },
+  "j82": {
+    "nombre": "Juan",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2010-08-06",
+    "equipoId": "a66fe5d7-d2d1-46af-8a90-3df075852104"
+  },
+  "j83": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2008-11-05",
+    "equipoId": "a66fe5d7-d2d1-46af-8a90-3df075852104"
+  },
+  "j84": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2005-11-04",
+    "equipoId": "a66fe5d7-d2d1-46af-8a90-3df075852104"
+  },
+  "j85": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2010-11-16",
+    "equipoId": "a66fe5d7-d2d1-46af-8a90-3df075852104"
+  },
+  "j86": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2006-12-15",
+    "equipoId": "a66fe5d7-d2d1-46af-8a90-3df075852104"
+  },
+  "j87": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2009-03-14",
+    "equipoId": "a66fe5d7-d2d1-46af-8a90-3df075852104"
+  },
+  "j88": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2005-04-17",
+    "equipoId": "a66fe5d7-d2d1-46af-8a90-3df075852104"
+  },
+  "j89": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2007-07-23",
+    "equipoId": "a66fe5d7-d2d1-46af-8a90-3df075852104"
+  },
+  "j90": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2005-09-27",
+    "equipoId": "a66fe5d7-d2d1-46af-8a90-3df075852104"
+  },
+  "j91": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2010-04-28",
+    "equipoId": "69e16365-529b-4264-9c79-61fd54909b89"
+  },
+  "j92": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2007-11-03",
+    "equipoId": "69e16365-529b-4264-9c79-61fd54909b89"
+  },
+  "j93": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2005-06-28",
+    "equipoId": "69e16365-529b-4264-9c79-61fd54909b89"
+  },
+  "j94": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2008-07-13",
+    "equipoId": "69e16365-529b-4264-9c79-61fd54909b89"
+  },
+  "j95": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-01-15",
+    "equipoId": "69e16365-529b-4264-9c79-61fd54909b89"
+  },
+  "j96": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2008-11-13",
+    "equipoId": "69e16365-529b-4264-9c79-61fd54909b89"
+  },
+  "j97": {
+    "nombre": "Franco",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-04-18",
+    "equipoId": "69e16365-529b-4264-9c79-61fd54909b89"
+  },
+  "j98": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2005-02-28",
+    "equipoId": "69e16365-529b-4264-9c79-61fd54909b89"
+  },
+  "j99": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2010-10-11",
+    "equipoId": "69e16365-529b-4264-9c79-61fd54909b89"
+  },
+  "j100": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2008-09-23",
+    "equipoId": "69e16365-529b-4264-9c79-61fd54909b89"
+  },
+  "j101": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2009-08-21",
+    "equipoId": "e2d1a4a7-6dea-443d-9849-2732ae15d303"
+  },
+  "j102": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2009-06-12",
+    "equipoId": "e2d1a4a7-6dea-443d-9849-2732ae15d303"
+  },
+  "j103": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2007-07-21",
+    "equipoId": "e2d1a4a7-6dea-443d-9849-2732ae15d303"
+  },
+  "j104": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2006-07-03",
+    "equipoId": "e2d1a4a7-6dea-443d-9849-2732ae15d303"
+  },
+  "j105": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2007-06-05",
+    "equipoId": "e2d1a4a7-6dea-443d-9849-2732ae15d303"
+  },
+  "j106": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2009-12-14",
+    "equipoId": "e2d1a4a7-6dea-443d-9849-2732ae15d303"
+  },
+  "j107": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-01-26",
+    "equipoId": "e2d1a4a7-6dea-443d-9849-2732ae15d303"
+  },
+  "j108": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2008-02-01",
+    "equipoId": "e2d1a4a7-6dea-443d-9849-2732ae15d303"
+  },
+  "j109": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2010-04-26",
+    "equipoId": "e2d1a4a7-6dea-443d-9849-2732ae15d303"
+  },
+  "j110": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2006-09-05",
+    "equipoId": "e2d1a4a7-6dea-443d-9849-2732ae15d303"
+  },
+  "j111": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 1,
+    "posicion": "Arquero",
+    "fechaNacimiento": "2008-07-03",
+    "equipoId": "35b182ec-2593-4bc6-9c62-655e5d851306"
+  },
+  "j112": {
+    "nombre": "Juan",
+    "numeroCamiseta": 2,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2009-10-13",
+    "equipoId": "35b182ec-2593-4bc6-9c62-655e5d851306"
+  },
+  "j113": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 3,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2007-02-13",
+    "equipoId": "35b182ec-2593-4bc6-9c62-655e5d851306"
+  },
+  "j114": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 4,
+    "posicion": "Defensor",
+    "fechaNacimiento": "2010-04-07",
+    "equipoId": "35b182ec-2593-4bc6-9c62-655e5d851306"
+  },
+  "j115": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 5,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2008-05-06",
+    "equipoId": "35b182ec-2593-4bc6-9c62-655e5d851306"
+  },
+  "j116": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 6,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2005-04-23",
+    "equipoId": "35b182ec-2593-4bc6-9c62-655e5d851306"
+  },
+  "j117": {
+    "nombre": "Franco",
+    "numeroCamiseta": 7,
+    "posicion": "Mediocampista",
+    "fechaNacimiento": "2010-03-02",
+    "equipoId": "35b182ec-2593-4bc6-9c62-655e5d851306"
+  },
+  "j118": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 8,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2006-09-09",
+    "equipoId": "35b182ec-2593-4bc6-9c62-655e5d851306"
+  },
+  "j119": {
+    "nombre": "Franco",
+    "numeroCamiseta": 9,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2008-11-17",
+    "equipoId": "35b182ec-2593-4bc6-9c62-655e5d851306"
+  },
+  "j120": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 10,
+    "posicion": "Delantero",
+    "fechaNacimiento": "2005-08-18",
+    "equipoId": "35b182ec-2593-4bc6-9c62-655e5d851306"
+  },
+  "j121": {
+    "nombre": "Juan",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2008-08-24",
+    "equipoId": "0cec4850-a4dd-4bea-b296-f7d10412c78b"
+  },
+  "j122": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2008-11-16",
+    "equipoId": "0cec4850-a4dd-4bea-b296-f7d10412c78b"
+  },
+  "j123": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2009-04-21",
+    "equipoId": "0cec4850-a4dd-4bea-b296-f7d10412c78b"
+  },
+  "j124": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2007-04-10",
+    "equipoId": "0cec4850-a4dd-4bea-b296-f7d10412c78b"
+  },
+  "j125": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2006-08-06",
+    "equipoId": "0cec4850-a4dd-4bea-b296-f7d10412c78b"
+  },
+  "j126": {
+    "nombre": "Franco",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2008-12-11",
+    "equipoId": "0cec4850-a4dd-4bea-b296-f7d10412c78b"
+  },
+  "j127": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2005-11-01",
+    "equipoId": "0cec4850-a4dd-4bea-b296-f7d10412c78b"
+  },
+  "j128": {
+    "nombre": "Franco",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2006-03-28",
+    "equipoId": "0cec4850-a4dd-4bea-b296-f7d10412c78b"
+  },
+  "j129": {
+    "nombre": "Juan",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2010-04-23",
+    "equipoId": "0cec4850-a4dd-4bea-b296-f7d10412c78b"
+  },
+  "j130": {
+    "nombre": "Franco",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2006-05-15",
+    "equipoId": "0cec4850-a4dd-4bea-b296-f7d10412c78b"
+  },
+  "j131": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2009-01-14",
+    "equipoId": "b0ed30cd-2f64-4830-81ee-2d9f760f8ee1"
+  },
+  "j132": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2008-03-28",
+    "equipoId": "b0ed30cd-2f64-4830-81ee-2d9f760f8ee1"
+  },
+  "j133": {
+    "nombre": "Franco",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2008-06-04",
+    "equipoId": "b0ed30cd-2f64-4830-81ee-2d9f760f8ee1"
+  },
+  "j134": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2008-04-24",
+    "equipoId": "b0ed30cd-2f64-4830-81ee-2d9f760f8ee1"
+  },
+  "j135": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2006-12-02",
+    "equipoId": "b0ed30cd-2f64-4830-81ee-2d9f760f8ee1"
+  },
+  "j136": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2008-07-01",
+    "equipoId": "b0ed30cd-2f64-4830-81ee-2d9f760f8ee1"
+  },
+  "j137": {
+    "nombre": "Juan",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2006-03-17",
+    "equipoId": "b0ed30cd-2f64-4830-81ee-2d9f760f8ee1"
+  },
+  "j138": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2008-08-04",
+    "equipoId": "b0ed30cd-2f64-4830-81ee-2d9f760f8ee1"
+  },
+  "j139": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2009-08-16",
+    "equipoId": "b0ed30cd-2f64-4830-81ee-2d9f760f8ee1"
+  },
+  "j140": {
+    "nombre": "Franco",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2010-09-17",
+    "equipoId": "b0ed30cd-2f64-4830-81ee-2d9f760f8ee1"
+  },
+  "j141": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2009-05-25",
+    "equipoId": "4b687d80-4e00-47e4-949d-911fc0b45878"
+  },
+  "j142": {
+    "nombre": "Franco",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2006-07-01",
+    "equipoId": "4b687d80-4e00-47e4-949d-911fc0b45878"
+  },
+  "j143": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2009-01-08",
+    "equipoId": "4b687d80-4e00-47e4-949d-911fc0b45878"
+  },
+  "j144": {
+    "nombre": "Juan",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2009-06-14",
+    "equipoId": "4b687d80-4e00-47e4-949d-911fc0b45878"
+  },
+  "j145": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2005-07-14",
+    "equipoId": "4b687d80-4e00-47e4-949d-911fc0b45878"
+  },
+  "j146": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2006-03-21",
+    "equipoId": "4b687d80-4e00-47e4-949d-911fc0b45878"
+  },
+  "j147": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2008-12-26",
+    "equipoId": "4b687d80-4e00-47e4-949d-911fc0b45878"
+  },
+  "j148": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2008-09-06",
+    "equipoId": "4b687d80-4e00-47e4-949d-911fc0b45878"
+  },
+  "j149": {
+    "nombre": "Juan",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2006-03-27",
+    "equipoId": "4b687d80-4e00-47e4-949d-911fc0b45878"
+  },
+  "j150": {
+    "nombre": "Juan",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2009-01-05",
+    "equipoId": "4b687d80-4e00-47e4-949d-911fc0b45878"
+  },
+  "j151": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2008-12-11",
+    "equipoId": "a0964390-9c52-4bff-9f61-e56dc06ed72c"
+  },
+  "j152": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2005-09-23",
+    "equipoId": "a0964390-9c52-4bff-9f61-e56dc06ed72c"
+  },
+  "j153": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2008-12-19",
+    "equipoId": "a0964390-9c52-4bff-9f61-e56dc06ed72c"
+  },
+  "j154": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2010-04-08",
+    "equipoId": "a0964390-9c52-4bff-9f61-e56dc06ed72c"
+  },
+  "j155": {
+    "nombre": "Juan",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2009-03-27",
+    "equipoId": "a0964390-9c52-4bff-9f61-e56dc06ed72c"
+  },
+  "j156": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2008-05-13",
+    "equipoId": "a0964390-9c52-4bff-9f61-e56dc06ed72c"
+  },
+  "j157": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2010-12-22",
+    "equipoId": "a0964390-9c52-4bff-9f61-e56dc06ed72c"
+  },
+  "j158": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2010-04-27",
+    "equipoId": "a0964390-9c52-4bff-9f61-e56dc06ed72c"
+  },
+  "j159": {
+    "nombre": "Franco",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2009-03-22",
+    "equipoId": "a0964390-9c52-4bff-9f61-e56dc06ed72c"
+  },
+  "j160": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2007-11-11",
+    "equipoId": "a0964390-9c52-4bff-9f61-e56dc06ed72c"
+  },
+  "j161": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2008-05-16",
+    "equipoId": "2edd0102-012c-4263-81ae-943c6f1dc282"
+  },
+  "j162": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2006-08-05",
+    "equipoId": "2edd0102-012c-4263-81ae-943c6f1dc282"
+  },
+  "j163": {
+    "nombre": "Franco",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2010-05-02",
+    "equipoId": "2edd0102-012c-4263-81ae-943c6f1dc282"
+  },
+  "j164": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2007-11-10",
+    "equipoId": "2edd0102-012c-4263-81ae-943c6f1dc282"
+  },
+  "j165": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2009-04-28",
+    "equipoId": "2edd0102-012c-4263-81ae-943c6f1dc282"
+  },
+  "j166": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2008-06-22",
+    "equipoId": "2edd0102-012c-4263-81ae-943c6f1dc282"
+  },
+  "j167": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2008-01-15",
+    "equipoId": "2edd0102-012c-4263-81ae-943c6f1dc282"
+  },
+  "j168": {
+    "nombre": "Franco",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2007-05-19",
+    "equipoId": "2edd0102-012c-4263-81ae-943c6f1dc282"
+  },
+  "j169": {
+    "nombre": "Juan",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2009-05-22",
+    "equipoId": "2edd0102-012c-4263-81ae-943c6f1dc282"
+  },
+  "j170": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2010-02-26",
+    "equipoId": "2edd0102-012c-4263-81ae-943c6f1dc282"
+  },
+  "j171": {
+    "nombre": "Juan",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2009-07-04",
+    "equipoId": "3f484e91-88f2-4c01-b53e-5cc3049ed609"
+  },
+  "j172": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2006-01-26",
+    "equipoId": "3f484e91-88f2-4c01-b53e-5cc3049ed609"
+  },
+  "j173": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2006-10-25",
+    "equipoId": "3f484e91-88f2-4c01-b53e-5cc3049ed609"
+  },
+  "j174": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2007-01-22",
+    "equipoId": "3f484e91-88f2-4c01-b53e-5cc3049ed609"
+  },
+  "j175": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2008-09-25",
+    "equipoId": "3f484e91-88f2-4c01-b53e-5cc3049ed609"
+  },
+  "j176": {
+    "nombre": "Franco",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2007-12-21",
+    "equipoId": "3f484e91-88f2-4c01-b53e-5cc3049ed609"
+  },
+  "j177": {
+    "nombre": "Juan",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2005-06-26",
+    "equipoId": "3f484e91-88f2-4c01-b53e-5cc3049ed609"
+  },
+  "j178": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2005-12-04",
+    "equipoId": "3f484e91-88f2-4c01-b53e-5cc3049ed609"
+  },
+  "j179": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2009-07-20",
+    "equipoId": "3f484e91-88f2-4c01-b53e-5cc3049ed609"
+  },
+  "j180": {
+    "nombre": "Juan",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2009-01-09",
+    "equipoId": "3f484e91-88f2-4c01-b53e-5cc3049ed609"
+  },
+  "j181": {
+    "nombre": "Juan",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2008-08-27",
+    "equipoId": "e25aa3a0-3b2c-450b-b250-703051024109"
+  },
+  "j182": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2010-02-13",
+    "equipoId": "e25aa3a0-3b2c-450b-b250-703051024109"
+  },
+  "j183": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2006-09-26",
+    "equipoId": "e25aa3a0-3b2c-450b-b250-703051024109"
+  },
+  "j184": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2009-01-26",
+    "equipoId": "e25aa3a0-3b2c-450b-b250-703051024109"
+  },
+  "j185": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2010-06-12",
+    "equipoId": "e25aa3a0-3b2c-450b-b250-703051024109"
+  },
+  "j186": {
+    "nombre": "Juan",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2007-02-10",
+    "equipoId": "e25aa3a0-3b2c-450b-b250-703051024109"
+  },
+  "j187": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2006-05-24",
+    "equipoId": "e25aa3a0-3b2c-450b-b250-703051024109"
+  },
+  "j188": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2006-12-13",
+    "equipoId": "e25aa3a0-3b2c-450b-b250-703051024109"
+  },
+  "j189": {
+    "nombre": "Juan",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2007-02-07",
+    "equipoId": "e25aa3a0-3b2c-450b-b250-703051024109"
+  },
+  "j190": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2009-05-18",
+    "equipoId": "e25aa3a0-3b2c-450b-b250-703051024109"
+  },
+  "j191": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2006-03-05",
+    "equipoId": "1b3ec62f-9305-40d7-adf6-f0e673f3c0d4"
+  },
+  "j192": {
+    "nombre": "Juan",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2008-01-20",
+    "equipoId": "1b3ec62f-9305-40d7-adf6-f0e673f3c0d4"
+  },
+  "j193": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2005-06-18",
+    "equipoId": "1b3ec62f-9305-40d7-adf6-f0e673f3c0d4"
+  },
+  "j194": {
+    "nombre": "Franco",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2006-08-15",
+    "equipoId": "1b3ec62f-9305-40d7-adf6-f0e673f3c0d4"
+  },
+  "j195": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2009-03-08",
+    "equipoId": "1b3ec62f-9305-40d7-adf6-f0e673f3c0d4"
+  },
+  "j196": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2006-05-06",
+    "equipoId": "1b3ec62f-9305-40d7-adf6-f0e673f3c0d4"
+  },
+  "j197": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2010-04-01",
+    "equipoId": "1b3ec62f-9305-40d7-adf6-f0e673f3c0d4"
+  },
+  "j198": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2005-05-09",
+    "equipoId": "1b3ec62f-9305-40d7-adf6-f0e673f3c0d4"
+  },
+  "j199": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2008-03-03",
+    "equipoId": "1b3ec62f-9305-40d7-adf6-f0e673f3c0d4"
+  },
+  "j200": {
+    "nombre": "Juan",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2007-10-06",
+    "equipoId": "1b3ec62f-9305-40d7-adf6-f0e673f3c0d4"
+  },
+  "j201": {
+    "nombre": "Franco",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2005-06-07",
+    "equipoId": "1a92537e-51e6-43b3-9d21-802ac00d3c34"
+  },
+  "j202": {
+    "nombre": "Juan",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2006-11-19",
+    "equipoId": "1a92537e-51e6-43b3-9d21-802ac00d3c34"
+  },
+  "j203": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2007-05-15",
+    "equipoId": "1a92537e-51e6-43b3-9d21-802ac00d3c34"
+  },
+  "j204": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2006-11-23",
+    "equipoId": "1a92537e-51e6-43b3-9d21-802ac00d3c34"
+  },
+  "j205": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2010-10-09",
+    "equipoId": "1a92537e-51e6-43b3-9d21-802ac00d3c34"
+  },
+  "j206": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2010-11-06",
+    "equipoId": "1a92537e-51e6-43b3-9d21-802ac00d3c34"
+  },
+  "j207": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2008-10-25",
+    "equipoId": "1a92537e-51e6-43b3-9d21-802ac00d3c34"
+  },
+  "j208": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2008-09-06",
+    "equipoId": "1a92537e-51e6-43b3-9d21-802ac00d3c34"
+  },
+  "j209": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2010-02-10",
+    "equipoId": "1a92537e-51e6-43b3-9d21-802ac00d3c34"
+  },
+  "j210": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2010-10-03",
+    "equipoId": "1a92537e-51e6-43b3-9d21-802ac00d3c34"
+  },
+  "j211": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2005-09-07",
+    "equipoId": "8a4b439f-f773-44a6-8260-39e1b5b633bc"
+  },
+  "j212": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2006-05-24",
+    "equipoId": "8a4b439f-f773-44a6-8260-39e1b5b633bc"
+  },
+  "j213": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2008-03-27",
+    "equipoId": "8a4b439f-f773-44a6-8260-39e1b5b633bc"
+  },
+  "j214": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2010-05-08",
+    "equipoId": "8a4b439f-f773-44a6-8260-39e1b5b633bc"
+  },
+  "j215": {
+    "nombre": "Franco",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2007-07-09",
+    "equipoId": "8a4b439f-f773-44a6-8260-39e1b5b633bc"
+  },
+  "j216": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2008-01-26",
+    "equipoId": "8a4b439f-f773-44a6-8260-39e1b5b633bc"
+  },
+  "j217": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2005-06-02",
+    "equipoId": "8a4b439f-f773-44a6-8260-39e1b5b633bc"
+  },
+  "j218": {
+    "nombre": "Franco",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2006-02-03",
+    "equipoId": "8a4b439f-f773-44a6-8260-39e1b5b633bc"
+  },
+  "j219": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2005-02-07",
+    "equipoId": "8a4b439f-f773-44a6-8260-39e1b5b633bc"
+  },
+  "j220": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2010-02-24",
+    "equipoId": "8a4b439f-f773-44a6-8260-39e1b5b633bc"
+  },
+  "j221": {
+    "nombre": "Juan",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2007-02-26",
+    "equipoId": "a170bac8-3948-4662-8312-de51f3087aaa"
+  },
+  "j222": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2006-07-03",
+    "equipoId": "a170bac8-3948-4662-8312-de51f3087aaa"
+  },
+  "j223": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2010-06-04",
+    "equipoId": "a170bac8-3948-4662-8312-de51f3087aaa"
+  },
+  "j224": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2009-03-01",
+    "equipoId": "a170bac8-3948-4662-8312-de51f3087aaa"
+  },
+  "j225": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2007-01-25",
+    "equipoId": "a170bac8-3948-4662-8312-de51f3087aaa"
+  },
+  "j226": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2009-05-08",
+    "equipoId": "a170bac8-3948-4662-8312-de51f3087aaa"
+  },
+  "j227": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2010-06-03",
+    "equipoId": "a170bac8-3948-4662-8312-de51f3087aaa"
+  },
+  "j228": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2008-05-25",
+    "equipoId": "a170bac8-3948-4662-8312-de51f3087aaa"
+  },
+  "j229": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2006-07-22",
+    "equipoId": "a170bac8-3948-4662-8312-de51f3087aaa"
+  },
+  "j230": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2009-01-28",
+    "equipoId": "a170bac8-3948-4662-8312-de51f3087aaa"
+  },
+  "j231": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 1,
+    "posicion": "Base",
+    "fechaNacimiento": "2006-04-10",
+    "equipoId": "a5ddb22f-f796-415a-9971-e069f41f7bed"
+  },
+  "j232": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 2,
+    "posicion": "Base",
+    "fechaNacimiento": "2006-07-11",
+    "equipoId": "a5ddb22f-f796-415a-9971-e069f41f7bed"
+  },
+  "j233": {
+    "nombre": "Juan",
+    "numeroCamiseta": 3,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2008-01-12",
+    "equipoId": "a5ddb22f-f796-415a-9971-e069f41f7bed"
+  },
+  "j234": {
+    "nombre": "Franco",
+    "numeroCamiseta": 4,
+    "posicion": "Escolta",
+    "fechaNacimiento": "2006-02-06",
+    "equipoId": "a5ddb22f-f796-415a-9971-e069f41f7bed"
+  },
+  "j235": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 5,
+    "posicion": "Alero",
+    "fechaNacimiento": "2008-01-08",
+    "equipoId": "a5ddb22f-f796-415a-9971-e069f41f7bed"
+  },
+  "j236": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 6,
+    "posicion": "Alero",
+    "fechaNacimiento": "2007-02-02",
+    "equipoId": "a5ddb22f-f796-415a-9971-e069f41f7bed"
+  },
+  "j237": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 7,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2009-09-06",
+    "equipoId": "a5ddb22f-f796-415a-9971-e069f41f7bed"
+  },
+  "j238": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 8,
+    "posicion": "Ala-Pívot",
+    "fechaNacimiento": "2010-02-16",
+    "equipoId": "a5ddb22f-f796-415a-9971-e069f41f7bed"
+  },
+  "j239": {
+    "nombre": "Juan",
+    "numeroCamiseta": 9,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2006-12-03",
+    "equipoId": "a5ddb22f-f796-415a-9971-e069f41f7bed"
+  },
+  "j240": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 10,
+    "posicion": "Pívot",
+    "fechaNacimiento": "2007-03-18",
+    "equipoId": "a5ddb22f-f796-415a-9971-e069f41f7bed"
+  },
+  "j241": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2009-05-20",
+    "equipoId": "cab2fc7a-d484-4d57-940a-c2f2aec2fc84"
+  },
+  "j242": {
+    "nombre": "Juan",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2010-06-05",
+    "equipoId": "cab2fc7a-d484-4d57-940a-c2f2aec2fc84"
+  },
+  "j243": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2006-09-17",
+    "equipoId": "cab2fc7a-d484-4d57-940a-c2f2aec2fc84"
+  },
+  "j244": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2007-09-20",
+    "equipoId": "cab2fc7a-d484-4d57-940a-c2f2aec2fc84"
+  },
+  "j245": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2010-03-26",
+    "equipoId": "cab2fc7a-d484-4d57-940a-c2f2aec2fc84"
+  },
+  "j246": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2005-05-23",
+    "equipoId": "cab2fc7a-d484-4d57-940a-c2f2aec2fc84"
+  },
+  "j247": {
+    "nombre": "Juan",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2007-03-04",
+    "equipoId": "cab2fc7a-d484-4d57-940a-c2f2aec2fc84"
+  },
+  "j248": {
+    "nombre": "Juan",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2010-05-18",
+    "equipoId": "cab2fc7a-d484-4d57-940a-c2f2aec2fc84"
+  },
+  "j249": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2006-02-22",
+    "equipoId": "cab2fc7a-d484-4d57-940a-c2f2aec2fc84"
+  },
+  "j250": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2007-03-09",
+    "equipoId": "cab2fc7a-d484-4d57-940a-c2f2aec2fc84"
+  },
+  "j251": {
+    "nombre": "Franco",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2008-01-17",
+    "equipoId": "9f2e2e4d-7311-4932-830a-9a5c51d233e6"
+  },
+  "j252": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2009-01-24",
+    "equipoId": "9f2e2e4d-7311-4932-830a-9a5c51d233e6"
+  },
+  "j253": {
+    "nombre": "Franco",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2006-12-19",
+    "equipoId": "9f2e2e4d-7311-4932-830a-9a5c51d233e6"
+  },
+  "j254": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2006-07-16",
+    "equipoId": "9f2e2e4d-7311-4932-830a-9a5c51d233e6"
+  },
+  "j255": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2005-05-01",
+    "equipoId": "9f2e2e4d-7311-4932-830a-9a5c51d233e6"
+  },
+  "j256": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2009-02-09",
+    "equipoId": "9f2e2e4d-7311-4932-830a-9a5c51d233e6"
+  },
+  "j257": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2006-10-27",
+    "equipoId": "9f2e2e4d-7311-4932-830a-9a5c51d233e6"
+  },
+  "j258": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2009-08-06",
+    "equipoId": "9f2e2e4d-7311-4932-830a-9a5c51d233e6"
+  },
+  "j259": {
+    "nombre": "Franco",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2005-03-24",
+    "equipoId": "9f2e2e4d-7311-4932-830a-9a5c51d233e6"
+  },
+  "j260": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2005-06-14",
+    "equipoId": "9f2e2e4d-7311-4932-830a-9a5c51d233e6"
+  },
+  "j261": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2007-01-25",
+    "equipoId": "64f97afe-4754-4e4e-b97a-a9f99bbd9476"
+  },
+  "j262": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2008-04-01",
+    "equipoId": "64f97afe-4754-4e4e-b97a-a9f99bbd9476"
+  },
+  "j263": {
+    "nombre": "Juan",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2005-10-06",
+    "equipoId": "64f97afe-4754-4e4e-b97a-a9f99bbd9476"
+  },
+  "j264": {
+    "nombre": "Juan",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2008-06-24",
+    "equipoId": "64f97afe-4754-4e4e-b97a-a9f99bbd9476"
+  },
+  "j265": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2006-05-18",
+    "equipoId": "64f97afe-4754-4e4e-b97a-a9f99bbd9476"
+  },
+  "j266": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2010-11-04",
+    "equipoId": "64f97afe-4754-4e4e-b97a-a9f99bbd9476"
+  },
+  "j267": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2010-02-23",
+    "equipoId": "64f97afe-4754-4e4e-b97a-a9f99bbd9476"
+  },
+  "j268": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2009-12-27",
+    "equipoId": "64f97afe-4754-4e4e-b97a-a9f99bbd9476"
+  },
+  "j269": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2007-07-21",
+    "equipoId": "64f97afe-4754-4e4e-b97a-a9f99bbd9476"
+  },
+  "j270": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2007-05-16",
+    "equipoId": "64f97afe-4754-4e4e-b97a-a9f99bbd9476"
+  },
+  "j271": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2009-04-25",
+    "equipoId": "b810b129-4122-4078-9b47-73ca9752fd1c"
+  },
+  "j272": {
+    "nombre": "Franco",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2007-03-03",
+    "equipoId": "b810b129-4122-4078-9b47-73ca9752fd1c"
+  },
+  "j273": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2010-07-20",
+    "equipoId": "b810b129-4122-4078-9b47-73ca9752fd1c"
+  },
+  "j274": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2009-10-07",
+    "equipoId": "b810b129-4122-4078-9b47-73ca9752fd1c"
+  },
+  "j275": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2005-07-15",
+    "equipoId": "b810b129-4122-4078-9b47-73ca9752fd1c"
+  },
+  "j276": {
+    "nombre": "Juan",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2009-11-09",
+    "equipoId": "b810b129-4122-4078-9b47-73ca9752fd1c"
+  },
+  "j277": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2006-03-23",
+    "equipoId": "b810b129-4122-4078-9b47-73ca9752fd1c"
+  },
+  "j278": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2005-12-28",
+    "equipoId": "b810b129-4122-4078-9b47-73ca9752fd1c"
+  },
+  "j279": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2010-03-20",
+    "equipoId": "b810b129-4122-4078-9b47-73ca9752fd1c"
+  },
+  "j280": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2005-03-19",
+    "equipoId": "b810b129-4122-4078-9b47-73ca9752fd1c"
+  },
+  "j281": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2006-04-03",
+    "equipoId": "ecff2d92-35c6-4fa3-a770-2e40417b6fe1"
+  },
+  "j282": {
+    "nombre": "Franco",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2005-01-21",
+    "equipoId": "ecff2d92-35c6-4fa3-a770-2e40417b6fe1"
+  },
+  "j283": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2006-05-14",
+    "equipoId": "ecff2d92-35c6-4fa3-a770-2e40417b6fe1"
+  },
+  "j284": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2009-01-12",
+    "equipoId": "ecff2d92-35c6-4fa3-a770-2e40417b6fe1"
+  },
+  "j285": {
+    "nombre": "Franco",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2006-03-15",
+    "equipoId": "ecff2d92-35c6-4fa3-a770-2e40417b6fe1"
+  },
+  "j286": {
+    "nombre": "Juan",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2005-11-19",
+    "equipoId": "ecff2d92-35c6-4fa3-a770-2e40417b6fe1"
+  },
+  "j287": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2006-02-17",
+    "equipoId": "ecff2d92-35c6-4fa3-a770-2e40417b6fe1"
+  },
+  "j288": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2010-05-28",
+    "equipoId": "ecff2d92-35c6-4fa3-a770-2e40417b6fe1"
+  },
+  "j289": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2005-09-10",
+    "equipoId": "ecff2d92-35c6-4fa3-a770-2e40417b6fe1"
+  },
+  "j290": {
+    "nombre": "Juan",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2009-02-13",
+    "equipoId": "ecff2d92-35c6-4fa3-a770-2e40417b6fe1"
+  },
+  "j291": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2008-11-10",
+    "equipoId": "e47bddb1-065f-4bae-8d40-8e032d60ce6c"
+  },
+  "j292": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2007-09-24",
+    "equipoId": "e47bddb1-065f-4bae-8d40-8e032d60ce6c"
+  },
+  "j293": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2005-05-18",
+    "equipoId": "e47bddb1-065f-4bae-8d40-8e032d60ce6c"
+  },
+  "j294": {
+    "nombre": "Juan",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2006-04-19",
+    "equipoId": "e47bddb1-065f-4bae-8d40-8e032d60ce6c"
+  },
+  "j295": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2009-03-16",
+    "equipoId": "e47bddb1-065f-4bae-8d40-8e032d60ce6c"
+  },
+  "j296": {
+    "nombre": "Franco",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2010-05-15",
+    "equipoId": "e47bddb1-065f-4bae-8d40-8e032d60ce6c"
+  },
+  "j297": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2008-04-11",
+    "equipoId": "e47bddb1-065f-4bae-8d40-8e032d60ce6c"
+  },
+  "j298": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2010-11-07",
+    "equipoId": "e47bddb1-065f-4bae-8d40-8e032d60ce6c"
+  },
+  "j299": {
+    "nombre": "Mateo",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2008-10-27",
+    "equipoId": "e47bddb1-065f-4bae-8d40-8e032d60ce6c"
+  },
+  "j300": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2009-11-13",
+    "equipoId": "e47bddb1-065f-4bae-8d40-8e032d60ce6c"
+  },
+  "j301": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2007-02-04",
+    "equipoId": "9d8dfad2-b612-4cba-b110-74eb88ed775e"
+  },
+  "j302": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2008-08-22",
+    "equipoId": "9d8dfad2-b612-4cba-b110-74eb88ed775e"
+  },
+  "j303": {
+    "nombre": "Franco",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2005-04-04",
+    "equipoId": "9d8dfad2-b612-4cba-b110-74eb88ed775e"
+  },
+  "j304": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2007-12-15",
+    "equipoId": "9d8dfad2-b612-4cba-b110-74eb88ed775e"
+  },
+  "j305": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2008-09-21",
+    "equipoId": "9d8dfad2-b612-4cba-b110-74eb88ed775e"
+  },
+  "j306": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2007-09-09",
+    "equipoId": "9d8dfad2-b612-4cba-b110-74eb88ed775e"
+  },
+  "j307": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2008-08-20",
+    "equipoId": "9d8dfad2-b612-4cba-b110-74eb88ed775e"
+  },
+  "j308": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2006-02-27",
+    "equipoId": "9d8dfad2-b612-4cba-b110-74eb88ed775e"
+  },
+  "j309": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2010-02-06",
+    "equipoId": "9d8dfad2-b612-4cba-b110-74eb88ed775e"
+  },
+  "j310": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2008-12-07",
+    "equipoId": "9d8dfad2-b612-4cba-b110-74eb88ed775e"
+  },
+  "j311": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2007-05-28",
+    "equipoId": "525f0349-6234-4b69-bb5c-b9be18dad6de"
+  },
+  "j312": {
+    "nombre": "Franco",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2005-09-19",
+    "equipoId": "525f0349-6234-4b69-bb5c-b9be18dad6de"
+  },
+  "j313": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2005-06-04",
+    "equipoId": "525f0349-6234-4b69-bb5c-b9be18dad6de"
+  },
+  "j314": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2008-08-28",
+    "equipoId": "525f0349-6234-4b69-bb5c-b9be18dad6de"
+  },
+  "j315": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2006-09-19",
+    "equipoId": "525f0349-6234-4b69-bb5c-b9be18dad6de"
+  },
+  "j316": {
+    "nombre": "Juan",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2008-08-16",
+    "equipoId": "525f0349-6234-4b69-bb5c-b9be18dad6de"
+  },
+  "j317": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2009-04-25",
+    "equipoId": "525f0349-6234-4b69-bb5c-b9be18dad6de"
+  },
+  "j318": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2006-06-01",
+    "equipoId": "525f0349-6234-4b69-bb5c-b9be18dad6de"
+  },
+  "j319": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2009-09-20",
+    "equipoId": "525f0349-6234-4b69-bb5c-b9be18dad6de"
+  },
+  "j320": {
+    "nombre": "Juan",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2009-11-26",
+    "equipoId": "525f0349-6234-4b69-bb5c-b9be18dad6de"
+  },
+  "j321": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2006-01-11",
+    "equipoId": "d56e6449-3b86-4162-98ce-22b8ae4bf3b9"
+  },
+  "j322": {
+    "nombre": "Franco",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2007-05-04",
+    "equipoId": "d56e6449-3b86-4162-98ce-22b8ae4bf3b9"
+  },
+  "j323": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2010-02-09",
+    "equipoId": "d56e6449-3b86-4162-98ce-22b8ae4bf3b9"
+  },
+  "j324": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2009-01-10",
+    "equipoId": "d56e6449-3b86-4162-98ce-22b8ae4bf3b9"
+  },
+  "j325": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2009-01-13",
+    "equipoId": "d56e6449-3b86-4162-98ce-22b8ae4bf3b9"
+  },
+  "j326": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2009-12-11",
+    "equipoId": "d56e6449-3b86-4162-98ce-22b8ae4bf3b9"
+  },
+  "j327": {
+    "nombre": "Franco",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2005-01-21",
+    "equipoId": "d56e6449-3b86-4162-98ce-22b8ae4bf3b9"
+  },
+  "j328": {
+    "nombre": "Juan",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2008-11-23",
+    "equipoId": "d56e6449-3b86-4162-98ce-22b8ae4bf3b9"
+  },
+  "j329": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2007-06-19",
+    "equipoId": "d56e6449-3b86-4162-98ce-22b8ae4bf3b9"
+  },
+  "j330": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2009-09-14",
+    "equipoId": "d56e6449-3b86-4162-98ce-22b8ae4bf3b9"
+  },
+  "j331": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2007-03-28",
+    "equipoId": "63e4951c-f92f-425e-bb48-0dc3a020647c"
+  },
+  "j332": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2010-10-19",
+    "equipoId": "63e4951c-f92f-425e-bb48-0dc3a020647c"
+  },
+  "j333": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2006-02-20",
+    "equipoId": "63e4951c-f92f-425e-bb48-0dc3a020647c"
+  },
+  "j334": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2005-09-08",
+    "equipoId": "63e4951c-f92f-425e-bb48-0dc3a020647c"
+  },
+  "j335": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2006-04-06",
+    "equipoId": "63e4951c-f92f-425e-bb48-0dc3a020647c"
+  },
+  "j336": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2009-03-13",
+    "equipoId": "63e4951c-f92f-425e-bb48-0dc3a020647c"
+  },
+  "j337": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2006-04-03",
+    "equipoId": "63e4951c-f92f-425e-bb48-0dc3a020647c"
+  },
+  "j338": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2009-10-24",
+    "equipoId": "63e4951c-f92f-425e-bb48-0dc3a020647c"
+  },
+  "j339": {
+    "nombre": "Juan",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2006-11-08",
+    "equipoId": "63e4951c-f92f-425e-bb48-0dc3a020647c"
+  },
+  "j340": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2006-10-22",
+    "equipoId": "63e4951c-f92f-425e-bb48-0dc3a020647c"
+  },
+  "j341": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2010-03-21",
+    "equipoId": "d3a569e7-2cd2-4609-9ba7-4b943a488b76"
+  },
+  "j342": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2008-10-17",
+    "equipoId": "d3a569e7-2cd2-4609-9ba7-4b943a488b76"
+  },
+  "j343": {
+    "nombre": "Santiago",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2009-02-06",
+    "equipoId": "d3a569e7-2cd2-4609-9ba7-4b943a488b76"
+  },
+  "j344": {
+    "nombre": "Franco",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2007-08-17",
+    "equipoId": "d3a569e7-2cd2-4609-9ba7-4b943a488b76"
+  },
+  "j345": {
+    "nombre": "Nicolás",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2007-02-27",
+    "equipoId": "d3a569e7-2cd2-4609-9ba7-4b943a488b76"
+  },
+  "j346": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2009-11-06",
+    "equipoId": "d3a569e7-2cd2-4609-9ba7-4b943a488b76"
+  },
+  "j347": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2005-12-02",
+    "equipoId": "d3a569e7-2cd2-4609-9ba7-4b943a488b76"
+  },
+  "j348": {
+    "nombre": "Juan",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2010-03-27",
+    "equipoId": "d3a569e7-2cd2-4609-9ba7-4b943a488b76"
+  },
+  "j349": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2006-02-01",
+    "equipoId": "d3a569e7-2cd2-4609-9ba7-4b943a488b76"
+  },
+  "j350": {
+    "nombre": "Valentín",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2005-06-07",
+    "equipoId": "d3a569e7-2cd2-4609-9ba7-4b943a488b76"
+  },
+  "j351": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 1,
+    "posicion": "Armador",
+    "fechaNacimiento": "2008-04-20",
+    "equipoId": "50614fce-3770-4ff9-8229-892a7aaf81cb"
+  },
+  "j352": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 2,
+    "posicion": "Armador",
+    "fechaNacimiento": "2008-02-20",
+    "equipoId": "50614fce-3770-4ff9-8229-892a7aaf81cb"
+  },
+  "j353": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 3,
+    "posicion": "Central",
+    "fechaNacimiento": "2009-01-02",
+    "equipoId": "50614fce-3770-4ff9-8229-892a7aaf81cb"
+  },
+  "j354": {
+    "nombre": "Franco",
+    "numeroCamiseta": 4,
+    "posicion": "Central",
+    "fechaNacimiento": "2006-11-09",
+    "equipoId": "50614fce-3770-4ff9-8229-892a7aaf81cb"
+  },
+  "j355": {
+    "nombre": "Franco",
+    "numeroCamiseta": 5,
+    "posicion": "Central",
+    "fechaNacimiento": "2010-10-28",
+    "equipoId": "50614fce-3770-4ff9-8229-892a7aaf81cb"
+  },
+  "j356": {
+    "nombre": "Tomás",
+    "numeroCamiseta": 6,
+    "posicion": "Punta",
+    "fechaNacimiento": "2010-12-15",
+    "equipoId": "50614fce-3770-4ff9-8229-892a7aaf81cb"
+  },
+  "j357": {
+    "nombre": "Lucas",
+    "numeroCamiseta": 7,
+    "posicion": "Punta",
+    "fechaNacimiento": "2010-07-22",
+    "equipoId": "50614fce-3770-4ff9-8229-892a7aaf81cb"
+  },
+  "j358": {
+    "nombre": "Benjamín",
+    "numeroCamiseta": 8,
+    "posicion": "Punta",
+    "fechaNacimiento": "2010-02-10",
+    "equipoId": "50614fce-3770-4ff9-8229-892a7aaf81cb"
+  },
+  "j359": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 9,
+    "posicion": "Opuesto",
+    "fechaNacimiento": "2008-08-17",
+    "equipoId": "50614fce-3770-4ff9-8229-892a7aaf81cb"
+  },
+  "j360": {
+    "nombre": "Thiago",
+    "numeroCamiseta": 10,
+    "posicion": "Líbero",
+    "fechaNacimiento": "2008-01-28",
+    "equipoId": "50614fce-3770-4ff9-8229-892a7aaf81cb"
+  }
+}

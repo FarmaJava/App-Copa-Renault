@@ -1,0 +1,12 @@
+mutation {
+  j351: jugador_insert(data:{nombre:"Thiago Romero" numeroCamiseta:1 posicion:"Armador" fechaNacimiento:"2008-04-20" equipoId:"50614fce-3770-4ff9-8229-892a7aaf81cb"})
+  j352: jugador_insert(data:{nombre:"Tomás Romero" numeroCamiseta:2 posicion:"Armador" fechaNacimiento:"2008-02-20" equipoId:"50614fce-3770-4ff9-8229-892a7aaf81cb"})
+  j353: jugador_insert(data:{nombre:"Thiago Romero" numeroCamiseta:3 posicion:"Central" fechaNacimiento:"2009-01-02" equipoId:"50614fce-3770-4ff9-8229-892a7aaf81cb"})
+  j354: jugador_insert(data:{nombre:"Franco López" numeroCamiseta:4 posicion:"Central" fechaNacimiento:"2006-11-09" equipoId:"50614fce-3770-4ff9-8229-892a7aaf81cb"})
+  j355: jugador_insert(data:{nombre:"Franco Díaz" numeroCamiseta:5 posicion:"Central" fechaNacimiento:"2010-10-28" equipoId:"50614fce-3770-4ff9-8229-892a7aaf81cb"})
+  j356: jugador_insert(data:{nombre:"Tomás Fernández" numeroCamiseta:6 posicion:"Punta" fechaNacimiento:"2010-12-15" equipoId:"50614fce-3770-4ff9-8229-892a7aaf81cb"})
+  j357: jugador_insert(data:{nombre:"Lucas López" numeroCamiseta:7 posicion:"Punta" fechaNacimiento:"2010-07-22" equipoId:"50614fce-3770-4ff9-8229-892a7aaf81cb"})
+  j358: jugador_insert(data:{nombre:"Benjamín Díaz" numeroCamiseta:8 posicion:"Punta" fechaNacimiento:"2010-02-10" equipoId:"50614fce-3770-4ff9-8229-892a7aaf81cb"})
+  j359: jugador_insert(data:{nombre:"Thiago López" numeroCamiseta:9 posicion:"Opuesto" fechaNacimiento:"2008-08-17" equipoId:"50614fce-3770-4ff9-8229-892a7aaf81cb"})
+  j360: jugador_insert(data:{nombre:"Thiago Gómez" numeroCamiseta:10 posicion:"Líbero" fechaNacimiento:"2008-01-28" equipoId:"50614fce-3770-4ff9-8229-892a7aaf81cb"})
+}
