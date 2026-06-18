@@ -1,6 +1,7 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useState, useEffect } from "react";
+import { listSponsors } from "../dataconnect-generated/esm/index.esm.js";
 import "./Deportes.css";
 
 // Componente reutilizable para edición inline. En modo admin, al hacer click
@@ -170,10 +171,13 @@ const [deportes, setDeportes] = useState([
   { id: "a87f074f-a29d-49dc-a13d-64dd4ff78908", nombre: "Vóley", inicial: "V", imagen: "https://media.tycsports.com/files/2022/09/30/486024/voley_862x485.webp?v=1" },
 ]);
 
-  const [sponsors, setSponsors] = useState(
-    Array.from({ length: 4 }, () => ({ nombre: "", imagen: "" }))
-  );
-  const [sponsorModalIndex, setSponsorModalIndex] = useState(null);
+const [sponsors, setSponsors] = useState([]);
+
+useEffect(() => {
+  listSponsors()
+    .then(res => setSponsors(res.data?.sponsors || []))
+    .catch(e => console.error("Error cargando sponsors:", e));
+}, []);
 
   const [productos, setProductos] = useState([
     { nombre: "", detalles: "", precio: "" },
@@ -181,6 +185,7 @@ const [deportes, setDeportes] = useState([
     { nombre: "", detalles: "", precio: "" },
   ]);
   const [productoModalIndex, setProductoModalIndex] = useState(null);
+  const [sponsorModalIndex, setSponsorModalIndex] = useState(null);
 
   const actualizarDeporte = (i, nombre) => {
     setDeportes((prev) =>
@@ -313,43 +318,42 @@ const [deportes, setDeportes] = useState([
         )}
       </section>
 
-      <section className="sponsors-section">
-        <div className="section-line" />
-        <h2 className="section-titulo">Sponsors</h2>
-        <div className="sponsors-grid">
-          {sponsors.map((s, i) => (
-            <div
-              key={i}
-              className={"sponsor-card" + (admin ? " sponsor-card-admin" : "")}
-              onClick={() => {
-                if (admin) setSponsorModalIndex(i);
-              }}
-              title={admin ? "Click para editar" : undefined}
-            >
-              {s.imagen ? (
-                <div className="sponsor-logo-wrap">
-                  <img className="sponsor-logo" src={s.imagen} alt={s.nombre} />
-                </div>
-              ) : s.nombre ? (
-                <span className="sponsor-nombre-solo">{s.nombre}</span>
-              ) : (
-                <div className="sponsor-placeholder" />
-              )}
-              {s.nombre && (
-                <span className="sponsor-nombre">{s.nombre}</span>
-              )}
+<section className="sponsors-section">
+  <div className="section-line" />
+  <h2 className="section-titulo">Sponsors</h2>
+  <div className="sponsors-grid">
+    {sponsors.length === 0 ? (
+      <p style={{ color: "var(--text)", opacity: 0.4, fontSize: 14 }}>
+        Cargando sponsors...
+      </p>
+    ) : (
+      sponsors.map((s) => (
+        <a
+          key={s.id}
+          href={s.sitioWeb || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="sponsor-card"
+          style={{ textDecoration: "none" }}
+        >
+          {s.logoUrl ? (
+            <div className="sponsor-logo-wrap">
+              <img className="sponsor-logo" src={s.logoUrl} alt={s.nombre} />
             </div>
-          ))}
-        </div>
-        {admin && (
-          <button
-            className="agregar-btn"
-            onClick={() => setSponsorModalIndex(sponsors.length)}
-          >
-            + Agregar sponsor
-          </button>
-        )}
-      </section>
+          ) : (
+            <span className="sponsor-nombre-solo">{s.nombre}</span>
+          )}
+          <span className="sponsor-nombre">{s.nombre}</span>
+          {s.slogan && (
+            <span style={{ fontSize: 11, color: "var(--text)", opacity: 0.5, textAlign: "center" }}>
+              {s.slogan}
+            </span>
+          )}
+        </a>
+      ))
+    )}
+  </div>
+</section>
 
       <footer className="deportes-footer">
         <p>© {bannerAno} Copa Renault · Todos los derechos reservados</p>

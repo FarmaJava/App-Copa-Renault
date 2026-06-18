@@ -41,3 +41,13 @@ query ListEquiposPorDivision($divisionId: UUID!) @auth(level: PUBLIC) {
     logoUrl
   }
 }
+
+query ListSponsors @auth(level: PUBLIC) {
+  sponsors(where: { estado: { eq: true } }) {
+    id
+    nombre
+    logoUrl
+    slogan
+    sitioWeb
+  }
+}

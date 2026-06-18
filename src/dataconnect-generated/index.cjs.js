@@ -73,6 +73,21 @@ exports.listEquiposPorDivision = function listEquiposPorDivision(dcOrVars, varsO
 }
 ;
 
+const listSponsorsRef = (dc) => {
+  const { dc: dcInstance} = validateArgs(connectorConfig, dc, undefined);
+  dcInstance._useGeneratedSdk();
+  return queryRef(dcInstance, 'ListSponsors');
+}
+listSponsorsRef.operationName = 'ListSponsors';
+exports.listSponsorsRef = listSponsorsRef;
+
+exports.listSponsors = function listSponsors(dcOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrOptions, options, undefined,false, false);
+  return executeQuery(listSponsorsRef(dcInstance, inputVars), inputOpts && { fetchPolicy: inputOpts.fetchPolicy });
+}
+;
+
 const jugadorInsertRef = (dcOrVars, vars) => {
   const { dc: dcInstance, vars: inputVars} = validateArgs(connectorConfig, dcOrVars, vars, true);
   dcInstance._useGeneratedSdk();

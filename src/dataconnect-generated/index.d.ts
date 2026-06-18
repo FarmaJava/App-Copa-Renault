@@ -126,6 +126,16 @@ export interface ListPartidosPorDeporteVariables {
   deporteId: UUIDString;
 }
 
+export interface ListSponsorsData {
+  sponsors: ({
+    id: UUIDString;
+    nombre: string;
+    logoUrl: string;
+    slogan?: string | null;
+    sitioWeb?: string | null;
+  } & Sponsor_Key)[];
+}
+
 export interface LogAccion_Key {
   id: UUIDString;
   __typename?: 'LogAccion_Key';
@@ -203,6 +213,18 @@ export const listEquiposPorDivisionRef: ListEquiposPorDivisionRef;
 
 export function listEquiposPorDivision(vars: ListEquiposPorDivisionVariables, options?: ExecuteQueryOptions): QueryPromise<ListEquiposPorDivisionData, ListEquiposPorDivisionVariables>;
 export function listEquiposPorDivision(dc: DataConnect, vars: ListEquiposPorDivisionVariables, options?: ExecuteQueryOptions): QueryPromise<ListEquiposPorDivisionData, ListEquiposPorDivisionVariables>;
+
+interface ListSponsorsRef {
+  /* Allow users to create refs without passing in DataConnect */
+  (): QueryRef<ListSponsorsData, undefined>;
+  /* Allow users to pass in custom DataConnect instances */
+  (dc: DataConnect): QueryRef<ListSponsorsData, undefined>;
+  operationName: string;
+}
+export const listSponsorsRef: ListSponsorsRef;
+
+export function listSponsors(options?: ExecuteQueryOptions): QueryPromise<ListSponsorsData, undefined>;
+export function listSponsors(dc: DataConnect, options?: ExecuteQueryOptions): QueryPromise<ListSponsorsData, undefined>;
 
 interface JugadorInsertRef {
   /* Allow users to create refs without passing in DataConnect */

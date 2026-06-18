@@ -1,4 +1,4 @@
-const { listPartidosPorDeporteRef, listDivisionesPorDeporteRef, listJugadoresPorEquipoRef, listEquiposPorDivisionRef, jugadorInsertRef, connectorConfig } = require('../index.cjs.js');
+const { listPartidosPorDeporteRef, listDivisionesPorDeporteRef, listJugadoresPorEquipoRef, listEquiposPorDivisionRef, listSponsorsRef, jugadorInsertRef, connectorConfig } = require('../index.cjs.js');
 const { validateArgs, CallerSdkTypeEnum } = require('firebase/data-connect');
 const { useDataConnectQuery, useDataConnectMutation, validateReactArgs } = require('@tanstack-query-firebase/react/data-connect');
 
@@ -24,6 +24,12 @@ exports.useListJugadoresPorEquipo = function useListJugadoresPorEquipo(dcOrVars,
 exports.useListEquiposPorDivision = function useListEquiposPorDivision(dcOrVars, varsOrOptions, options) {
   const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateReactArgs(connectorConfig, dcOrVars, varsOrOptions, options, true, true);
   const ref = listEquiposPorDivisionRef(dcInstance, inputVars);
+  return useDataConnectQuery(ref, inputOpts, CallerSdkTypeEnum.GeneratedReact);
+}
+
+exports.useListSponsors = function useListSponsors(dcOrOptions, options) {
+  const { dc: dcInstance, options: inputOpts } = validateReactArgs(connectorConfig, dcOrOptions, options);
+  const ref = listSponsorsRef(dcInstance);
   return useDataConnectQuery(ref, inputOpts, CallerSdkTypeEnum.GeneratedReact);
 }
 exports.useJugadorInsert = function useJugadorInsert(dcOrOptions, options) {
