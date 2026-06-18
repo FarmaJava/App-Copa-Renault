@@ -11,8 +11,7 @@ React 19 + Vite 8 + Firebase (Auth, Data Connect / PostgreSQL). JS, not TS.
 | `npm run lint` | ESLint (must pass before commit) |
 | `npm run preview` | Preview production build |
 
-No `test` or `typecheck` scripts exist. No CI workflows (no `.github/`).
-ESLint uses flat config (`eslint.config.js`), not legacy `.eslintrc`.
+No `test` or `typecheck` scripts exist. ESLint uses flat config (`eslint.config.js`).
 
 ## Routes (`src/App.jsx`)
 
@@ -25,29 +24,30 @@ ESLint uses flat config (`eslint.config.js`), not legacy `.eslintrc`.
 
 ## Key facts
 
-- **Entry**: `src/main.jsx` mounts `<App>` inside `<StrictMode>` → `<BrowserRouter>` → `<AuthProvider>` (not in App itself).
+- **Entry**: `src/main.jsx` mounts `<App>` inside `<StrictMode>` → `<BrowserRouter>` → `<AuthProvider>`.
 - **Auth**: `useAuth()` from `src/context/AuthContext.jsx` exposes `{ user, admin, loading, logout }`.
-- **Admin mode**: user with `admin@itr.com` email gets `admin: true`. Enables inline-editing UI. Press **Ctrl+;** to temporarily toggle admin off (`adminOverride` in `AuthContext`).
-- **Registration is disconnected from login**: `/registro` saves to `localStorage` key `usuarios` (no `createUserWithEmailAndPassword`). `/` only authenticates via Firebase Auth — local registrants cannot sign in.
-- **react-router-dom** is v7 but the app uses the v6-compatible `<BrowserRouter>` / `<Routes>` / `<Route element>` pattern (not `createBrowserRouter`). Keep using this pattern when adding routes.
+- **Admin mode**: user `admin@itr.com` gets `admin: true`. Press **Ctrl+;** to temporarily toggle off (`adminOverride` in `AuthContext`).
+- **Registration is local-only**: `/registro` saves to `localStorage` key `usuarios` (no `createUserWithEmailAndPassword`). Login only authenticates via Firebase Auth — local registrants cannot sign in.
+- **react-router-dom** is v7 but uses v6-compatible `<BrowserRouter>` / `<Routes>` / `<Route element>` pattern. Keep using this pattern when adding routes.
 
-## Firebase
+## Firebase & Data Connect
 
 - **Project**: `copa-renualt-app` (`.firebaserc`)
 - **Auth config**: `src/firebase/config.js` → `src/firebase/auth.js`
-- **Data Connect schema**: `dataconnect/schema/schema.gql` (12 tables)
-- **Connector**: `dataconnect/example/connector.yaml` — generates JS SDK + React hooks to `src/dataconnect-generated/`. Regenerate with:
+- **Schema**: `dataconnect/schema/schema.gql` — 12 tables.
+- **Connector**: `dataconnect/example/connector.yaml` — generates React hooks + JS SDK to `src/dataconnect-generated/`. Regenerate with:
   ```
   firebase dataconnect:sdk:generate
   ```
-- **Emulators**: configured in `firebase.json` (local PGlite data at `dataconnect/.dataconnect/pgliteData`)
+- **Emulators**: only dataconnect emulator configured in `firebase.json` (no auth/firestore emulators). Local PGlite data at `dataconnect/.dataconnect/pgliteData`.
 - **Region**: `southamerica-east1`
 
 ## Generated code
 
-`src/dataconnect-generated/` is **not** gitignored but does not exist until generated. Confirm it exists before editing files under it; if missing, regenerate.
+`src/dataconnect-generated/` does **not** exist until generated. It is not gitignored. Confirm it exists before editing; if missing, regenerate.
 
 ## Conventions
 
 - Page styles are co-located CSS files (`src/pages/<Name>.css`), imported at the top of each page component.
 - CSS variables in `src/index.css` with light/dark mode via `prefers-color-scheme`.
+- All UI text is in Spanish.

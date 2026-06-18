@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./Deportes.css";
 
+// Componente reutilizable para edición inline. En modo admin, al hacer click
+// sobre un texto se convierte en input; al perder foco o presionar Enter se guarda.
 function InlineEdit({ value, onSave, className, admin, placeholder }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(value);
@@ -45,6 +47,7 @@ function InlineEdit({ value, onSave, className, admin, placeholder }) {
   );
 }
 
+// Modal para editar sponsors en modo admin (nombre + URL del logo)
 function SponsorModal({ sponsor, onSave, onClose }) {
   const [nombre, setNombre] = useState(sponsor?.nombre || "");
   const [imagen, setImagen] = useState(sponsor?.imagen || "");
@@ -89,6 +92,7 @@ function SponsorModal({ sponsor, onSave, onClose }) {
   );
 }
 
+// Modal para editar productos de la cantina (nombre, detalles, precio)
 function ProductoModal({ producto, onSave, onClose }) {
   const [nombre, setNombre] = useState(producto?.nombre || "");
   const [detalles, setDetalles] = useState(producto?.detalles || "");
@@ -144,6 +148,8 @@ function ProductoModal({ producto, onSave, onClose }) {
   );
 }
 
+// Página principal. Muestra banner del evento, tarjetas de deportes, cantina y sponsors.
+// En modo admin permite editar cualquier texto inline y gestionar productos/sponsors.
 function Deportes() {
   const navigate = useNavigate();
   const { admin } = useAuth();
@@ -157,6 +163,7 @@ function Deportes() {
   const [horario, setHorario] = useState("9:00 - 17:00");
   const [lugar, setLugar] = useState("Instituto Técnico Renault");
 
+  // Lista de deportes disponibles — cada uno con nombre e imagen de fondo
   const [deportes, setDeportes] = useState([
     { nombre: "Fútbol", inicial: "F", imagen: "https://www.clarin.com/2025/06/17/IOfIZWHY5_2000x1500__1.jpg" },
     { nombre: "Básquet", inicial: "B", imagen: "https://fotos.perfil.com/2023/04/24/trim/720/410/basquet-1553477.jpg" },
