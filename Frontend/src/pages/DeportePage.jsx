@@ -4,6 +4,8 @@ import { useAuth } from "../context/AuthContext";
 import { listPartidosPorDeporte, listDivisionesPorDeporte, listEquiposPorDivision, listJugadoresPorEquipo } from "../services/api.js";
 import "./DeportePage.css";
 
+const jugadoresCache = {};
+
 const DEPORTES = {
   "44edf1eb-e95c-40c8-9a42-e4655707d439": "Fútbol",
   "77d08f9b-9244-4584-bad9-f91b0ed4f36c": "Básquet",
@@ -63,7 +65,7 @@ function PartidoCard({ partido }) {
   );
 }
 
-function EquipoCard({ equipo, accent, cache }) {
+function EquipoCard({ equipo, accent }) {
   const [abierto, setAbierto] = useState(false);
   const [jugadores, setJugadores] = useState(null);
   const [cargando, setCargando] = useState(false);
@@ -72,8 +74,8 @@ function EquipoCard({ equipo, accent, cache }) {
   async function toggleJugadores() {
     if (abierto) { setAbierto(false); return; }
 
-    if (cache.current[equipo.id]) {
-      setJugadores(cache.current[equipo.id]);
+    if (jugadoresCache[equipo.id]) {
+      setJugadores(jugadoresCache[equipo.id]);
       setAbierto(true);
       return;
     }
@@ -88,9 +90,9 @@ function EquipoCard({ equipo, accent, cache }) {
         .sort((a, b) => a.numeroCamiseta - b.numeroCamiseta)
         .filter((j, i, arr) => arr.findIndex(x => x.id === j.id) === i);
 
-      cache.current[equipo.id] = lista;
       setJugadores(lista);
       setAbierto(true);
+      jugadoresCache[equipo.id] = lista;
     } catch (e) {
       console.error(e);
       setJugadores([]);
@@ -174,7 +176,7 @@ function EquipoCard({ equipo, accent, cache }) {
   );
 }
 
-function DivisionGrupo({ division, visible, cache }) {
+function DivisionGrupo({ division, visible }) {
   const [equipos, setEquipos] = useState(null);
   const fetchedRef = useRef(false);
   const accent = NIVEL_ACCENT[division.nivel] || "var(--accent)";
@@ -185,7 +187,7 @@ function DivisionGrupo({ division, visible, cache }) {
     listEquiposPorDivision({ divisionId: division.id })
       .then(res => setEquipos(res.data?.equipos || []))
       .catch(() => setEquipos([]));
-  }, [visible]);
+  }, [visible, division.id]);
 
   if (!visible) return null;
 
@@ -214,7 +216,7 @@ function DivisionGrupo({ division, visible, cache }) {
         <p style={{ fontSize: 13, color: "var(--text)", opacity: 0.5 }}>Cargando equipos...</p>
       )}
       {equipos?.map(eq => (
-        <EquipoCard key={eq.id} equipo={eq} accent={accent} cache={cache} />
+        <EquipoCard key={eq.id} equipo={eq} accent={accent} />
       ))}
     </div>
   );
@@ -226,7 +228,6 @@ function DeportePage() {
   const { admin, logout } = useAuth();
 
   const deporteNombre = DEPORTES[id] || "Deporte";
-  const jugadoresCache = useRef({});
 
   const [partidos, setPartidos] = useState([]);
   const [divisiones, setDivisiones] = useState([]);
@@ -374,7 +375,6 @@ function DeportePage() {
                 key={div.id}
                 division={div}
                 visible={divisionActiva === "todas" || divisionActiva === div.id}
-                cache={jugadoresCache}
               />
             ))}
           </section>
