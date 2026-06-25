@@ -112,7 +112,7 @@ function ProductoModal({ producto, onSave, onClose, loading }) {
 
 function Deportes() {
   const navigate = useNavigate();
-  const { admin } = useAuth();
+  const { admin, logout } = useAuth();
 
   const [bannerTitulo, setBannerTitulo] = useState("Copa Renault");
   const [bannerSubtitulo, setBannerSubtitulo] = useState("Torneo Deportivo Intercolegial");

@@ -6,9 +6,8 @@ from routes.sponsors import sponsors_bp
 from routes.auth import auth_bp
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5173", "http://localhost:5174"]) # Puerto de Vite
+CORS(app, origins=["http://localhost:5173", "http://localhost:5174"])
 
-# Registro de blueprints (rutas separadas por módulo)
 app.register_blueprint(cantina_bp,   url_prefix="/api/cantina")
 app.register_blueprint(deportes_bp,  url_prefix="/api/deportes")
 app.register_blueprint(sponsors_bp,  url_prefix="/api/sponsors")
